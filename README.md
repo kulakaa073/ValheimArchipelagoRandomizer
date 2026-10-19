@@ -6,6 +6,8 @@ This fork continues [Samupo's Valheim Archipelago Randomizer](https://github.com
 
 Code added after the original mod was written with AI assistance in Cursor, using Grok (xAI).
 
+The connect window has two local options. Trophy drops: Default, x2, or Easy. x2 doubles trophy chance and caps the pity counter at 10. Easy drops that trophy on the first kill, then uses the normal rate. The host rolls the corpse. Research costs: Default or Halved. Halved spends half, rounded up, and never less than 1. Health, stamina, and eitr regen from trophies is 50% per food.
+
 ## Install
 
 The mod and the Archipelago world are separate.

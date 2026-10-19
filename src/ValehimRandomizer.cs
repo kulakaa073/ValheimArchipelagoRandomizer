@@ -19,7 +19,7 @@ public class ValheimRandomizer : BaseUnityPlugin
 {
     public const string ModGuid = "com.samupo.randomizer";
     public const string ModName = "Randomizer";
-    public const string ModVersion = "0.2.34";
+    public const string ModVersion = "0.2.35";
 
     internal static BepInEx.Configuration.ConfigEntry<bool> randomized;
     internal static BepInEx.Configuration.ConfigEntry<string> archipelagoHostname;
@@ -29,6 +29,8 @@ public class ValheimRandomizer : BaseUnityPlugin
     internal static BepInEx.Configuration.ConfigEntry<bool> anyResearchMaterial;
     internal static BepInEx.Configuration.ConfigEntry<bool> showResearchUnlocks;
     internal static BepInEx.Configuration.ConfigEntry<string> researchAccess;
+    internal static BepInEx.Configuration.ConfigEntry<string> trophyDrops;
+    internal static BepInEx.Configuration.ConfigEntry<string> researchCosts;
 
     public enum ResearchAccessMode
     {
@@ -45,6 +47,24 @@ public class ValheimRandomizer : BaseUnityPlugin
         "Materials only",
         "Natural: craft opens the next",
     };
+
+    public enum TrophyDropMode
+    {
+        Default = 0,
+        Double = 1,
+        Easy = 2,
+    }
+
+    public enum ResearchCostMode
+    {
+        Default = 0,
+        Halved = 1,
+    }
+
+    public static readonly string[] TrophyDropLabels = { "Default", "x2", "Easy" };
+    public static readonly string[] ResearchCostLabels = { "Default", "Halved" };
+    public static TrophyDropMode ActiveTrophyDrops = TrophyDropMode.Default;
+    public static ResearchCostMode ActiveResearchCosts = ResearchCostMode.Default;
 
     // Items required to enter a tier. Keep this in sync with valheimapworld/Regions.py.
     static readonly Dictionary<int, string[]> TierDoorItems = new Dictionary<int, string[]>
@@ -71,7 +91,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         public const int HpPerFood = 2;
         public const int StaminaPerFood = 2;
         public const int EitrPerFood = 5;
-        public const int RegenPercentPerFood = 100;
+        public const int RegenPercentPerFood = 50;
         public const int AdrenalinePerTrophy = 3;
         public const int AttackPercentPerTrophy = 5;
         public const int DefensePercentPerTrophy = 5;
@@ -159,6 +179,7 @@ public class ValheimRandomizer : BaseUnityPlugin
     static readonly List<string> dropMissing = new List<string>();
     static readonly HashSet<string> sentDrops = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
     static readonly HashSet<string> craftedResearch = new HashSet<string>(StringComparer.Ordinal);
+    static readonly Dictionary<string, int[]> researchBaseCosts = new Dictionary<string, int[]>(StringComparer.Ordinal);
     static readonly List<ItemDrop.ItemData> researchConsume = new List<ItemDrop.ItemData>();
     static HashSet<string> researchIds;
     static int researchIdCount = -1;
@@ -213,7 +234,13 @@ public class ValheimRandomizer : BaseUnityPlugin
             "Off: a randomized research says Unlocks: Something?. On: the description lists what that research unlocks.");
         researchAccess = Config.Bind("Archipelago", "ResearchAccess", "default",
             "Used until a seed connects. default, tier, materials, or natural.");
+        trophyDrops = Config.Bind("Archipelago", "TrophyDrops", "default",
+            "Trophy drop help on the host that rolls the corpse. default, x2, or easy.");
+        researchCosts = Config.Bind("Archipelago", "ResearchCosts", "default",
+            "Research bench costs. default, or halved.");
         ActiveResearchAccess = ParseResearchAccess(researchAccess.Value);
+        ActiveTrophyDrops = ParseTrophyDrops(trophyDrops.Value);
+        ActiveResearchCosts = ParseResearchCosts(researchCosts.Value);
 
         ValheimRandomizer.Log = this.Logger;
         PrefabManager.OnVanillaPrefabsAvailable += DoOnPrefabsAvailable;
@@ -345,6 +372,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                 var chance = info.chances[c];
                 if (!table.TryGetValue(chance.key, out int count)) continue;
                 int left = Math.Max(1, count);
+                if (ActiveTrophyDrops == TrophyDropMode.Double && left > 10) left = 10;
                 if (!chance.starred)
                 {
                     hasBase = true;
@@ -401,11 +429,13 @@ public class ValheimRandomizer : BaseUnityPlugin
                     info = new TrophyPityInfo();
                     map[name] = info;
                 }
-                info.baseChance = drop.m_chance;
-                AddPityChance(info, name, drop.m_chance, starred: false);
+                float chance = drop.m_chance;
+                if (ActiveTrophyDrops == TrophyDropMode.Double) chance *= 2f;
+                info.baseChance = chance;
+                AddPityChance(info, name, chance, starred: false);
                 if (!drop.m_levelMultiplier) continue;
-                AddPityChance(info, name, drop.m_chance * 2f, starred: true);
-                AddPityChance(info, name, drop.m_chance * 4f, starred: true);
+                AddPityChance(info, name, chance * 2f, starred: true);
+                AddPityChance(info, name, chance * 4f, starred: true);
             }
         }
         if (map.Count == 0) return;
@@ -1082,6 +1112,88 @@ public class ValheimRandomizer : BaseUnityPlugin
         ActiveResearchAccess = ParseResearchAccess(researchAccess?.Value);
     }
 
+    public static int ScaleResearchCost(int amount)
+    {
+        if (amount <= 1 || ActiveResearchCosts != ResearchCostMode.Halved) return amount;
+        return Math.Max(1, (amount + 1) / 2);
+    }
+
+    public static void ApplyResearchCostMode()
+    {
+        if (ObjectDB.instance == null || ObjectDB.instance.m_recipes == null) return;
+        foreach (var recipe in ObjectDB.instance.m_recipes)
+        {
+            if (recipe == null || recipe.m_item == null || recipe.m_resources == null) continue;
+            if (!researchBaseCosts.TryGetValue(recipe.m_item.name, out var amounts)) continue;
+            int count = Math.Min(amounts.Length, recipe.m_resources.Length);
+            for (int i = 0; i < count; i++)
+            {
+                if (recipe.m_resources[i] == null) continue;
+                recipe.m_resources[i].m_amount = ScaleResearchCost(amounts[i]);
+            }
+        }
+    }
+
+    public static void SetTrophyDrops(TrophyDropMode mode)
+    {
+        ActiveTrophyDrops = mode;
+        if (trophyDrops != null)
+            trophyDrops.Value = TrophyDropName(mode);
+        pityChancesFrozen = false;
+        pityChances = null;
+        MarkTrophyPityDirty();
+    }
+
+    public static void SetResearchCosts(ResearchCostMode mode)
+    {
+        ActiveResearchCosts = mode;
+        if (researchCosts != null)
+            researchCosts.Value = mode == ResearchCostMode.Halved ? "halved" : "default";
+        ApplyResearchCostMode();
+        ArchipelagoConnection.PublishResearchCosts();
+    }
+
+    public static TrophyDropMode ParseTrophyDrops(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text)) return TrophyDropMode.Default;
+        switch (text.Trim().ToLowerInvariant())
+        {
+            case "x2":
+            case "double":
+            case "1":
+                return TrophyDropMode.Double;
+            case "easy":
+            case "2":
+                return TrophyDropMode.Easy;
+            default:
+                return TrophyDropMode.Default;
+        }
+    }
+
+    public static ResearchCostMode ParseResearchCosts(string text)
+    {
+        if (string.IsNullOrWhiteSpace(text)) return ResearchCostMode.Default;
+        switch (text.Trim().ToLowerInvariant())
+        {
+            case "halved":
+            case "half":
+            case "1":
+                return ResearchCostMode.Halved;
+            default:
+                return ResearchCostMode.Default;
+        }
+    }
+
+    static string TrophyDropName(TrophyDropMode mode)
+    {
+        switch (mode)
+        {
+            case TrophyDropMode.Double: return "x2";
+            case TrophyDropMode.Easy: return "easy";
+            default: return "default";
+        }
+    }
+
     public static ResearchAccessMode ParseResearchAccess(string text)
     {
         if (string.IsNullOrWhiteSpace(text)) return ResearchAccessMode.Default;
@@ -1270,12 +1382,17 @@ public class ValheimRandomizer : BaseUnityPlugin
                 string[] gated = SplitPipes(gatedStr);
 
                 var reqs = new List<RequirementConfig>();
+                var bases = new List<int>();
                 foreach (var tok in SplitPipes(costsStr))
                 {
                     var p = tok.Split(':');
                     if (p.Length == 2 && int.TryParse(p[1], out int amt) && amt > 0)
-                        reqs.Add(new RequirementConfig(p[0], amt));
+                    {
+                        bases.Add(amt);
+                        reqs.Add(new RequirementConfig(p[0], ScaleResearchCost(amt)));
+                    }
                 }
+                researchBaseCosts[rid] = bases.ToArray();
 
                 RandomizerUtils.CreateResearch(
                     string.IsNullOrWhiteSpace(iconSrc) ? "Amber" : iconSrc,
@@ -1291,6 +1408,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             }
 
             Logger.LogInfo($"Loaded and registered {added} research definition(s) from {file}.");
+            ApplyResearchCostMode();
             RevealEligibleRecipes();
         }
         catch (Exception ex)

@@ -8,6 +8,8 @@ The Archipelago world is separate. Install `valheimapworld.apworld` from the [re
 
 Code added after Samupo's original mod was written with AI assistance in Cursor, using Grok (xAI).
 
+The connect window has two local options. Trophy drops: Default, x2, or Easy. x2 doubles trophy chance and caps the pity counter at 10. Easy drops that trophy on the first kill, then uses the normal rate. The host rolls the corpse. Research costs: Default or Halved. Halved spends half, rounded up, and never less than 1. Health, stamina, and eitr regen from trophies is 50% per food.
+
 ## World options
 
 `boss_checks` is on by default. Each boss kill is a check in that boss's tier. The unique drop is removed from the corpse and can be placed on any check from tier 0 through that boss's tier. The granted amount follows the world resource rate. The swamp key and the wishbone also follow how many players are in the world. Off, the corpse still drops the item, and only the goal kill is a location.

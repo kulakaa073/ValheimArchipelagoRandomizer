@@ -65,6 +65,7 @@ internal static class ArchipelagoConnection
             session.Socket.SocketClosed += OnSocketClosed;
             session.Socket.ErrorReceived += OnSocketError;
             connected = true;
+            PublishResearchCosts();
             if (successSlotData(result, out var slotData))
             {
                 ValheimRandomizer.Log?.LogInfo("Slot data keys: " + string.Join(", ", slotData.Keys));
@@ -204,6 +205,17 @@ internal static class ArchipelagoConnection
             type = type.BaseType;
         }
         return null;
+    }
+
+    public static void PublishResearchCosts()
+    {
+        if (!IsConnected || session == null) return;
+        var info = session.ConnectionInfo;
+        string key = "valheim_costs_" + info.Team.ToString(CultureInfo.InvariantCulture)
+            + "_" + info.Slot.ToString(CultureInfo.InvariantCulture);
+        session.DataStorage[key] = ValheimRandomizer.ActiveResearchCosts == ValheimRandomizer.ResearchCostMode.Halved
+            ? "halved"
+            : "default";
     }
 
     public static void PublishPity(JObject payload)

@@ -701,4 +701,94 @@ public static class Patches
             __result.RemoveAll(pair => pair.Key != null && ValheimRandomizer.IsBossDropPrefab(pair.Key.name));
         }
     }
+
+    // x2 doubles trophy chance and caps pity at 10. Easy forces the first trophy, then leaves the roll alone.
+    [HarmonyPatch(typeof(CharacterDrop), nameof(CharacterDrop.GenerateDropList))]
+    static class CharacterDrop_TrophyHelp_Patch
+    {
+        const int PityCap = 10;
+
+        static void Prefix(CharacterDrop __instance, out float[] __state)
+        {
+            __state = null;
+            if (ValheimRandomizer.ActiveTrophyDrops != ValheimRandomizer.TrophyDropMode.Double) return;
+            if (__instance == null || __instance.m_drops == null) return;
+            var saved = new float[__instance.m_drops.Count];
+            bool any = false;
+            for (int i = 0; i < __instance.m_drops.Count; i++)
+            {
+                var drop = __instance.m_drops[i];
+                saved[i] = drop != null ? drop.m_chance : 0f;
+                if (!IsTrophy(drop)) continue;
+                any = true;
+                drop.m_chance *= 2f;
+                ClampPity(drop);
+            }
+            if (any) __state = saved;
+        }
+
+        static void Postfix(CharacterDrop __instance, List<KeyValuePair<GameObject, int>> __result, float[] __state)
+        {
+            if (__state != null && __instance != null && __instance.m_drops != null)
+            {
+                int count = Math.Min(__state.Length, __instance.m_drops.Count);
+                for (int i = 0; i < count; i++)
+                {
+                    var drop = __instance.m_drops[i];
+                    if (!IsTrophy(drop)) continue;
+                    ClampPity(drop);
+                    drop.m_chance = __state[i];
+                }
+            }
+            if (ValheimRandomizer.ActiveTrophyDrops == ValheimRandomizer.TrophyDropMode.Easy)
+                ForceFirstTrophy(__instance, __result);
+        }
+
+        static bool IsTrophy(CharacterDrop.Drop drop)
+        {
+            return drop != null && drop.m_prefab != null
+                && ValheimRandomizer.trophyByItemID.ContainsKey(drop.m_prefab.name);
+        }
+
+        static void ClampPity(CharacterDrop.Drop drop)
+        {
+            if (drop.m_prefab == null || CharacterDrop.s_pseudoCounter == null) return;
+            string name = drop.m_prefab.name;
+            ClampOne(name, drop.m_chance);
+            if (!drop.m_levelMultiplier) return;
+            ClampOne(name, drop.m_chance * 2f);
+            ClampOne(name, drop.m_chance * 4f);
+        }
+
+        static void ClampOne(string name, float chance)
+        {
+            if (chance <= 0f || chance > 0.3f) return;
+            int key = name.GetStableHashCode() + (int)(chance * 1000f);
+            if (CharacterDrop.s_pseudoCounter.TryGetValue(key, out int count) && count > PityCap)
+                CharacterDrop.s_pseudoCounter[key] = PityCap;
+        }
+
+        static void ForceFirstTrophy(CharacterDrop dropper, List<KeyValuePair<GameObject, int>> result)
+        {
+            if (dropper == null || dropper.m_drops == null || result == null || ZoneSystem.instance == null) return;
+            for (int i = 0; i < dropper.m_drops.Count; i++)
+            {
+                var drop = dropper.m_drops[i];
+                if (!IsTrophy(drop)) continue;
+                string key = "ap_trophy_first_" + drop.m_prefab.name;
+                if (ZoneSystem.instance.GetGlobalKey(key)) continue;
+                ZoneSystem.instance.SetGlobalKey(key);
+                bool present = false;
+                for (int r = 0; r < result.Count; r++)
+                {
+                    if (result[r].Key == drop.m_prefab)
+                    {
+                        present = true;
+                        break;
+                    }
+                }
+                if (!present) result.Add(new KeyValuePair<GameObject, int>(drop.m_prefab, 1));
+            }
+        }
+    }
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.35
+* Trophy drops can stay as they are, double with pity capped at 10, or guarantee the first trophy from each creature
+* Research costs can be halved. Half a cost rounds up, and a cost of 1 stays 1
+* Health, stamina, and eitr regen from trophies is 50% per food
+
 ## 0.2.34
 * Natural access opens the next research only after its parents are crafted. Receiving a parent still grants its gear
 

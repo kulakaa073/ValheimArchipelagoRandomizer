@@ -10,7 +10,9 @@ public class ArchipelagoUI : MonoBehaviour
 {
 
     // UI state
-    private Rect _win = new Rect(30, 80, 460, 460);
+    private Rect _win = new Rect(30, 80, 460, 620);
+    private int _trophyDrops;
+    private int _researchCosts;
     private bool _randomized;
     private bool _anyMaterial;
     private bool _showUnlocks;
@@ -35,6 +37,8 @@ public class ArchipelagoUI : MonoBehaviour
         _port = ValheimRandomizer.archipelagoPort.Value;
         _slot = ValheimRandomizer.archipelagoSlot.Value;
         _password = ValheimRandomizer.archipelagoPassword.Value;
+        _trophyDrops = (int)ValheimRandomizer.ActiveTrophyDrops;
+        _researchCosts = (int)ValheimRandomizer.ActiveResearchCosts;
     }
 
     private void Update()
@@ -104,6 +108,26 @@ public class ArchipelagoUI : MonoBehaviour
         GUILayout.Label(seedLocksAccess
             ? "Research access comes from this seed."
             : "Research access is local until a seed connects.");
+
+        GUILayout.Space(4);
+        GUILayout.Label("Trophy drops");
+        int trophyNext = GUILayout.SelectionGrid(_trophyDrops, ValheimRandomizer.TrophyDropLabels, 3);
+        if (trophyNext != _trophyDrops)
+        {
+            _trophyDrops = trophyNext;
+            ValheimRandomizer.SetTrophyDrops((ValheimRandomizer.TrophyDropMode)trophyNext);
+        }
+        GUILayout.Label("x2 doubles trophy chance and caps pity at 10. Easy drops the trophy on the first kill, then uses the normal rate. The host rolls these.");
+
+        GUILayout.Space(4);
+        GUILayout.Label("Research costs");
+        int costNext = GUILayout.SelectionGrid(_researchCosts, ValheimRandomizer.ResearchCostLabels, 2);
+        if (costNext != _researchCosts)
+        {
+            _researchCosts = costNext;
+            ValheimRandomizer.SetResearchCosts((ValheimRandomizer.ResearchCostMode)costNext);
+        }
+        GUILayout.Label("Halved spends half, rounded up, and never less than 1.");
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Host", GUILayout.Width(60));
