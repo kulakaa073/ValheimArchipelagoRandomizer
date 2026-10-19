@@ -2,16 +2,17 @@
 
 Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a boss kill chosen for the seed. The default is Defeat Kall.
 
-This fork continues [Samupo's Valheim Archipelago Randomizer](https://github.com/Samupo/ValheimArchipelagoRandomizer). The [tracker](https://valheim-tracker.vercel.app) shows a room.
+This fork continues [Samupo's Valheim Archipelago Randomizer](https://github.com/Samupo/ValheimArchipelagoRandomizer). Gale installs the mod from [Thunderstore](https://thunderstore.io/c/valheim/p/ShadeNoob/ValheimArchipelagoRandomizer/). The [tracker](https://valheim-tracker.vercel.app) shows a room.
 
 Code added after the original mod was written with AI assistance in Cursor, using Grok (xAI).
 
 ## Install
 
-The mod and the Archipelago world are separate. Download both from the [latest release](https://github.com/kulakaa073/ValheimArchipelagoRandomizer/releases/latest). Source for that version is attached there too.
+The mod and the Archipelago world are separate.
 
-* The mod zip is the Gale package. It depends on BepInEx and Jotunn. Install it on every player's game, and on the host or dedicated server, so the unique boss item is removed when the corpse rolls its drops.
-* `valheimapworld.apworld` installs in Archipelago. Generate the seed after it is installed.
+* Install the mod with Gale from [Thunderstore](https://thunderstore.io/c/valheim/p/ShadeNoob/ValheimArchipelagoRandomizer/). It depends on BepInEx and Jotunn. Install it on every player's game, and on the host or dedicated server, so the unique boss item is removed when the corpse rolls its drops. The same zip is on the [latest release](https://github.com/kulakaa073/ValheimArchipelagoRandomizer/releases/latest).
+* `valheimapworld.apworld` is on that release. Install it in Archipelago, then generate the seed.
+* Source for that version is attached to the release.
 
 ## World options
 
