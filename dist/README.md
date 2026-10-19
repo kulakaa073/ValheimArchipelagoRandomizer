@@ -2,6 +2,12 @@
 
 Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a boss kill chosen for the seed. The default is Defeat Kall.
 
+Gale installs this package. BepInEx and Jotunn are dependencies.
+
+The Archipelago world is separate. Install `valheimapworld.apworld` from the [repository](https://github.com/kulakaa073/ValheimArchipelagoRandomizer). The [tracker](https://valheim-tracker.vercel.app) shows the room.
+
+Code added after Samupo's original mod was written with AI assistance in Cursor, using Grok (xAI).
+
 ## World options
 
 `boss_checks` is on by default. Each boss kill is a check in that boss's tier. The unique drop is removed from the corpse and can be placed on any check from tier 0 through that boss's tier. The granted amount follows the world resource rate. The swamp key and the wishbone also follow how many players are in the world. Off, the corpse still drops the item, and only the goal kill is a location.

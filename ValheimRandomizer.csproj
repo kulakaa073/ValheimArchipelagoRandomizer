@@ -5,7 +5,7 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
     <AssemblyName>ValheimRandomizer</AssemblyName>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <GenerateDependencyFile>false</GenerateDependencyFile>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
@@ -13,6 +13,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="tools/**" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyMetadata Include="AI_Assisted_Creation" Value="This assembly was partially created with the assistance of generative AI in Cursor." />
+    <AssemblyMetadata Include="AI_Model_Vendor" Value="xAI" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine.AccessibilityModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath><Private>false</Private></Reference>
