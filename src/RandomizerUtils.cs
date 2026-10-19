@@ -1,4 +1,4 @@
-﻿using Jotunn.Configs;
+using Jotunn.Configs;
 using Jotunn.Entities;
 using Jotunn.Managers;
 using System;
@@ -10,7 +10,6 @@ public static class RandomizerUtils
 {
     public static void RegisterResearchBench()
     {
-        PrefabManager.OnVanillaPrefabsAvailable -= RegisterResearchBench;
         ValheimRandomizer.Log.LogInfo("RegisterResearchBench: Vanilla prefabs available, cloning Forge…");
 
         UnityEngine.GameObject clone = PrefabManager.Instance.CreateClonedPrefab(ValheimRandomizer.ResearchBenchPrefabName, "forge");
@@ -40,6 +39,8 @@ public static class RandomizerUtils
 
         researchCS.m_craftRequireRoof = false;
         researchCS.m_craftRequireFire = false;
+        researchCS.m_hasCraftTab = true;
+        researchCS.m_upgrader = false;
 
         ValheimRandomizer.ResearchBenchCraftingStation = researchCS;
 
@@ -106,33 +107,13 @@ public static class RandomizerUtils
         // Name/description
         researchDrop.m_itemData.m_shared.m_name = displayName;
 
-        if (requiredResearchIDs.Length > 0)
-        {
-            description += "\r\n\r\nRequires: ";
-            foreach (var researchID in requiredResearchIDs)
-            {
-                description += researchID + ", ";
-            }
-            description.Substring(0, description.Length - 2);
-        }
+        if (requiredResearchIDs != null && requiredResearchIDs.Length > 0)
+            description += "\r\n\r\nRequires: " + string.Join(", ", requiredResearchIDs);
 
-        if (ValheimRandomizer.randomized.Value)
-        {
-            description += "\r\n\r\nUnlocks: Something?";
-        }
-        else
-        {
-            if (gatedItemPrefabIDs.Length > 0)
-            {
-                description += "\r\n\r\nUnlocks: ";
-                foreach (var prefabID in gatedItemPrefabIDs)
-                {
-                    description += prefabID + ", ";
-                }
-                description.Substring(0, description.Length - 2);
-            }
-        }
-        researchDrop.m_itemData.m_shared.m_description = description;
+        ValheimRandomizer.researchBody[researchItemID] = description;
+        ValheimRandomizer.researchUnlockPrefabs[researchItemID] =
+            gatedItemPrefabIDs == null ? Array.Empty<string>() : (string[])gatedItemPrefabIDs.Clone();
+        researchDrop.m_itemData.m_shared.m_description = ValheimRandomizer.BuildResearchDescription(researchItemID);
 
         // Copy ICON from the provided item
         var iconSrcGO = PrefabManager.Instance.GetPrefab(iconFromItemPrefab);
@@ -157,6 +138,7 @@ public static class RandomizerUtils
         researchDrop.m_itemData.m_shared.m_weight = 0.1f;
         researchDrop.m_itemData.m_shared.m_teleportable = true;
         researchDrop.m_itemData.m_shared.m_maxStackSize = 1;
+        researchDrop.m_itemData.m_shared.m_maxQuality = 1;
 
         // Register the item
         ItemManager.Instance.AddItem(new CustomItem(researchGO, fixReference: true));
@@ -193,6 +175,7 @@ public static class RandomizerUtils
     {
         var tr = new ValheimRandomizer.TrophyResearch(itemID, researchID, boost);
         ValheimRandomizer.trophyByItemID[itemID] = tr;
+        ValheimRandomizer.trophyByResearchID[researchID] = tr;
 
         // Note: these are not craftable researches, so we deliberately do NOT
         // add to ValheimRandomizer.research list, nor create a recipe.
@@ -209,6 +192,7 @@ public static class RandomizerUtils
             {
                 return true; // Skip if already researched
             }
+            return !ValheimRandomizer.ResearchRecipeVisible(itemID);
         }
         foreach (string research in ValheimRandomizer.GetResearchRequired(itemID))
         {

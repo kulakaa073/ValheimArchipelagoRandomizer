@@ -1,0 +1,3008 @@
+[
+  {
+    "prefab": "Acorn",
+    "name": "Acorns",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Amber",
+    "name": "Amber",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AmberPearl",
+    "name": "Amber Pearl",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AncientCoin",
+    "name": "Ancient Coin",
+    "stack": 999,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AncientGemstoneBlack",
+    "name": "Draumyx",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AncientGemstoneGreen",
+    "name": "Grimvarn",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AncientGemstoneOrange",
+    "name": "Solryth",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AncientGemstonePurple",
+    "name": "Veydris",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldHeavyChestUncooked",
+    "name": "Cast: Breastplate of the Protector",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldHeavyHelmetUncooked",
+    "name": "Cast: Helmet of the Protector",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldHeavyLegsUncooked",
+    "name": "Cast: Trousers of the Protector",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldMageChestUncooked",
+    "name": "Cast: Robes of the Caller",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldMageHelmetUncooked",
+    "name": "Cast: Headdress of the Caller",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldMageLegsUncooked",
+    "name": "Cast: Trousers of the Caller",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldMediumChestUncooked",
+    "name": "Cast: Chestpiece of the Vanguard",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldMediumHelmetUncooked",
+    "name": "Cast: Hood of the Vanguard",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ArmorGoldMediumLegsUncooked",
+    "name": "Cast: Trousers of the Vanguard",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AskBladder",
+    "name": "Asksvin Bladder",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AskHide",
+    "name": "Asksvin Hide",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AsksvinCarrionNeck",
+    "name": "Asksvin Neck",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AsksvinCarrionPelvic",
+    "name": "Asksvin Pelvis",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AsksvinCarrionRibcage",
+    "name": "Asksvin Ribcage",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AsksvinCarrionSkull",
+    "name": "Asksvin Skull",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AsksvinMeat",
+    "name": "Asksvin Tail",
+    "stack": 20,
+    "food": 70.0,
+    "stamina": 24.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AtgeirGoldUncooked",
+    "name": "Cast: Nord Atgeir",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AxeGoldUncooked",
+    "name": "Cast: Nord Axe",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AxeHead1",
+    "name": "Curious Axe Head",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "AxeHead2",
+    "name": "Mysterious Axe Head",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BakedPoteitrUncooked",
+    "name": "Unbaked Poteitr",
+    "stack": 10,
+    "food": 37.0,
+    "stamina": 19.0,
+    "eitr": 110.0,
+    "consume": true
+  },
+  {
+    "prefab": "BarkaBranch",
+    "name": "Frozen Branch",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Barley",
+    "name": "Barley",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BarleyWineBase",
+    "name": "Barley Wine Base: Fire Resistance",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BattleaxeGoldUncooked",
+    "name": "Cast: Nord Greataxe",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BeechSeeds",
+    "name": "Beech Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BellFragment",
+    "name": "Bell Fragment",
+    "stack": 9,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Bilebag",
+    "name": "Bilebag",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BirchSeeds",
+    "name": "Birch Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BjornHide",
+    "name": "Bear Hide",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BjornMeat",
+    "name": "Bear Meat",
+    "stack": 20,
+    "food": 35.0,
+    "stamina": 12.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BjornPaw",
+    "name": "Bear Paw",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BlackCore",
+    "name": "Black Core",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BlackMarble",
+    "name": "Black Marble",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BlackMetal",
+    "name": "Black Metal",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BlackMetalScrap",
+    "name": "Black Metal Scrap",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Blackwood",
+    "name": "Ashwood",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BlobVial",
+    "name": "Corked Vial",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Bloodbag",
+    "name": "Bloodbag",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BombSiege",
+    "name": "Explosive Payload",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BoneFragments",
+    "name": "Bone Fragments",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BoneMawSerpentMeat",
+    "name": "Bonemaw Meat",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BonemawSerpentScale",
+    "name": "Bonemaw Scale",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BonemawSerpentTooth",
+    "name": "Bonemaw Tooth",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BowGoldUncooked",
+    "name": "Cast: Nord Bow",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BreadDough",
+    "name": "Bread Dough",
+    "stack": 20,
+    "food": 10.0,
+    "stamina": 120.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Bronze",
+    "name": "Bronze",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BronzeNails",
+    "name": "Bronze Nails",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BronzeScrap",
+    "name": "Scrap Bronze",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "BugMeat",
+    "name": "Seeker Meat",
+    "stack": 20,
+    "food": 35.0,
+    "stamina": 12.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CandleWick",
+    "name": "Candle Wick",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Carapace",
+    "name": "Carapace",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CarrotSeeds",
+    "name": "Carrot Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Catapult_ammo",
+    "name": "Grausten Payload",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Catapult_Ammo_BloodGold",
+    "name": "Bloodgold Payload",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CelestialFeather",
+    "name": "Celestial Feather",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CeramicPlate",
+    "name": "Ceramic Plate",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Chain",
+    "name": "Chain",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CharcoalResin",
+    "name": "Charcoal Resin",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CharredBone",
+    "name": "Charred Bone",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CharredCogwheel",
+    "name": "Charred Cogwheel",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Charredskull",
+    "name": "Charred Skull",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ChickenMeat",
+    "name": "Chicken Meat",
+    "stack": 20,
+    "food": 35.0,
+    "stamina": 12.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Chitin",
+    "name": "Chitin",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Coal",
+    "name": "Coal",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Coins",
+    "name": "Coins",
+    "stack": 999,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Copper",
+    "name": "Copper",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CopperOre",
+    "name": "Copper Ore",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CopperScrap",
+    "name": "Copper Scrap",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CrossbowGoldUncooked",
+    "name": "Cast: Nord Crossbow",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CrownJewel",
+    "name": "Crown Jewel",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Crystal",
+    "name": "Crystal",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "CuredSquirrelHamstring",
+    "name": "Cured Squirrel Hamstring",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Dandelion",
+    "name": "Dandelion",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "DeerHide",
+    "name": "Deer Hide",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "DeerMeat",
+    "name": "Deer Meat",
+    "stack": 20,
+    "food": 20.0,
+    "stamina": 20.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "DvergrKeyFragment",
+    "name": "Sealbreaker Fragment",
+    "stack": 9,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "DvergrNeedle",
+    "name": "Dvergr Extractor",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "DyrnwynBladeFragment",
+    "name": "Dyrnwyn Blade Fragment",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "DyrnwynHiltFragment",
+    "name": "Dyrnwyn Hilt Fragment",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "DyrnwynTipFragment",
+    "name": "Dyrnwyn Tip Fragment",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Ectoplasm",
+    "name": "Ectoplasm",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Eitr",
+    "name": "Refined Eitr",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ElakingHairBundle",
+    "name": "Elaking Hair Bundle",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ElderBark",
+    "name": "Ancient Bark",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Entrails",
+    "name": "Entrails",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FaderDrop",
+    "name": "Kindled Ribs",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FaderEmber",
+    "name": "Embers",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastAshlands_Material",
+    "name": "Ashlands Gourmet Bowl",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastBlackforest_Material",
+    "name": "Black Forest Buffet Platter",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastDeepNorth_Material",
+    "name": "Northern Morning Fare",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastMeadows_Material",
+    "name": "Whole Roasted Meadow Boar",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastMistlands_Material",
+    "name": "Mushrooms Galore á la Mistlands",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastMountains_Material",
+    "name": "Hearty Mountain Logger's Stew",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastOceans_Material",
+    "name": "Sailor's Bounty",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastPlains_Material",
+    "name": "Plains Pie Picnic",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FeastSwamps_Material",
+    "name": "Swamp Dweller's Delight",
+    "stack": 5,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Feathers",
+    "name": "Feathers",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FineWood",
+    "name": "Finewood",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FirCone",
+    "name": "Fir Cone",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FirConeFrost",
+    "name": "Timberwood Cone",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FireworksRocket_Blue",
+    "name": "Blue Fireworks",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FireworksRocket_Cyan",
+    "name": "Cyan Fireworks",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FireworksRocket_Green",
+    "name": "Green Fireworks",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FireworksRocket_Purple",
+    "name": "Purple Fireworks",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FireworksRocket_Red",
+    "name": "Red Fireworks",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FireworksRocket_White",
+    "name": "Basic Fireworks",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FireworksRocket_Yellow",
+    "name": "Yellow Fireworks",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FishAndBreadUncooked",
+    "name": "Uncooked Fish 'n' Bread",
+    "stack": 10,
+    "food": 28.0,
+    "stamina": 85.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FishAnglerRaw",
+    "name": "Raw Fish",
+    "stack": 20,
+    "food": 20.0,
+    "stamina": 20.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FishRaw",
+    "name": "Raw Fish",
+    "stack": 20,
+    "food": 20.0,
+    "stamina": 20.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FistGoldUncooked",
+    "name": "Cast: Nord Knucklechains",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Flametal",
+    "name": "Ancient Metal",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FlametalNew",
+    "name": "Flametal",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FlametalOre",
+    "name": "Glowing Metal Ore",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FlametalOreNew",
+    "name": "Flametal Ore",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Flax",
+    "name": "Flax",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Flint",
+    "name": "Flint",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FragrantBundle",
+    "name": "Fragrant Bundle",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FreezeGland",
+    "name": "Freeze Gland",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FreshSeaweed",
+    "name": "Fresh Seaweed",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FrostCore",
+    "name": "Frostcore",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Frostwood",
+    "name": "Timberwood",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FrozenFuel",
+    "name": "Liquid Frost",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "FrozenKingDrop",
+    "name": "Sacrificial Blood",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "GemstoneBlue",
+    "name": "Iolite",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "GemstoneGreen",
+    "name": "Jade",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "GemstoneRed",
+    "name": "Bloodstone",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "GenericMoldUncooked",
+    "name": "item_smallparts_gold_uncooked",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "GiantBloodSack",
+    "name": "Blood Clot",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Gold",
+    "name": "Bloodgold",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "GoldOre",
+    "name": "Petrified Tissue",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Grausten",
+    "name": "Grausten",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "GreydwarfEye",
+    "name": "Greydwarf Eye",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Guck",
+    "name": "Guck",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "HardAntler",
+    "name": "Hard Antler",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "HareMeat",
+    "name": "Hare Meat",
+    "stack": 20,
+    "food": 35.0,
+    "stamina": 12.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "HoneyGlazedChickenUncooked",
+    "name": "Uncooked Honey Glazed Chicken",
+    "stack": 10,
+    "food": 80.0,
+    "stamina": 26.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Hook",
+    "name": "Hook",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Ice",
+    "name": "Ice",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Iron",
+    "name": "Iron",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "IronNails",
+    "name": "Iron Nails",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "IronOre",
+    "name": "Iron Ore",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Ironpit",
+    "name": "Iron Pit",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "IronScrap",
+    "name": "Scrap Iron",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "JuteBlue",
+    "name": "Blue Jute",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "JuteRed",
+    "name": "Red Jute",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "KaleChipsUncooked",
+    "name": "Raw Kale Chips",
+    "stack": 10,
+    "food": 39.0,
+    "stamina": 115.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "KaleSeeds",
+    "name": "Kale Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "KeysGoldUncooked",
+    "name": "Cast: Intricate Key",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "KnifeGoldUncooked",
+    "name": "Cast: Nord Dagger",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Larva",
+    "name": "item_larva",
+    "stack": 20,
+    "food": 35.0,
+    "stamina": 12.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "LastBossGate_RuneTile",
+    "name": "item_runetile",
+    "stack": 3,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "LeatherScraps",
+    "name": "Leather Scraps",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Leatherstraps",
+    "name": "Leather Straps",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "LinenThread",
+    "name": "Linen Thread",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "LoxMeat",
+    "name": "Lox Meat",
+    "stack": 20,
+    "food": 20.0,
+    "stamina": 20.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "LoxPelt",
+    "name": "Lox Pelt",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "LoxPieUncooked",
+    "name": "Unbaked Lox Pie",
+    "stack": 10,
+    "food": 120.0,
+    "stamina": 10.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MaceGoldUncooked",
+    "name": "Cast: Nord Mace",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MagicallyStuffedShroomUncooked",
+    "name": "Uncooked Stuffed Mushroom",
+    "stack": 10,
+    "food": 25.0,
+    "stamina": 12.0,
+    "eitr": 75.0,
+    "consume": true
+  },
+  {
+    "prefab": "Mandible",
+    "name": "Mandible",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseBugRepellent",
+    "name": "Mead Base: Anti-Sting",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseBzerker",
+    "name": "Mead base: Berserkir",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseEitrLingering",
+    "name": "Mead Base: Lingering Eitr",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseEitrMinor",
+    "name": "Mead Base: Minor Eitr",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseFrostResist",
+    "name": "Mead Base: Frost Resistance",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseHasty",
+    "name": "Mead base: Ratatosk",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseHealthLingering",
+    "name": "Mead Base: Lingering Health",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseHealthMajor",
+    "name": "Mead Base: Major Healing",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseHealthMedium",
+    "name": "Mead Base: Medium Healing",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseHealthMinor",
+    "name": "Mead Base: Minor Healing",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseLightFoot",
+    "name": "Mead Base: Lightfoot",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBasePoisonResist",
+    "name": "Mead Base: Poison Resistance",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseStaminaLingering",
+    "name": "Mead Base: Lingering Stamina",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseStaminaMedium",
+    "name": "Mead Base: Medium Stamina",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseStaminaMinor",
+    "name": "Mead Base: Minor Stamina",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseStrength",
+    "name": "Mead Base: Troll Endurance",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseSwimmer",
+    "name": "Mead Base: Vananidir",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseTamer",
+    "name": "Mead Base: Animal Whispers",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeadBaseTasty",
+    "name": "Mead Base: Tasty",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MeatPlatterUncooked",
+    "name": "Uncooked Meat Platter",
+    "stack": 10,
+    "food": 80.0,
+    "stamina": 26.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MechanicalSpring",
+    "name": "Mechanical Spring",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MemorialCoal",
+    "name": "Memorial Coal",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MisthareSupremeUncooked",
+    "name": "Uncooked Misthare Supreme",
+    "stack": 10,
+    "food": 85.0,
+    "stamina": 28.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorGoldChest",
+    "name": "Mould: Breastplate of the Protector",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorGoldHelmet",
+    "name": "Mould: Helmet of the Protector",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorGoldLegs",
+    "name": "Mould: Trousers of the Protector",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorMageChest",
+    "name": "Mould: Robes of the Caller",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorMageHelmet",
+    "name": "Mould: Headdress of the Caller",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorMageLegs",
+    "name": "Mould: Trousers of the Caller",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmormediumChest",
+    "name": "Mould: Chestpiece of the Vanguard",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorMediumHelmet",
+    "name": "Mould: Hood of the Vanguard",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldArmorMediumLegs",
+    "name": "Mould: Trousers of the Vanguard",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldAtgeir",
+    "name": "Mould: Nord Atgeir",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldAxe",
+    "name": "Mould: Nord Axe",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldAxe2H",
+    "name": "Mould: Nord Greataxe",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldBow",
+    "name": "Mould: Nord Bow",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldCrossbow",
+    "name": "Mould: Nord Crossbow",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldFistweapon",
+    "name": "Mould: Nord Knucklechains",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldKeys",
+    "name": "Mould: Intricate Key",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldKnife",
+    "name": "Mould: Nord Dagger",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldMace",
+    "name": "Mould: Nord Mace",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldMace2H",
+    "name": "Mould: Nord Sledge",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldShieldBuckler",
+    "name": "Mould: Nord Buckler",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldShieldRound",
+    "name": "Mould: Nord Shield",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldShieldTower",
+    "name": "Mould: Nord Greatshield",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldSmallParts",
+    "name": "item_mold_smallparts",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldSpear",
+    "name": "Mould: Nord Spear",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldStafffrostorbs",
+    "name": "Mould: Northern Vengeance",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldStaffOrbofAhri",
+    "name": "Mould: Echo Spike",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldStaffspiritcaller",
+    "name": "Mould: Spirit Caller",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldStaffthunderblood",
+    "name": "Mould: Lightning Strike",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldSword",
+    "name": "Mould: Nord Sword",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoldSword2H",
+    "name": "Mould: Nord Greatsword",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoleClaws",
+    "name": "Long Claws",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MoltenCore",
+    "name": "Molten Core",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MooseHide",
+    "name": "Moose Hide",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MooseMeat",
+    "name": "Moose Meat",
+    "stack": 20,
+    "food": 35.0,
+    "stamina": 12.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MooseSinew",
+    "name": "Moose Sinew",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MorgenHeart",
+    "name": "Morgen Heart",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "MorgenSinew",
+    "name": "Morgen Sinew",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "NeckTail",
+    "name": "Neck Tail",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Needle",
+    "name": "Needle",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "NornThread",
+    "name": "Nornathread",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "OatSeeds",
+    "name": "Oat Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Obsidian",
+    "name": "Obsidian",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "OnionSeeds",
+    "name": "Onion Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Ooze",
+    "name": "Ooze",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "OozeMork",
+    "name": "Dead Pulp",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "OrbFrostFire",
+    "name": "Frostfire Essence",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "OrbThunderBlood",
+    "name": "Thunderblood Essence",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "OvenPancakeUncooked",
+    "name": "Oven Pancake Batter",
+    "stack": 10,
+    "food": 39.0,
+    "stamina": 115.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "PineCone",
+    "name": "Pine Cone",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "PiquantPieUncooked",
+    "name": "Uncooked Piquant Pie",
+    "stack": 10,
+    "food": 120.0,
+    "stamina": 10.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Pot_Shard_Green",
+    "name": "Pot Shard",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Pot_Shard_Red",
+    "name": "item_pot_shard_red",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "PoteitrSeeds",
+    "name": "Seed Poteitr",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "PowderedDragonEgg",
+    "name": "Powdered Dragon Eggshells",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ProustitePowder",
+    "name": "Proustite Powder",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "PungentPebbles",
+    "name": "Pungent Pebbles",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "QueenBee",
+    "name": "Queen Bee",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "QueenDrop",
+    "name": "Majestic Carapace",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "RawMeat",
+    "name": "Boar Meat",
+    "stack": 20,
+    "food": 20.0,
+    "stamina": 20.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Resin",
+    "name": "Resin",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "RoastedCrustPieUncooked",
+    "name": "Uncooked Roasted Crust Pie",
+    "stack": 10,
+    "food": 120.0,
+    "stamina": 10.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Root",
+    "name": "Root",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "RoundLog",
+    "name": "Corewood",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Ruby",
+    "name": "Ruby",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Sap",
+    "name": "Sap",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ScaleHide",
+    "name": "Scale Hide",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SealBlubber",
+    "name": "Seal Blubber",
+    "stack": 20,
+    "food": 80.0,
+    "stamina": 27.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SealHide",
+    "name": "Seal Pelt",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SerpentMeat",
+    "name": "Serpent Meat",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SerpentScale",
+    "name": "Serpent Scale",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SharpeningStone",
+    "name": "Sharpening Stone",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ShieldBucklerGoldUncooked",
+    "name": "Cast: Nord Buckler",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ShieldCore",
+    "name": "Shield Core",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ShieldRoundGoldUncooked",
+    "name": "Cast: Nord Shield",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "ShieldTowerGoldUncooked",
+    "name": "Cast: Nord Greatshield",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Silver",
+    "name": "Silver",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SilverNecklace",
+    "name": "Silver Necklace",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SilverOre",
+    "name": "Silver Ore",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SledgeGoldUncooked",
+    "name": "Cast: Nord Sledge",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SmallPartsGoldUncooked",
+    "name": "item_smallparts_gold_uncooked",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Softtissue",
+    "name": "Soft Tissue",
+    "stack": 40,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpearGoldUncooked",
+    "name": "Cast: Nord Spear",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpiceAshlands",
+    "name": "Fiery Spice Powder",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpiceDeepNorth",
+    "name": "Seasoning of the Gourd",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpiceForests",
+    "name": "Woodland Herb Blend",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpiceMistlands",
+    "name": "Herbs of the Hidden Hills",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpiceMountains",
+    "name": "Mountain Peak Pepper Powder",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpiceOceans",
+    "name": "Seafarer's Herbs",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SpicePlains",
+    "name": "Grasslands Herbalist Harvest",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "StaffFrostOrbsUncooked",
+    "name": "Cast: Northern Vengeance",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "StaffOrbofAhriUncooked",
+    "name": "Cast: Echo Spike",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "StaffSpiritCallerUncooked",
+    "name": "Cast: Spirit Caller",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "StaffThunderbloodUncooked",
+    "name": "Cast: Lightning Strike",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Stone",
+    "name": "Stone",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "StoneRock",
+    "name": "Rock",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SulfurStone",
+    "name": "Sulfur",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SurtlingCore",
+    "name": "Surtling Core",
+    "stack": 10,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "SwordGoldUncooked",
+    "name": "Cast: Nord Sword",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Tar",
+    "name": "Tar",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Thistle",
+    "name": "Thistle",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "THSwordGoldUncooked",
+    "name": "Cast: Nord Greatsword",
+    "stack": 1,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Thunderstone",
+    "name": "Thunder Stone",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Tin",
+    "name": "Tin",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "TinOre",
+    "name": "Tin Ore",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "TrollHide",
+    "name": "Troll Hide",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Turnip",
+    "name": "Turnip",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "TurnipSeeds",
+    "name": "Turnip Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "UndeadBjornRibcage",
+    "name": "Vile Ribcage",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader0Armor",
+    "name": "item_upgrader_tier0 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader0Weapon",
+    "name": "item_upgrader_tier0 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader1Armor",
+    "name": "item_upgrader_tier1 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader1Weapon",
+    "name": "item_upgrader_tier1 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader2Armor",
+    "name": "item_upgrader_tier2 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader2Weapon",
+    "name": "item_upgrader_tier2 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader3Armor",
+    "name": "item_upgrader_tier3 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader3Weapon",
+    "name": "item_upgrader_tier3 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader4Armor",
+    "name": "item_upgrader_tier4 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader4Weapon",
+    "name": "item_upgrader_tier4 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader5Armor",
+    "name": "item_upgrader_tier5 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader5Weapon",
+    "name": "item_upgrader_tier5 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader6Armor",
+    "name": "item_upgrader_tier6 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader6Weapon",
+    "name": "item_upgrader_tier6 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader7Armor",
+    "name": "item_upgrader_tier7 $item_upgrader_armor $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Upgrader7Weapon",
+    "name": "item_upgrader_tier7 $item_upgrader_weapon $item_upgrader_name",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "VegvisirShard_Bonemass",
+    "name": "Yagluth thing",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "VikingCupcakeUncooked",
+    "name": "Unbaked Sweetbread",
+    "stack": 10,
+    "food": 120.0,
+    "stamina": 10.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "VineberrySeeds",
+    "name": "Vineberry Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "VineGreenSeeds",
+    "name": "Ivy Seeds",
+    "stack": 100,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Voidplasm",
+    "name": "Ectoplasm",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "VoltureMeat",
+    "name": "Volture Meat",
+    "stack": 20,
+    "food": 70.0,
+    "stamina": 24.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Wisp",
+    "name": "Wisp",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "WitheredBone",
+    "name": "Withered Bone",
+    "stack": 30,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "WolfClaw",
+    "name": "Fenris Claw",
+    "stack": 20,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "WolfFang",
+    "name": "Wolf Fang",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "WolfHairBundle",
+    "name": "Fenris Hair",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "WolfMeat",
+    "name": "Wolf Meat",
+    "stack": 20,
+    "food": 50.0,
+    "stamina": 5.0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "WolfPelt",
+    "name": "Wolf Pelt",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "Wood",
+    "name": "Wood",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "WrithanRoots",
+    "name": "Writhan Roots",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "YggdrasilWood",
+    "name": "Yggdrasil Wood",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  },
+  {
+    "prefab": "YmirRemains",
+    "name": "Ymir Flesh",
+    "stack": 50,
+    "food": 0,
+    "stamina": 0,
+    "eitr": 0,
+    "consume": true
+  }
+]

@@ -1,0 +1,7 @@
+bin/
+obj/
+**/__pycache__/
+*.pdb
+rendo/
+rendo.fch
+dist/*.zip

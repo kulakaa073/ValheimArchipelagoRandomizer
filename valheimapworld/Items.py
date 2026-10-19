@@ -230,7 +230,7 @@ Bolts Tier 4,item:researchBoltsTier4,1,Item,Useful
 Elemental Magic Tier 2,item:researchElementalMagicTier2,1,Item,Useful
 Elemental Magic Tier 3,item:researchElementalMagicTier3,1,Item,Useful
 Blood Magic Tier 2,item:researchBloodMagicTier2,1,Item,Useful
-Siege,item:researchSiege,1,Item,Useful
+Siege,item:researchSiege,1,Item,Progression
 Trinkets Tier 6,item:researchTrinketTier6,1,Item,Useful
 Ashwood Floors,item:researchAshwoodFloor,1,Item,Filler
 Ashwood Walls,item:researchAshwoodWalls,1,Item,Filler
@@ -243,12 +243,66 @@ Cauldron Upgrade 5,item:researchCauldronUpgrade5,1,Item,Useful
 Bed Tier 3,item:researchBedTier3,1,Item,Useful
 Shields Tier 6,item:researchShieldTier6,1,Item,Useful
 Tower Shields Tier 4,item:researchTowerShieldTier4,1,Item,Useful
+Snow Shovel,item:researchSnowShovel,1,Item,Progression
+Ironwood Beam 67,item:researchIronwoodBeam67,1,Item,Filler
+Stone Fence,item:researchStoneFence,1,Item,Filler
+Roundpole Fence,item:researchRoundpole,1,Item,Filler
+Drawbridge,item:researchDrawbridge,1,Item,Useful
+Frigid Kiln,item:researchFrostKiln,1,Item,Progression
+Frost Foundry,item:researchFrostFoundry,1,Item,Progression
+Black Forge Upgrade 5,item:researchBlackForgeUpgrade5,1,Item,Useful
+Cauldron Upgrade 6,item:researchCauldronUpgrade6,1,Item,Useful
+Galdr Table Upgrade 4,item:researchGaldrTableUpgrade4,1,Item,Useful
+Protector Armor,item:researchProtectorArmor,1,Item,Useful
+Vanguard Armor,item:researchVanguardArmor,1,Item,Useful
+Caller Armor,item:researchCallerArmor,1,Item,Useful
+Lox Fur Armor,item:researchLoxFurArmor,1,Item,Useful
+Crown of Valheim,item:researchCrownOfValheim,1,Item,Useful
+Cape Tier 9,item:researchCapeTier9,1,Item,Useful
+Cape Tier 10,item:researchCapeTier10,1,Item,Useful
+Blades Tier 9,item:researchBladesTier9,1,Item,Useful
+Long Blades Tier 4,item:researchLongBladesTier4,1,Item,Useful
+Polearms Tier 5,item:researchPolearmsTier5,1,Item,Useful
+Clubs Tier 8,item:researchClubTier8,1,Item,Useful
+Sledgehammers Tier 4,item:researchSledgehammerTier4,1,Item,Useful
+Axes Tier 6,item:researchAxeTier6,1,Item,Useful
+Battleaxes Tier 7,item:researchBattleaxeTier7,1,Item,Useful
+Spears Tier 8,item:researchSpearTier8,1,Item,Useful
+Short Blades Tier 7,item:researchShortBladesTier7,1,Item,Useful
+Knuckles Tier 4,item:researchKnucklesTier4,1,Item,Useful
+Bows Tier 8,item:researchBowsTier8,1,Item,Useful
+Crossbows Tier 4,item:researchCrossbowsTier4,1,Item,Useful
+Shields Tier 7,item:researchShieldTier7,1,Item,Useful
+Bucklers Tier 4,item:researchBucklerTier4,1,Item,Useful
+Tower Shields Tier 5,item:researchTowerShieldTier5,1,Item,Useful
+Shield of Roots,item:researchShieldOfRoots,1,Item,Useful
+Arrows Tier 12,item:researchArrowsTier12,1,Item,Useful
+Bolts Tier 5,item:researchBoltsTier5,1,Item,Useful
+Bloodgold Ammunition,item:researchBloodgoldAmmo,1,Item,Useful
+Elemental Magic Tier 4,item:researchElementalMagicTier4,1,Item,Useful
+Blood Magic Tier 3,item:researchBloodMagicTier3,1,Item,Useful
+Trinkets Tier 7,item:researchTrinketTier7,1,Item,Useful
+Grappling Hook,item:researchGrapplingHook,1,Item,Useful
+Moose Saddle,item:researchSaddleMoose,1,Item,Useful
+Intricate Key,item:researchIntricateKey,1,Item,Useful
+Snowball,item:researchSnowball,1,Item,Filler
+Ember Charge,item:researchEmberCharge,1,Item,Useful
+Timber Walls,item:researchTimberWalls,1,Item,Filler
+Timber Beams,item:researchTimberBeams,1,Item,Filler
+Timber Decor,item:researchTimberDecor,1,Item,Filler
+Scalewood Walls,item:researchScalewoodWalls,1,Item,Filler
+Deep North Furniture,item:researchDeepNorthFurniture,1,Item,Filler
+Storage Tier 5,item:researchStorageTier5,1,Item,Useful
+Deep North Crops,item:researchDeepNorthCrops,1,Item,Useful
+Deep North Cooking,item:researchDeepNorthCooking,1,Item,Useful
+Northern Feast,item:researchNorthernFeast,1,Item,Useful
+Pulled Bear,item:researchPulledBear,1,Item,Useful
+Meat In Bread,item:researchMeatInBread,1,Item,Useful
 Trophy: TrophyNeck,item:researchTrophyNeck,1,Item,Useful
 Trophy: TrophyBoar,item:researchTrophyBoar,1,Item,Useful
 Trophy: TrophyDeer,item:researchTrophyDeer,1,Item,Useful
 Trophy: TrophyGreydwarfBrute,item:researchTrophyGreydwarfBrute,1,Item,Useful
 Trophy: TrophyBjorn,item:researchTrophyBear,1,Item,Useful
-Trophy: TrophyForestTroll,item:researchTrophyTroll,1,Item,Useful
 Trophy: TrophySkeleton,item:researchTrophySkeleton,1,Item,Useful
 Trophy: TrophyGreydwarfShaman,item:researchTrophyGreydwarfShaman,1,Item,Useful
 Trophy: TrophySkeletonPoison,item:researchTrophyRancidRemains,1,Item,Useful
@@ -301,6 +355,25 @@ Trophy: TrophyCharredMelee,item:researchTrophyCharredWarrior,1,Item,Useful
 Trophy: TrophyFader,item:researchTrophyFader,1,Item,Useful
 Trophy: TrophyAsksvin,item:researchTrophyAsksvin,1,Item,Useful
 Trophy: TrophyVolture,item:researchTrophyVolture,1,Item,Useful
+Trophy: TrophyBarka,item:researchTrophyBarka,1,Item,Useful
+Trophy: TrophyMole,item:researchTrophyMole,1,Item,Useful
+Trophy: TrophyFrostTroll,item:researchTrophyFrostTroll,1,Item,Useful
+Trophy: TrophyWrithan,item:researchTrophyWrithan,1,Item,Useful
+Trophy: TrophyBlob_Frost,item:researchTrophyFrostBlob,1,Item,Useful
+Trophy: TrophyBlob_Lava,item:researchTrophyLavaBlob,1,Item,Useful
+Trophy: TrophyBlob_Morkhalla,item:researchTrophyMorkhallaBlob,1,Item,Useful
+Trophy: TrophyMoose,item:researchTrophyMoose,1,Item,Useful
+Trophy: TrophySeal,item:researchTrophySeal,1,Item,Useful
+Trophy: TrophyJotunWarrior,item:researchTrophyKrigen,1,Item,Useful
+Trophy: TrophyJotunWitch,item:researchTrophyHexen,1,Item,Useful
+Trophy: TrophyElaking,item:researchTrophyElaking,1,Item,Useful
+Celebratory Cap,item:researchCelebratoryCap,1,Item,Useful
+Pointy Hat,item:researchPointyHat,1,Item,Useful
+Iron Shield,item:researchIronShield,1,Item,Useful
+Lox Saddle,item:researchSaddleLox,1,Item,Useful
+Lantern,item:researchLantern,1,Item,Useful
+Asksvin Saddle,item:researchSaddleAsksvin,1,Item,Useful
+Fishing Hat,item:researchFishingHat,1,Item,Useful
 '''
 
 # Map string classifications to `ItemClassification`

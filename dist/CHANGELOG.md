@@ -1,0 +1,128 @@
+# Changelog
+
+## 0.2.34
+* Natural access opens the next research only after its parents are crafted. Receiving a parent still grants its gear
+
+## 0.2.33
+* The game sends each trophy's pity count to the tracker. The Trophy view has a Pity toggle that shows how many kills guarantee that drop
+
+## 0.2.32
+* Corewood Beams and Battleaxes Tier 3 had a blank parent, so those recipes never appeared. A blank parent is ignored
+
+## 0.2.31
+* A boss drop can be placed on any check from tier 0 through that boss's tier. The kill is no longer reserved for it
+
+## 0.2.30
+* Bog Witch and Haldor gather checks sit in the tier where that item can actually be gotten
+* Toadstool and the scythe handle wait for Moder. The spices wait for the boss that unlocks them. Eggs and chicken meat are plains checks
+* Ungated witch goods, Ymir flesh, and thunder stones are swamp checks
+
+## 0.2.29
+* Boss kills are a world option, on by default. Off, the corpse still drops its item and only the goal kill is a location
+
+## 0.2.28
+* Blue Mushroom is not placed in the world, so it is no longer a gather check
+
+## 0.2.27
+* Rock, Glowing Metal Ore, Ancient Metal, and Bonemaw Scale are no longer checks
+* Chicken meat, volture meat, blue mushroom, luminous larva, eggs, crops, dragon eggs, toadstool, bukeperries, rotten meat, and the scythe handle are gather checks
+* A boss kill is a check in that boss's tier. The unique drop no longer falls from the corpse, and the check grants it
+* That grant follows the world resource rate. The swamp key and the wishbone also follow the player count
+
+## 0.2.26
+* A dropped Archipelago connection disconnects and asks for a reconnect, and a dead socket cannot freeze the game
+
+## 0.2.25
+* The Queen grants eitr regen, the Hare grants movement speed, and the Fuling Shaman grants skill experience
+
+## 0.2.24
+* Forge requires Yellow Mushroom, and finewood researches require Finewood, so those checks can be crafted
+
+## 0.2.23
+* Default access generates. A research with one parent was read letter by letter, so that check could never open
+* Sequential tiers no longer locks a door onto a check that needs a later door
+
+## 0.2.22
+* Default access no longer places a research item on a check that needs that item first
+
+## 0.2.21
+* Memorial Coal is a Deep North gather, tier 12, and one reward is enough for the altar
+* Gather rewards that could not pay their cheapest craft now can
+* The unused alpha troll trophy is no longer a check
+* Upgrade idols use their item names on the tracker
+
+## 0.2.20
+* Materials and natural seeds keep the tier doors. The bench still follows the selected access mode
+* Celebratory Cap, Pointy Hat, Fishing Hat, Iron Shield, Lox Saddle, Asksvin Saddle, and Lantern are researches
+
+## 0.2.19
+* The troll trophy that drops is a Black Forest check, so it is tier 1
+
+## 0.2.18
+* A finished research leaves the craft tab as soon as it completes
+
+## 0.2.17
+* Frost Blob is a mountain trophy, so its check is tier 7
+* Lava Blob is an ashlands trophy, so its check is tier 11
+
+## 0.2.16
+* Picking up many items scans the inventory once, and skips checks that are already done
+* Recipes refresh when a pickup teaches a new material or finishes a research
+
+## 0.2.15
+* Artisan Press unlocks the artisan press, not a second copy of the artisan table
+
+## 0.2.14
+* A trophy reward shows a notice with the stat it grants
+* The compendium Active effects page lists the trophy bonuses you have
+
+## 0.2.13
+* A menu switch lists what a randomized research unlocks. It is off by default
+
+## 0.2.12
+* The Done tab no longer searches every loaded type while it is open
+
+## 0.2.11
+* The world option Goal chooses which boss kill finishes the seed
+* Kall still means his last phase
+
+## 0.2.10
+* The research bench lists unfinished researches by tier, and still puts ones you can craft first
+* Completed researches move to the Done tab
+
+## 0.2.9
+* A gather reward is granted once per world. Reconnecting no longer pays it again
+
+## 0.2.8
+* Gather rewards cover one basic craft or station build, including the research bench, smelter, and a nord weapon cast
+* Moulds and idols grant 1, matching the recipe
+* Research recipe costs do not change the gather amount
+
+## 0.2.7
+* Finding one research cost reveals the recipe when that option is on
+* Crafting a research still spends every material in the recipe
+
+## 0.2.6
+* Gather checks cover crafting materials, including processed materials such as nails and refined eitr
+* Gear, arrows, food, and mead stay ordinary items, except the forage and creature drops that were already checks
+
+## 0.2.5
+* Gather checks turn on when the seed contains them, including seeds whose slot data was empty
+* Items already in inventory send their gather check on the next connect
+
+## 0.2.4
+* Research access can follow the parent chain, tier doors, materials, or natural crafting
+* Sequential tiers places each tier door's items in the previous tier
+
+## 0.2.2
+* Goal is defeating Kall's last phase
+
+## 0.2.1
+* Status stays on Connecting until login succeeds
+* Disconnect closes the session
+
+## 0.2.0
+* Deep North researches and trophies
+* Optional drop checks
+* Location checks no longer collide when names contain spaces
+* Goal location Defeat Kall

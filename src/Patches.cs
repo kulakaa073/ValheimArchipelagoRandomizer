@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -89,54 +89,275 @@ public static class Patches
         }
     }
 
-    [HarmonyPatch(typeof(InventoryGui), "AddRecipeToList",
-    new Type[] { typeof(Player), typeof(Recipe), typeof(ItemDrop.ItemData), typeof(bool) })]
-    public static class InventoryGui_AddRecipeToList_Patch
+    // Research bench: craft tab is unfinished research, sorted craftable-then-tier.
+    // The upgrade tab is relabeled Done and lists researches already sent.
+    [HarmonyPatch(typeof(InventoryGui), "UpdateRecipeList", new Type[] { typeof(List<Recipe>) })]
+    public static class InventoryGui_UpdateRecipeList_Patch
     {
-        static void Postfix(
-            InventoryGui __instance,
-            Player player,
-            Recipe recipe,
-            ItemDrop.ItemData item,
-            bool canCraft,
-            Transform ___m_recipeListRoot)
+        static bool Prefix(InventoryGui __instance, List<Recipe> recipes)
         {
             try
             {
-                if (recipe?.m_item == null || ___m_recipeListRoot == null) return;
+                ResearchBenchList.ApplySortWeights();
+                bool bench = ResearchBenchList.IsOpen();
+                ResearchBenchList.SetUpgradeTabLabel(__instance, bench);
+                if (!bench) return true;
 
-                // Prefab/component name of the crafted item
-                string id = recipe.m_item.name;
-                if (string.IsNullOrEmpty(id)) return;
-
-                // Only tag research items, and only if already unlocked
-                if (!ValheimRandomizer.research.Contains(id)) return;
-                if (!ValheimRandomizer.IsResearchCrafted(id)) return;
-
-                // The element created by AddRecipeToList is the last child under m_recipeListRoot
-                int childCount = ___m_recipeListRoot.childCount;
-                if (childCount <= 0) return;
-
-                Transform last = ___m_recipeListRoot.GetChild(childCount - 1);
-                if (last == null) return;
-
-                // Find "name" -> TMP_Text and prefix if not already prefixed
-                var nameTf = last.Find("name");
-                if (nameTf == null) return;
-
-                var label = nameTf.GetComponent<TMP_Text>();
-                if (label == null) return;
-
-                const string prefix = "(Completed) ";
-                if (!label.text.StartsWith(prefix, StringComparison.Ordinal))
+                if (__instance.InCraftTab())
                 {
-                    label.text = prefix + label.text;
+                    recipes.RemoveAll(ResearchBenchList.IsCompleted);
+                    return true;
                 }
+
+                return ResearchBenchList.FillDoneTab(__instance) ? false : true;
             }
             catch (Exception e)
             {
-                ValheimRandomizer.Log?.LogWarning($"AddRecipeToList postfix failed: {e.Message}");
+                ValheimRandomizer.Log?.LogWarning($"Research list update failed: {e.Message}");
+                return true;
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(InventoryGui), "UpdateRecipe")]
+    public static class InventoryGui_UpdateRecipe_Patch
+    {
+        static void Postfix(InventoryGui __instance)
+        {
+            try
+            {
+                bool bench = ResearchBenchList.IsOpen();
+                ResearchBenchList.SetUpgradeTabLabel(__instance, bench);
+                if (!bench || __instance.InCraftTab()) return;
+                ResearchBenchList.LockCompletedButton(__instance);
+            }
+            catch (Exception e)
+            {
+                ValheimRandomizer.Log?.LogWarning($"Research bench tab label failed: {e.Message}");
+            }
+        }
+    }
+
+    public static void RefreshResearchBench()
+    {
+        try
+        {
+            ResearchBenchList.RefreshOpenList();
+        }
+        catch (Exception e)
+        {
+            ValheimRandomizer.Log?.LogWarning($"Research bench refresh failed: {e.Message}");
+        }
+    }
+
+    static class ResearchBenchList
+    {
+        const string DoneLabel = "Done";
+
+        static readonly FieldInfo AvailableRecipesField =
+            AccessTools.Field(typeof(InventoryGui), "m_availableRecipes");
+        static readonly FieldInfo SelectedRecipeField =
+            AccessTools.Field(typeof(InventoryGui), "m_selectedRecipe");
+        static readonly AccessTools.FieldRef<InventoryGui, float> ListBaseSize =
+            AccessTools.FieldRefAccess<InventoryGui, float>("m_recipeListBaseSize");
+        static readonly MethodInfo AddRecipeToListMethod =
+            AccessTools.Method(typeof(InventoryGui), "AddRecipeToList", new[]
+            {
+                typeof(Player), typeof(Recipe), typeof(ItemDrop.ItemData), typeof(bool)
+            });
+        static readonly MethodInfo UpdateCraftingPanelMethod =
+            AccessTools.Method(typeof(InventoryGui), "UpdateCraftingPanel", new[] { typeof(bool) });
+
+        static string savedUpgradeLabel;
+        static bool weightsApplied;
+        static Dictionary<string, Recipe> researchRecipes;
+        static TMP_Text[] upgradeTabLabels;
+        static TMP_Text craftButtonLabel;
+        static FieldInfo craftTooltipText;
+
+        public static void RefreshOpenList()
+        {
+            if (!IsOpen() || UpdateCraftingPanelMethod == null) return;
+            var gui = InventoryGui.instance;
+            if (!gui) return;
+            UpdateCraftingPanelMethod.Invoke(gui, new object[] { false });
+        }
+
+        public static bool IsOpen()
+        {
+            var player = Player.m_localPlayer;
+            var station = player ? player.GetCurrentCraftingStation() : null;
+            if (!station) return false;
+            if (station.m_name == "Research Bench") return true;
+            string name = station.gameObject ? station.gameObject.name : null;
+            return name == ValheimRandomizer.ResearchBenchPrefabName
+                || (name != null && name.StartsWith(ValheimRandomizer.ResearchBenchPrefabName, StringComparison.Ordinal));
+        }
+
+        public static bool IsCompleted(Recipe recipe)
+        {
+            string id = recipe?.m_item ? recipe.m_item.name : null;
+            return !string.IsNullOrEmpty(id)
+                && ValheimRandomizer.researchTier.ContainsKey(id)
+                && ValheimRandomizer.IsResearchCrafted(id);
+        }
+
+        public static void ApplySortWeights()
+        {
+            if (weightsApplied) return;
+            var all = ObjectDB.instance != null ? ObjectDB.instance.m_recipes : null;
+            if (all == null) return;
+            int matched = 0;
+            foreach (var recipe in all)
+            {
+                string id = recipe?.m_item ? recipe.m_item.name : null;
+                if (string.IsNullOrEmpty(id)) continue;
+                if (!ValheimRandomizer.researchTier.TryGetValue(id, out int tier)) continue;
+                matched++;
+                if (recipe.m_listSortWeight != tier) recipe.m_listSortWeight = tier;
+            }
+            if (matched > 0 && matched >= ValheimRandomizer.research.Count)
+                weightsApplied = true;
+        }
+
+        public static bool FillDoneTab(InventoryGui gui)
+        {
+            if (AddRecipeToListMethod == null || AvailableRecipesField == null || gui.m_recipeListRoot == null)
+                return false;
+
+            var available = AvailableRecipesField.GetValue(gui) as System.Collections.IList;
+            if (available == null) return false;
+
+            available.Clear();
+            var root = gui.m_recipeListRoot;
+            for (int i = root.childCount - 1; i >= 0; i--)
+                UnityEngine.Object.Destroy(root.GetChild(i).gameObject);
+
+            EnsureRecipeIndex();
+            var done = new List<Recipe>();
+            if (researchRecipes != null)
+            {
+                foreach (var id in ValheimRandomizer.research)
+                {
+                    if (!ValheimRandomizer.IsResearchCrafted(id)) continue;
+                    if (researchRecipes.TryGetValue(id, out var recipe)) done.Add(recipe);
+                }
+            }
+            done.Sort(CompareTierThenName);
+
+            var player = Player.m_localPlayer;
+            foreach (var recipe in done)
+            {
+                // canCraft stays true so the icon and name stay visible. The button is locked.
+                AddRecipeToListMethod.Invoke(gui, new object[] { player, recipe, null, true });
+            }
+
+            float height = Mathf.Max(ListBaseSize(gui), done.Count * gui.m_recipeListSpace);
+            gui.m_recipeListRoot.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, height);
+            return true;
+        }
+
+        public static void LockCompletedButton(InventoryGui gui)
+        {
+            if (gui.m_craftButton == null || SelectedRecipeField == null) return;
+            object pair = SelectedRecipeField.GetValue(gui);
+            var recipe = pair?.GetType().GetProperty("Recipe")?.GetValue(pair) as Recipe;
+            if (!IsCompleted(recipe)) return;
+
+            gui.m_craftButton.interactable = false;
+            if (craftButtonLabel == null)
+                craftButtonLabel = gui.m_craftButton.GetComponentInChildren<TMP_Text>();
+            if (craftButtonLabel != null && craftButtonLabel.text != DoneLabel)
+                craftButtonLabel.text = DoneLabel;
+            ClearCraftTooltip(gui.m_craftButton);
+        }
+
+        public static void SetUpgradeTabLabel(InventoryGui gui, bool doneTab)
+        {
+            if (gui?.m_tabUpgrade == null) return;
+            if (upgradeTabLabels == null || upgradeTabLabels.Length == 0)
+            {
+                var found = gui.m_tabUpgrade.GetComponentsInChildren<TMP_Text>(true);
+                if (found != null && found.Length > 0) upgradeTabLabels = found;
+            }
+            var labels = upgradeTabLabels;
+            if (labels == null || labels.Length == 0) return;
+
+            if (savedUpgradeLabel == null)
+            {
+                foreach (var label in labels)
+                {
+                    if (label == null || string.IsNullOrEmpty(label.text) || label.text == DoneLabel) continue;
+                    savedUpgradeLabel = label.text;
+                    break;
+                }
+            }
+
+            string text = doneTab ? DoneLabel : (savedUpgradeLabel ?? "Upgrade");
+            foreach (var label in labels)
+            {
+                if (label == null || label.text == text) continue;
+                if (savedUpgradeLabel != null && label.text != savedUpgradeLabel && label.text != DoneLabel) continue;
+                label.text = text;
+            }
+        }
+
+        static void EnsureRecipeIndex()
+        {
+            if (researchRecipes != null && researchRecipes.Count > 0) return;
+            var all = ObjectDB.instance != null ? ObjectDB.instance.m_recipes : null;
+            if (all == null) return;
+            researchRecipes = new Dictionary<string, Recipe>(StringComparer.Ordinal);
+            foreach (var recipe in all)
+            {
+                string id = recipe?.m_item ? recipe.m_item.name : null;
+                if (string.IsNullOrEmpty(id) || researchRecipes.ContainsKey(id)) continue;
+                if (!ValheimRandomizer.researchTier.ContainsKey(id)) continue;
+                researchRecipes.Add(id, recipe);
+            }
+            if (researchRecipes.Count == 0) researchRecipes = null;
+        }
+
+        static void ClearCraftTooltip(Component button)
+        {
+            if (button == null) return;
+            if (craftTooltipText == null)
+            {
+                foreach (var behaviour in button.GetComponents<MonoBehaviour>())
+                {
+                    if (behaviour == null || behaviour.GetType().Name != "UITooltip") continue;
+                    var field = behaviour.GetType().GetField("m_text");
+                    if (field != null && field.FieldType == typeof(string))
+                    {
+                        craftTooltipText = field;
+                        craftTooltipTarget = behaviour;
+                        break;
+                    }
+                }
+            }
+            if (craftTooltipText != null && craftTooltipTarget != null)
+                craftTooltipText.SetValue(craftTooltipTarget, "");
+        }
+
+        static MonoBehaviour craftTooltipTarget;
+
+        static int CompareTierThenName(Recipe a, Recipe b)
+        {
+            int tier = TierOf(a).CompareTo(TierOf(b));
+            if (tier != 0) return tier;
+            return string.Compare(DisplayName(a), DisplayName(b), StringComparison.OrdinalIgnoreCase);
+        }
+
+        static int TierOf(Recipe recipe)
+        {
+            string id = recipe?.m_item ? recipe.m_item.name : null;
+            if (!string.IsNullOrEmpty(id) && ValheimRandomizer.researchTier.TryGetValue(id, out int tier)) return tier;
+            return recipe != null ? recipe.m_listSortWeight : 0;
+        }
+
+        static string DisplayName(Recipe recipe)
+        {
+            return recipe?.m_item?.m_itemData?.m_shared?.m_name ?? "";
         }
     }
 
@@ -144,24 +365,18 @@ public static class Patches
     [HarmonyPatch(typeof(Player), nameof(Player.GetMaxCarryWeight))]
     private static class Player_GetMaxCarryWeight_Patch
     {
-        private const int LoadPerTier = 10; // +10 carry weight per tier
-
         private static void Postfix(Player __instance, ref float __result)
         {
             if (__instance == null || !__instance.IsPlayer()) return;
             int tiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.Load);
             if (tiers <= 0) return;
-            __result += LoadPerTier * tiers;
+            __result += ValheimRandomizer.TrophyResearch.LoadPerTrophy * tiers;
         }
     }
 
     [HarmonyPatch]
     internal static class Player_GetTotalFoodValue_Patch
     {
-        private const float HpPerFoodPerTier = 2f;
-        private const float StaminaPerFoodPerTier = 2f;
-        private const float EitrPerFoodPerTier = 5f;
-
         // Cached direct field ref => fastest way to access a private field with Harmony
         private static readonly AccessTools.FieldRef<Player, List<Player.Food>> FoodsRef =
             AccessTools.FieldRefAccess<Player, List<Player.Food>>("m_foods");
@@ -192,15 +407,15 @@ public static class Patches
 
             // HP
             int hpTiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.HP);
-            if (hpTiers > 0) hp += HpPerFoodPerTier * foods * hpTiers;
+            if (hpTiers > 0) hp += ValheimRandomizer.TrophyResearch.HpPerFood * foods * hpTiers;
 
             // Stamina
             int stTiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.Stamina);
-            if (stTiers > 0) stamina += StaminaPerFoodPerTier * foods * stTiers;
+            if (stTiers > 0) stamina += ValheimRandomizer.TrophyResearch.StaminaPerFood * foods * stTiers;
 
             // Eitr
             int eiTiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.Eitr);
-            if (eiTiers > 0) eitr += EitrPerFoodPerTier * foods * eiTiers;
+            if (eiTiers > 0) eitr += ValheimRandomizer.TrophyResearch.EitrPerFood * foods * eiTiers;
         }
     }
 
@@ -222,7 +437,7 @@ public static class Patches
 
             if (tiers <= 0) return;
 
-            v += 3f * tiers; // stacks linearly with total unlocked trophy tiers
+            v += ValheimRandomizer.TrophyResearch.AdrenalinePerTrophy * tiers;
         }
     }
 
@@ -254,8 +469,6 @@ public static class Patches
     [HarmonyPatch]
     internal static class SEMan_ModifyHealthRegen_RefOnly_Patch
     {
-        private const float HpRegenPerFoodPerTier = 1f;
-
         static MethodBase TargetMethod()
         {
             // Try: void ModifyHealthRegen(ref float regen)
@@ -275,7 +488,7 @@ public static class Patches
             int tiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.HPRegen);
             if (tiers <= 0) return;
 
-            regenMultiplier += HpRegenPerFoodPerTier * foods * tiers;
+            regenMultiplier += (ValheimRandomizer.TrophyResearch.RegenPercentPerFood / 100f) * foods * tiers;
         }
     }
 
@@ -283,8 +496,6 @@ public static class Patches
     [HarmonyPatch]
     internal static class SEMan_ModifyStaminaRegen_RefOnly_Patch
     {
-        private const float StaminaRegenPerFoodPerTier = 1f;
-
         static MethodBase TargetMethod()
         {
             // Try: void ModifyStaminaRegen(ref float regen)
@@ -304,15 +515,91 @@ public static class Patches
             int tiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.StaminaRegen);
             if (tiers <= 0) return;
 
-            staminaMultiplier += StaminaRegenPerFoodPerTier * foods * tiers;
+            staminaMultiplier += (ValheimRandomizer.TrophyResearch.RegenPercentPerFood / 100f) * foods * tiers;
+        }
+    }
+
+    // ======================= EITR REGEN (ref float) =======================
+    [HarmonyPatch]
+    internal static class SEMan_ModifyEitrRegen_RefOnly_Patch
+    {
+        static MethodBase TargetMethod()
+        {
+            var param = new[] { typeof(float).MakeByRefType() };
+            return AccessTools.Method(typeof(SEMan), "ModifyEitrRegen", param);
+        }
+
+        static bool Prepare() => TargetMethod() != null && SEManPatchHelpers.OwnerRef != null && SEManPatchHelpers.FoodsRef != null;
+
+        static void Postfix(SEMan __instance, ref float eitrMultiplier)
+        {
+            if (!SEManPatchHelpers.IsLocalPlayer(__instance)) return;
+            var player = Player.m_localPlayer;
+            int foods = SEManPatchHelpers.GetActiveFoodCount(player);
+            if (foods <= 0) return;
+
+            int tiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.EitrRegen);
+            if (tiers <= 0) return;
+
+            eitrMultiplier += (ValheimRandomizer.TrophyResearch.RegenPercentPerFood / 100f) * foods * tiers;
+        }
+    }
+
+    // Walk and sprint share one percent. Armor weight stays on its own factor.
+    [HarmonyPatch(typeof(Player), "GetJogSpeedFactor")]
+    internal static class Player_GetJogSpeedFactor_Patch
+    {
+        static bool Prepare() => AccessTools.Method(typeof(Player), "GetJogSpeedFactor") != null;
+
+        static void Postfix(Player __instance, ref float __result)
+        {
+            ApplyMoveSpeed(__instance, ref __result);
+        }
+    }
+
+    [HarmonyPatch(typeof(Player), "GetRunSpeedFactor")]
+    internal static class Player_GetRunSpeedFactor_Patch
+    {
+        static bool Prepare() => AccessTools.Method(typeof(Player), "GetRunSpeedFactor") != null;
+
+        static void Postfix(Player __instance, ref float __result)
+        {
+            ApplyMoveSpeed(__instance, ref __result);
+        }
+    }
+
+    static void ApplyMoveSpeed(Player player, ref float factor)
+    {
+        if (player != Player.m_localPlayer) return;
+        int tiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.Speed);
+        if (tiers <= 0) return;
+        factor *= 1f + (ValheimRandomizer.TrophyResearch.SpeedPercentPerTrophy / 100f) * tiers;
+    }
+
+    // Adds to the same multiplier rested uses, so the two stack as 1.75x rather than 1.875x.
+    [HarmonyPatch]
+    internal static class SEMan_ModifyRaiseSkill_Patch
+    {
+        static MethodBase TargetMethod() =>
+            AccessTools.Method(typeof(SEMan), "ModifyRaiseSkill", new[] { typeof(Skills.SkillType), typeof(float).MakeByRefType() });
+
+        static bool Prepare() => TargetMethod() != null && SEManPatchHelpers.OwnerRef != null;
+
+        static void Postfix(SEMan __instance, Skills.SkillType skill, ref float multiplier)
+        {
+            if (skill == Skills.SkillType.None) return;
+            if (!SEManPatchHelpers.IsLocalPlayer(__instance)) return;
+
+            int tiers = ValheimRandomizer.GetBoost(ValheimRandomizer.TrophyResearch.TrophyBoost.SkillXp);
+            if (tiers <= 0) return;
+
+            multiplier += (ValheimRandomizer.TrophyResearch.SkillXpPercentPerTrophy / 100f) * tiers;
         }
     }
 
     [HarmonyPatch(typeof(Player), nameof(Player.GetBodyArmor))]
     internal static class Player_GetBodyArmor_DefenseBoost_Patch
     {
-        private const float DefensePerTier = 0.05f; // +5% per tier
-
         // Postfix: multiply final armor value
         private static void Postfix(Player __instance, ref float __result)
         {
@@ -323,7 +610,7 @@ public static class Patches
 
             if (tiers <= 0) return;
 
-            float mul = 1f + DefensePerTier * tiers;
+            float mul = 1f + (ValheimRandomizer.TrophyResearch.DefensePercentPerTrophy / 100f) * tiers;
             __result *= mul;
         }
     }
@@ -331,8 +618,6 @@ public static class Patches
     [HarmonyPatch(typeof(Character), nameof(Character.Damage))]
     internal static class Character_Damage_AttackBoost_Patch
     {
-        private const float AttackPerTier = 0.05f; // +5% per tier
-
         // Prefix: scale outgoing damage when the attacker is the local player
         private static void Prefix(Character __instance, HitData hit)
         {
@@ -346,7 +631,7 @@ public static class Patches
 
             if (tiers <= 0) return;
 
-            float mul = 1f + AttackPerTier * tiers;
+            float mul = 1f + (ValheimRandomizer.TrophyResearch.AttackPercentPerTrophy / 100f) * tiers;
             ScaleDamageTypes(ref hit.m_damage, mul);
         }
 
@@ -364,6 +649,56 @@ public static class Patches
             // include tool-like damages in case something uses them offensively
             dmg.m_pickaxe *= mul;
             dmg.m_chop *= mul;
+        }
+    }
+
+    [HarmonyPatch(typeof(TextsDialog), "AddActiveEffects")]
+    static class TextsDialog_AddActiveEffects_Patch
+    {
+        static readonly AccessTools.FieldRef<TextsDialog, List<TextsDialog.TextInfo>> TextsRef =
+            AccessTools.FieldRefAccess<TextsDialog, List<TextsDialog.TextInfo>>("m_texts");
+
+        static void Prefix(TextsDialog __instance, out int __state)
+        {
+            var list = TextsRef(__instance);
+            __state = list != null ? list.Count : -1;
+        }
+
+        static void Postfix(TextsDialog __instance, int __state)
+        {
+            if (__state < 0) return;
+            var list = TextsRef(__instance);
+            if (list == null || list.Count != __state + 1 || list.Count == 0) return;
+
+            string block = ValheimRandomizer.BuildTrophyStatusBlock();
+            if (string.IsNullOrEmpty(block)) return;
+
+            var info = list[0];
+            if (info == null) return;
+            info.m_text = string.IsNullOrEmpty(info.m_text)
+                ? block
+                : info.m_text.TrimEnd() + "\n\n" + block;
+        }
+    }
+
+    // Pity counts update inside the drop roll. The tracker reads them from the next publish.
+    [HarmonyPatch(typeof(CharacterDrop), nameof(CharacterDrop.GenerateDropList))]
+    static class CharacterDrop_Pity_Patch
+    {
+        static void Postfix()
+        {
+            ValheimRandomizer.MarkTrophyPityDirty();
+        }
+    }
+
+    // The unique boss drop is the Archipelago item. The corpse keeps its trophy and the rest of the table.
+    [HarmonyPatch(typeof(CharacterDrop), nameof(CharacterDrop.GenerateDropList))]
+    static class CharacterDrop_GenerateDropList_Patch
+    {
+        static void Postfix(List<KeyValuePair<GameObject, int>> __result)
+        {
+            if (!ArchipelagoConnection.BossDropsEnabled || __result == null || __result.Count == 0) return;
+            __result.RemoveAll(pair => pair.Key != null && ValheimRandomizer.IsBossDropPrefab(pair.Key.name));
         }
     }
 }

@@ -1,0 +1,8 @@
+{
+  "name": "ValheimArchipelagoRandomizer",
+  "author": "local",
+  "description": "Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a chosen boss kill. Default is Defeat Kall.",
+  "version_number": "0.2.34",
+  "website_url": "",
+  "dependencies": []
+}

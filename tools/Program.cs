@@ -23,7 +23,7 @@ class Program
     const string ItemsCsv = "items.csv";
     const string LocationsCsv = "locations.csv";
 
-    const int MaxTier = 11;
+    const int MaxTier = 12;
 
     static void Main(string[] args)
     {

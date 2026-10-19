@@ -1,18 +1,19 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using BepInEx.Logging;
 using HarmonyLib;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class ArchipelagoUI : MonoBehaviour
 {
 
     // UI state
-    private Rect _win = new Rect(30, 80, 420, 260);
+    private Rect _win = new Rect(30, 80, 460, 460);
     private bool _randomized;
+    private bool _anyMaterial;
+    private bool _showUnlocks;
     private string _host, _slot, _password;
     private int _port;
 
@@ -28,6 +29,8 @@ public class ArchipelagoUI : MonoBehaviour
     {
         // load config values into fields
         _randomized = ValheimRandomizer.randomized.Value;
+        _anyMaterial = ValheimRandomizer.anyResearchMaterial.Value;
+        _showUnlocks = ValheimRandomizer.ShowResearchUnlocks;
         _host = ValheimRandomizer.archipelagoHostname.Value;
         _port = ValheimRandomizer.archipelagoPort.Value;
         _slot = ValheimRandomizer.archipelagoSlot.Value;
@@ -43,6 +46,9 @@ public class ArchipelagoUI : MonoBehaviour
             _fejdCheckTimer = 0.5f;
             _inMainMenu = IsInMainMenu();
         }
+
+        if (!_connecting && !string.IsNullOrEmpty(ArchipelagoConnection.DisconnectMessage))
+            _status = ArchipelagoConnection.DisconnectMessage;
     }
 
     private static bool IsInMainMenu()
@@ -73,6 +79,31 @@ public class ArchipelagoUI : MonoBehaviour
         GUILayout.Space(6);
 
         _randomized = GUILayout.Toggle(_randomized, "Randomized?");
+        bool anyMaterial = GUILayout.Toggle(_anyMaterial, "Any one found cost item reveals a research");
+        if (anyMaterial != _anyMaterial)
+        {
+            _anyMaterial = anyMaterial;
+            ValheimRandomizer.SetAnyResearchMaterial(_anyMaterial);
+        }
+        bool showUnlocks = GUILayout.Toggle(_showUnlocks, "Show what each research unlocks");
+        if (showUnlocks != _showUnlocks)
+        {
+            _showUnlocks = showUnlocks;
+            ValheimRandomizer.SetShowResearchUnlocks(_showUnlocks);
+        }
+
+        GUILayout.Space(4);
+        GUILayout.Label("Research access");
+        bool seedLocksAccess = ValheimRandomizer.SeedControlsAccess;
+        int selected = (int)ValheimRandomizer.ActiveResearchAccess;
+        GUI.enabled = !seedLocksAccess && !_connecting;
+        int next = GUILayout.SelectionGrid(selected, ValheimRandomizer.ResearchAccessLabels, 1);
+        if (!seedLocksAccess && next != selected)
+            ValheimRandomizer.SetLocalResearchAccess((ValheimRandomizer.ResearchAccessMode)next);
+        GUI.enabled = true;
+        GUILayout.Label(seedLocksAccess
+            ? "Research access comes from this seed."
+            : "Research access is local until a seed connects.");
 
         GUILayout.BeginHorizontal();
         GUILayout.Label("Host", GUILayout.Width(60));
@@ -91,11 +122,17 @@ public class ArchipelagoUI : MonoBehaviour
 
         GUILayout.Space(6);
         GUILayout.Label($"Status: {_status}");
+        GUILayout.Label(ArchipelagoConnection.DropChecksEnabled
+            ? "Drop checks: on for this seed"
+            : "Drop checks: off unless the seed enables them");
+        GUILayout.Label(ValheimRandomizer.SequentialTiers
+            ? "Sequential tiers: on for this seed"
+            : "Sequential tiers: off unless the seed enables them");
         GUILayout.Space(6);
 
         GUILayout.BeginHorizontal();
 
-        bool clientConnected = false;
+        bool clientConnected = ArchipelagoConnection.IsConnected;
         GUI.enabled = !_connecting && !clientConnected && ValidInputs();
         if (GUILayout.Button("Connect", GUILayout.Height(28)))
         {
@@ -138,18 +175,19 @@ public class ArchipelagoUI : MonoBehaviour
 
     private async void StartConnect()
     {
-        // Cancel previous attempts if any
-
+        if (_connecting || ArchipelagoConnection.IsConnected) return;
 
         _connecting = true;
-        _status = "Connected";
+        _status = "Connecting...";
+        string host = _host;
+        int port = _port;
+        string slot = _slot;
+        string password = _password;
         try
         {
-            ArchipelagoConnection.Connect(_host, _port, _slot, _password);
-        }
-        catch (OperationCanceledException)
-        {
-            _status = "Canceled";
+            await Task.Run(() => ArchipelagoConnection.Connect(host, port, slot, password));
+            _status = "Connected";
+            ValheimRandomizer.RevealEligibleRecipes();
         }
         catch (Exception ex)
         {
@@ -164,6 +202,8 @@ public class ArchipelagoUI : MonoBehaviour
 
     private void Disconnect()
     {
-
+        ArchipelagoConnection.Disconnect();
+        _status = "Not connected";
+        ValheimRandomizer.RevealEligibleRecipes();
     }
 }
