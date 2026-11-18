@@ -1,0 +1,2600 @@
+{
+  "version": "5.1",
+  "doors_into": {
+    "1": [
+      "Crafting"
+    ],
+    "2": [
+      "Axes Tier 1",
+      "Warmth Tier 1",
+      "Bed Tier 1",
+      "Cooking Station"
+    ],
+    "3": [
+      "Pickaxes Tier 1",
+      "Smelter",
+      "Charcoal Kiln",
+      "Forge"
+    ],
+    "4": [
+      "Bronze"
+    ],
+    "5": [
+      "Axes Tier 2"
+    ],
+    "6": [
+      "Pickaxes Tier 2",
+      "Boat Tier 2"
+    ],
+    "7": [
+      "Pickaxes Tier 3"
+    ],
+    "8": [
+      "Artisan Table",
+      "Blast Furnace"
+    ],
+    "9": [
+      "Axes Tier 4",
+      "Wisp Fountain",
+      "Wisplight"
+    ],
+    "10": [
+      "Pickaxes Tier 4",
+      "Sap Extractor",
+      "Eitr Refinery",
+      "Galdr Table"
+    ],
+    "11": [
+      "Boat Tier 4",
+      "Ceramic Plates",
+      "Artisan Press",
+      "Black Forge"
+    ],
+    "12": [
+      "Black Forge Upgrade 3",
+      "Siege"
+    ],
+    "13": [
+      "Snow Shovel"
+    ],
+    "14": [
+      "Frigid Kiln",
+      "Frost Foundry",
+      "Ember Charge"
+    ],
+    "15": [
+      "Intricate Key"
+    ]
+  },
+  "tier_labels": {
+    "0": "Bootstrap",
+    "1": "Meadows",
+    "2": "Eikthyr / BF prep",
+    "3": "Black Forest (smelting + BF gear)",
+    "4": "Bronze (clean copper/tin)",
+    "5": "Finewood / pre-Swamp",
+    "6": "Swamp / Iron (Bonemass)",
+    "7": "Mountains (Moder)",
+    "8": "Plains (Yagluth)",
+    "9": "Mistlands entry",
+    "10": "Mistlands deep (Queen)",
+    "11": "Ashlands base",
+    "12": "Ashlands upgraded (Fader)",
+    "13": "Deep North entry",
+    "14": "Deep North Nord base (pre-M\u00f6rkhalla)",
+    "15": "Deep North M\u00f6rkhalla / enchanted (Kall)"
+  },
+  "soft": [
+    "Black Forge Upgrade 1",
+    "Black Forge Upgrade 2",
+    "Black Forge Upgrade 4",
+    "Black Forge Upgrade 5",
+    "Boat Tier 1",
+    "Boat Tier 3",
+    "Cauldron",
+    "Forge Upgrade 1",
+    "Galdr Table Upgrade 1",
+    "Galdr Table Upgrade 2",
+    "Galdr Table Upgrade 3",
+    "Galdr Table Upgrade 4",
+    "Grappling Hook",
+    "Nails Tier 1",
+    "Nails Tier 2",
+    "Spinning Wheel",
+    "Transportation Tier 1",
+    "Transportation Tier 2",
+    "Transportation Tier 3"
+  ],
+  "fix_prereqs": {
+    "Forge Upgrade 1": [
+      "Forge"
+    ],
+    "Forge Upgrade 2": [
+      "Forge"
+    ],
+    "Forge Upgrade 3": [
+      "Forge",
+      "Bronze"
+    ],
+    "Forge Upgrade 4": [
+      "Forge",
+      "Pickaxes Tier 2"
+    ],
+    "Forge Upgrade 5": [
+      "Forge"
+    ],
+    "Forge Upgrade 6": [
+      "Forge",
+      "Stonecutter"
+    ],
+    "Transportation Tier 1": [
+      "Nails Tier 1"
+    ],
+    "Nails Tier 1": [
+      "Bronze"
+    ],
+    "Bronze": [
+      "Forge"
+    ],
+    "Shield of Roots": [
+      "Root Armor"
+    ],
+    "Lox Fur Armor": [
+      "Spinning Wheel"
+    ],
+    "Grappling Hook": [
+      "Eitr Refinery"
+    ],
+    "Bows Tier 4": [
+      "Bows Tier 3",
+      "Blast Furnace",
+      "Forge Upgrade 1"
+    ],
+    "Scythe": [
+      "Cultivator",
+      "Blast Furnace"
+    ],
+    "Pickaxes Tier 3": [
+      "Pickaxes Tier 2",
+      "Forge Upgrade 1"
+    ]
+  },
+  "proposed_costs": {
+    "Cauldron": "Tin:8",
+    "Nails Tier 1": "CarrotSeeds:5, Tin:2, Bronze:1",
+    "Transportation Tier 1": "Bronze:2, Wood:10",
+    "Bronze Armor": "Flint:4, SurtlingCore:5, Bronze:2",
+    "Cultivator": "RoundLog:1, CopperOre:4, Tin:2",
+    "Darkwood Beams": "Wood:10, Resin:5",
+    "Darkwood Decorations": "Wood:10, Resin:5",
+    "Darkwood Roofs": "Wood:10, Resin:5",
+    "Axes Tier 2": "Bronze:5, Copper:3, RoundLog:5",
+    "Arrows Tier 3": "MushroomYellow:1, RoundLog:5, Bronze:3",
+    "Blades Tier 2": "RoundLog:7, Bronze:3",
+    "Bucklers Tier 1": "Bronze:5, Wood:10",
+    "Clubs Tier 2": "Tin:6, Bronze:2",
+    "Forge Upgrade 3": "Wood:10, Bronze:5",
+    "Polearms Tier 1": "Feathers:2, Bronze:5",
+    "Spears Tier 2": "Bronze:4, Wood:5",
+    "Trinkets Tier 1": "Tin:3, Copper:3",
+    "Boat Tier 2": "Flint:5, FineWood:10",
+    "Pickaxes Tier 2": "Bronze:5, FineWood:5",
+    "Forge Upgrade 1": "FineWood:10, Copper:5",
+    "Transportation Tier 2": "Ectoplasm:2, GreydwarfEye:10",
+    "Bows Tier 2": "Raspberry:7, FineWood:10",
+    "Workbench Upgrade 3": "FineWood:10, Bronze:2",
+    "Forge Upgrade 2": "Chain:5"
+  },
+  "notes": [
+    "v5.1: pre-swamp/bronze research costs retuned \u2014 no swamp/plains mats before their biomes (see PROPOSED_COST; rows show was:).",
+    "v5 audit: nails+cart SoftProg T3; bronze weapons T4; BF-gated mist pack T10; forge prereqs rewired; Galdr Up3 SoftProg.",
+    "WrithanRoots = swamp \u2192 Shield of Roots T6 + Lox Fur T8; drop Frigid Kiln prereqs.",
+    "JuteRed = mountains \u2192 Bows T4 stays T7; drop Spinning Wheel prereq.",
+    "Forge ups by vanilla mats: Cooler(Up1)=T5 SoftProg; Anvils(Up3)=T4; Bellows(Up2)+Smith/Toolrack/Grind=T6. Prereqs not linear.",
+    "Workbench: Up1-2 Meadows; Adze T5; Tool Shelf T7. Cauldron: Spice T6 \u2192 Butcher T7 \u2192 Pots T8 \u2192 Mortar T10 \u2192 Rolling T11 \u2192 Smoker T13.",
+    "Grappling Hook SoftProg T9 (prereq Eitr Refinery). Scythe \u2192 Blast Furnace. Short Blades T6 \u2192 T10. Bronze prereq drops Boat T1.",
+    "T14 Nord + Key; T15 armor + Enchanted + Kall. Moder=T7, Yagluth=T8, Fader=T12, Kall=T15."
+  ],
+  "counts_by_tier": {
+    "0": 3,
+    "1": 27,
+    "2": 6,
+    "3": 16,
+    "4": 15,
+    "5": 10,
+    "6": 34,
+    "7": 21,
+    "8": 25,
+    "9": 8,
+    "10": 32,
+    "11": 31,
+    "12": 11,
+    "13": 14,
+    "14": 26,
+    "15": 18
+  },
+  "counts_by_role": {
+    "Door": 34,
+    "Useful": 221,
+    "Filler": 23,
+    "SoftProg": 19
+  },
+  "items": [
+    {
+      "name": "Crafting",
+      "oldTier": 0,
+      "tier": 0,
+      "role": "Door",
+      "cost": "Dandelion:5",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Clubs Tier 1",
+      "oldTier": 0,
+      "tier": 0,
+      "role": "Useful",
+      "cost": "BoneFragments:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Lighting Tier 1",
+      "oldTier": 0,
+      "tier": 0,
+      "role": "Filler",
+      "cost": "Resin:5",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Axes Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Door",
+      "cost": "Flint:10, GreydwarfEye:2",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Bed Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Door",
+      "cost": "AmberPearl:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Cooking Station",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Door",
+      "cost": "BoneFragments:5, Thistle:5",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Warmth Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Door",
+      "cost": "SurtlingCore:2, Coins:25",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Boat Tier 1",
+      "oldTier": 2,
+      "tier": 1,
+      "role": "SoftProg",
+      "cost": "AncientSeed:2, RoundLog:5",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Arrows Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Raspberry:10, Flint:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Beekeping",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Honey:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "AncientSeed:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "DeerHide:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Leather Armor",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Blueberries:15, DeerHide:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Rag Armor",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "LeatherScraps:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shields Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:15, Stone:10, Thistle:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Flint:5, Dandelion:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Flint:5, Wood:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Storage Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Feathers:5, Ruby:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Storage Tier 2",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Amber:2, Ruby:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Tower Shields Tier 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "BoneFragments:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Wooden Beams",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:25, Honey:3, Mushroom:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Wooden Doors",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:25, Honey:3, Mushroom:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Wooden Floors",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:25, Honey:3, Mushroom:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Wooden Roofs",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:25, Honey:3, Mushroom:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Wooden Stairs",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:25, Honey:3, Mushroom:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Wooden Walls",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:25, Honey:3, Mushroom:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Workbench Upgrade 1",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Wood:20, GreydwarfEye:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Workbench Upgrade 2",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Useful",
+      "cost": "Stone:20, MushroomYellow:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Roundpole Fence",
+      "oldTier": 1,
+      "tier": 1,
+      "role": "Filler",
+      "cost": "Wood:20, RoundLog:5",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Charcoal Kiln",
+      "oldTier": 1,
+      "tier": 2,
+      "role": "Door",
+      "cost": "Ectoplasm:1, Thistle:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Forge",
+      "oldTier": 2,
+      "tier": 2,
+      "role": "Door",
+      "cost": "RoundLog:5, MushroomYellow:2",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Pickaxes Tier 1",
+      "oldTier": 2,
+      "tier": 2,
+      "role": "Door",
+      "cost": "RoundLog:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Smelter",
+      "oldTier": 2,
+      "tier": 2,
+      "role": "Door",
+      "cost": "RoundLog:10, Raspberry:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Sledgehammers Tier 1",
+      "oldTier": 2,
+      "tier": 2,
+      "role": "Useful",
+      "cost": "RoundLog:20",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Corewood Beams",
+      "oldTier": 2,
+      "tier": 2,
+      "role": "Filler",
+      "cost": "RoundLog:3, BjornPaw:1",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Bronze",
+      "oldTier": 3,
+      "tier": 3,
+      "role": "Door",
+      "cost": "Tin:10, Copper:5  [PREREQ\u2192 Forge]",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Cauldron",
+      "oldTier": 3,
+      "tier": 3,
+      "role": "SoftProg",
+      "cost": "Tin:8  [was: Chitin:10]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Nails Tier 1",
+      "oldTier": 4,
+      "tier": 3,
+      "role": "SoftProg",
+      "cost": "CarrotSeeds:5, Tin:2, Bronze:1  [was: CarrotSeeds:5, Tin:2, Ooze:1; PREREQ\u2192 Bronze]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Transportation Tier 1",
+      "oldTier": 4,
+      "tier": 3,
+      "role": "SoftProg",
+      "cost": "Bronze:2, Wood:10  [was: Ooze:2; PREREQ\u2192 Nails Tier 1]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 2",
+      "oldTier": 1,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "Ectoplasm:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bear Armor",
+      "oldTier": 1,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "BjornPaw:3, Honey:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bronze Armor",
+      "oldTier": 4,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "Flint:4, SurtlingCore:5, Bronze:2  [was: Flint:4, SurtlingCore:5, Guck:1]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 2",
+      "oldTier": 1,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "TrollHide:5, Stone:10, Wood:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cultivator",
+      "oldTier": 4,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "RoundLog:1, CopperOre:4, Tin:2  [was: RoundLog:1, CopperOre:4, Guck:3]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Hoe",
+      "oldTier": 1,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "Thistle:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Knuckles Tier 1",
+      "oldTier": 1,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "BjornHide:3, Wood:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Pulled Bear",
+      "oldTier": 1,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "CookedBjornMeat:1, Carrot:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Troll Armor",
+      "oldTier": 1,
+      "tier": 3,
+      "role": "Useful",
+      "cost": "TrollHide:10, Thistle:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Darkwood Beams",
+      "oldTier": 3,
+      "tier": 3,
+      "role": "Filler",
+      "cost": "Wood:10, Resin:5  [was: Wood:10, Chitin:2]",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Darkwood Decorations",
+      "oldTier": 3,
+      "tier": 3,
+      "role": "Filler",
+      "cost": "Wood:10, Resin:5  [was: Wood:10, Chitin:2]",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Darkwood Roofs",
+      "oldTier": 3,
+      "tier": 3,
+      "role": "Filler",
+      "cost": "Wood:10, Resin:5  [was: Wood:10, Chitin:2]",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Axes Tier 2",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Door",
+      "cost": "Bronze:5, Copper:3, RoundLog:5  [was: Chitin:3, Copper:3, Guck:1]",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Arrows Tier 3",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "MushroomYellow:1, RoundLog:5, Bronze:3  [was: MushroomYellow:1, RoundLog:5, Guck:5]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 2",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "RoundLog:7, Bronze:3  [was: RoundLog:7, Chain:2]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bucklers Tier 1",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Bronze:5, Wood:10  [was: Bloodbag:9, Ooze:2]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Celebratory Cap",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "DeerHide:2, Bronze:1, BjornHide:1, AmberPearl:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 2",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Tin:6, Bronze:2  [was: Tin:6, Ooze:5]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Forge Upgrade 3",
+      "oldTier": 8,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Wood:10, Bronze:5  [was: Cloudberry:5; PREREQ\u2192 Forge + Bronze]",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Harpoon",
+      "oldTier": 3,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Tin:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Knife Butcher",
+      "oldTier": 3,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "CopperOre:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Mead ketill",
+      "oldTier": 3,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "RoundLog:13, Copper:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Pointy Hat",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "DeerHide:3, Coal:5, Bronze:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Polearms Tier 1",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Feathers:2, Bronze:5  [was: Feathers:2, Bloodbag:8]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 2",
+      "oldTier": 3,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Copper:10, Stone:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 2",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Bronze:4, Wood:5  [was: Root:5]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Trinkets Tier 1",
+      "oldTier": 4,
+      "tier": 4,
+      "role": "Useful",
+      "cost": "Tin:3, Copper:3  [was: Bloodbag:1, Root:2]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Boat Tier 2",
+      "oldTier": 4,
+      "tier": 5,
+      "role": "Door",
+      "cost": "Flint:5, FineWood:10  [was: Flint:5, Entrails:3]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Pickaxes Tier 2",
+      "oldTier": 5,
+      "tier": 5,
+      "role": "Door",
+      "cost": "Bronze:5, FineWood:5  [was: Chitin:2, ElderBark:9]",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Forge Upgrade 1",
+      "oldTier": 6,
+      "tier": 5,
+      "role": "SoftProg",
+      "cost": "FineWood:10, Copper:5  [was: SilverNecklace:1, WitheredBone:9; PREREQ\u2192 Forge]",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Transportation Tier 2",
+      "oldTier": 4,
+      "tier": 5,
+      "role": "SoftProg",
+      "cost": "Ectoplasm:2, GreydwarfEye:10  [was: Ectoplasm:2, Guck:5]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bonfire",
+      "oldTier": 5,
+      "tier": 5,
+      "role": "Useful",
+      "cost": "FineWood:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 2",
+      "oldTier": 5,
+      "tier": 5,
+      "role": "Useful",
+      "cost": "Raspberry:7, FineWood:10  [was: Raspberry:7, ElderBark:9]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Fermenter",
+      "oldTier": 5,
+      "tier": 5,
+      "role": "Useful",
+      "cost": "FineWood:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shields Tier 2",
+      "oldTier": 5,
+      "tier": 5,
+      "role": "Useful",
+      "cost": "RoundLog:6, FineWood:19",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 3",
+      "oldTier": 5,
+      "tier": 5,
+      "role": "Useful",
+      "cost": "RoundLog:8, FineWood:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Workbench Upgrade 3",
+      "oldTier": 4,
+      "tier": 5,
+      "role": "Useful",
+      "cost": "FineWood:10, Bronze:2  [was: Root:1]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Pickaxes Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Door",
+      "cost": "RoundLog:7, FineWood:7, WitheredBone:1  [PREREQ\u2192 Pickaxes Tier 2 + Forge Upgrade 1]",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Boat Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "SoftProg",
+      "cost": "RoundLog:6, SilverNecklace:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Nails Tier 2",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "SoftProg",
+      "cost": "WitheredBone:2",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Arrows Tier 4",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Entrails:2, FineWood:5, SilverNecklace:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Axes Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "WitheredBone:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Battleaxes Tier 1",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "WitheredBone:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bed Tier 2",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "BjornPaw:5, Ectoplasm:3, Coins:200",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "BjornPaw:9, WitheredBone:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Wood:1, SilverNecklace:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bucklers Tier 2",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Entrails:2, FineWood:6, Coins:225",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cauldron Upgrade 1",
+      "oldTier": 3,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Tin:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "WitheredBone:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Darkwood Doors",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "CarrotSeeds:7, Coins:125, Iron:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Drawbridge",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Iron:8, Wood:20",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Food Preparation Table",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "AncientSeed:2, WitheredBone:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Forge Upgrade 2",
+      "oldTier": 8,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Chain:5  [was: LoxPelt:1; PREREQ\u2192 Forge]",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Forge Upgrade 4",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Coins:150, SilverNecklace:1  [PREREQ\u2192 Forge + Pickaxes Tier 2]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Forge Upgrade 5",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "WitheredBone:1  [PREREQ\u2192 Forge]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Forge Upgrade 6",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "BjornPaw:10, Entrails:10, WitheredBone:6  [PREREQ\u2192 Forge + Stonecutter]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Hearth",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "RoundLog:12, Coins:25",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Iron Armor",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Coins:225",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Iron Cooking Station",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "TrollHide:2, RoundLog:7, Coins:250",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Iron Shield",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "FineWood:10, Iron:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Polearms Tier 2",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Iron:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Root Armor",
+      "oldTier": 5,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Blueberries:4, Ectoplasm:7, ElderBark:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shield of Roots",
+      "oldTier": 12,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "FineWood:10, WrithanRoots:1  [PREREQ\u2192 Root Armor]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Sledgehammers Tier 2",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Iron:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "Iron:3, SilverNecklace:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Stonecutter",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "AncientSeed:7, WitheredBone:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Storage Tier 3",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "SilverNecklace:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Tower Shields Tier 2",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "SilverNecklace:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Trinkets Tier 2",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Useful",
+      "cost": "RoundLog:10, Guck:7, Coins:100",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Ironwood Beam 67",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Filler",
+      "cost": "Iron:5",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Stone Fence",
+      "oldTier": 6,
+      "tier": 6,
+      "role": "Filler",
+      "cost": "Stone:20",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Artisan Table",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Door",
+      "cost": "FineWood:3, FreezeGland:8, WolfClaw:6",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Blast Furnace",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Door",
+      "cost": "Copper:2, WitheredBone:9, Crystal:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Arrows Tier 5",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "RoundLog:5, Tin:2, Obsidian:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 6",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Guck:4, ElderBark:9, SilverOre:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 7",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Coins:100, WolfHairBundle:13",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 8",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Ectoplasm:2, WolfHairBundle:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 9",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "RoundLog:9, SilverNecklace:1, WolfHairBundle:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Battleaxes Tier 2",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "FreezeGland:7",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 4",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "CopperOre:9, FineWood:4, WolfClaw:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 4",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Tin:9, JuteRed:3, WolfClaw:6  [PREREQ\u2192 Bows Tier 3 + Blast Furnace + Forge Upgrade 1]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cauldron Upgrade 2",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Obsidian:7",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 4",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "AncientSeed:3, SilverOre:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Fenris Armor",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Copper:5, WolfPelt:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Knuckles Tier 2",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Coins:100, FreezeGland:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Meat In Bread",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "BreadDough:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shields Tier 3",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "TrollHide:5, SilverOre:4, WolfPelt:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 4",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "GreydwarfEye:10, FineWood:4, WolfHairBundle:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 4",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "BjornPaw:7, Crystal:8, Obsidian:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Trinkets Tier 3",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Ooze:1, SilverOre:10, WolfHairBundle:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Wolf Armor",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "WolfFang:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Workbench Upgrade 4",
+      "oldTier": 7,
+      "tier": 7,
+      "role": "Useful",
+      "cost": "Copper:2, Obsidian:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Axes Tier 4",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Door",
+      "cost": "Barley:9, BlackMetalScrap:1",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Wisp Fountain",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Door",
+      "cost": "CopperOre:1, Flax:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Wisplight",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Door",
+      "cost": "BjornPaw:1, Barley:3",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Spinning Wheel",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "SoftProg",
+      "cost": "Cloudberry:9",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Battleaxes Tier 3",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "FineWood:2, Coins:100, Cloudberry:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 5",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Ectoplasm:7, JuteRed:1, Needle:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 3",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "UndeadBjornRibcage:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 4",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Barley:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 5",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Barley:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cauldron Upgrade 3",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Ectoplasm:1, Iron:10, LoxPelt:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 5",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Blueberries:2, Needle:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Knuckles Tier 3",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Dandelion:8, Barley:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Lox Fur Armor",
+      "oldTier": 12,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "LoxPelt:5, WrithanRoots:2  [PREREQ\u2192 Spinning Wheel]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Lox Saddle",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "LeatherScraps:10, LinenThread:20, BlackMetal:15",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Padded Armor",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "BjornHide:5, Crystal:1, BlackMetalScrap:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Polearms Tier 3",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Ooze:4, UndeadBjornRibcage:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Scythe",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Chain:9, Ooze:10, Barley:7  [PREREQ\u2192 Cultivator + Blast Furnace]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shields Tier 4",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Thistle:6, TinOre:5, Barley:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 5",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "LoxPelt:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Stone Oven",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "RoundLog:6, Tin:5, Flax:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Storage Tier 4",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "GreydwarfEye:10, Cloudberry:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Tower Shields Tier 3",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Ectoplasm:7, Chitin:7, Needle:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Trinkets Tier 4",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "Feathers:9, BlackMetalScrap:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Vilebone Armor",
+      "oldTier": 8,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "BlackMetalScrap:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Windmill",
+      "oldTier": 6,
+      "tier": 8,
+      "role": "Useful",
+      "cost": "ElderBark:2, Coins:25",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Eitr Refinery",
+      "oldTier": 9,
+      "tier": 9,
+      "role": "Door",
+      "cost": "ElderBark:2, MushroomJotunPuffs:2, YggdrasilWood:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Galdr Table",
+      "oldTier": 10,
+      "tier": 9,
+      "role": "Door",
+      "cost": "RoundLog:10, Softtissue:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Pickaxes Tier 4",
+      "oldTier": 9,
+      "tier": 9,
+      "role": "Door",
+      "cost": "DvergrNeedle:8",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Sap Extractor",
+      "oldTier": 9,
+      "tier": 9,
+      "role": "Door",
+      "cost": "BjornHide:5, Ectoplasm:9, RoyalJelly:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Grappling Hook",
+      "oldTier": 12,
+      "tier": 9,
+      "role": "SoftProg",
+      "cost": "YggdrasilWood:10, Eitr:10, Hook:1  [PREREQ\u2192 Eitr Refinery]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Dvergr Doors",
+      "oldTier": 9,
+      "tier": 9,
+      "role": "Filler",
+      "cost": "BlackCore:7",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Dvergr Fences",
+      "oldTier": 9,
+      "tier": 9,
+      "role": "Filler",
+      "cost": "CarrotSeeds:9, YggdrasilWood:9",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Dvergr Stairs",
+      "oldTier": 9,
+      "tier": 9,
+      "role": "Filler",
+      "cost": "Blueberries:2, Ooze:1, Bilebag:9",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Artisan Press",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Door",
+      "cost": "Bloodbag:3, LoxPelt:6, Sap:5",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Black Forge",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Door",
+      "cost": "MushroomMagecap:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Boat Tier 4",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Door",
+      "cost": "Sap:7",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Ceramic Plates",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Door",
+      "cost": "RoundLog:9, WitheredBone:1, Softtissue:1",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Black Forge Upgrade 1",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "SoftProg",
+      "cost": "YggdrasilWood:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Black Forge Upgrade 2",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "SoftProg",
+      "cost": "BlackCore:10, JuteBlue:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Galdr Table Upgrade 1",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "SoftProg",
+      "cost": "Wisp:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Galdr Table Upgrade 2",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "SoftProg",
+      "cost": "FineWood:1, BlackMarble:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 10",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "FineWood:7, ScaleHide:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Axes Tier 5",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "BlackMarble:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Battleaxes Tier 4",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Resin:9, BlackMarble:2, Eitr:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 6",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "FreezeGland:2, Softtissue:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blood Magic Tier 1",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "LoxPelt:2, BlackMarble:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bolts Tier 1",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "SilverNecklace:1, YggdrasilWood:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bolts Tier 2",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Stone:9, Tin:5, Mandible:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bolts Tier 3",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "RoundLog:4, WolfFang:7, DvergrNeedle:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 5",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "BjornPaw:6, Flax:8, Eitr:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bucklers Tier 3",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Sap:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 6",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Raspberry:5, Softtissue:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Carapace Armor",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Thistle:2, GiantBloodSack:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cauldron Upgrade 4",
+      "oldTier": 8,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "RoundLog:3, Cloudberry:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Crossbows Tier 1",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Copper:6, SilverNecklace:1, GiantBloodSack:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Eitr Armor",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "RoundLog:2, Mandible:4, BlackMarble:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Elemental Magic Tier 1",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "TinOre:9, Eitr:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Lantern",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Bronze:2, SurtlingCore:1, Crystal:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Long Blades Tier 1",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Mandible:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Polearms Tier 4",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Wood:9, TrollHide:7, Eitr:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shields Tier 5",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "BjornHide:1, RoundLog:8, Softtissue:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 6",
+      "oldTier": 8,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "SurtlingCore:4, Iron:3, Flax:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Sledgehammers Tier 3",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Ectoplasm:8, Root:8, BlackMarble:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 5",
+      "oldTier": 9,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Bilebag:9, BlackCore:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Trinkets Tier 5",
+      "oldTier": 10,
+      "tier": 10,
+      "role": "Useful",
+      "cost": "Wisp:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Black Forge Upgrade 3",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Door",
+      "cost": "FineWood:4, Sap:5, AsksvinCarrionPelvic:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Siege",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Door",
+      "cost": "MushroomSmokePuff:8",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Galdr Table Upgrade 3",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "SoftProg",
+      "cost": "LeatherScraps:10, RoundLog:8, CharredBone:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Transportation Tier 3",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "SoftProg",
+      "cost": "Crystal:4, AsksvinCarrionPelvic:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 11",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Entrails:9, Crystal:4, ProustitePowder:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Ask Armor",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Fiddleheadfern:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Asksvin Saddle",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "FlametalNew:6, LinenThread:20, MorgenSinew:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Battleaxes Tier 5",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "AsksvinCarrionRibcage:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bed Tier 3",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "LoxPelt:8, Needle:10, MushroomSmokePuff:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 7",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "BjornPaw:10, CopperOre:9, AsksvinCarrionSkull:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bolts Tier 4",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Iron:10, Softtissue:9, AskHide:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 6",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Dandelion:2, AskBladder:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 7",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "RoundLog:5, AskHide:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 8",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Fiddleheadfern:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cauldron Upgrade 5",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Guck:1, GiantBloodSack:3, FlametalNew:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 6",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Guck:2, MorgenHeart:6",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Crossbows Tier 2",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "BonemawSerpentTooth:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Elemental Magic Tier 2",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "ElderBark:5, LoxPelt:1, Vineberry:7",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Embla Armor",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "MorgenHeart:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Flametal Armor",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "RoundLog:5, JuteRed:8, MorgenHeart:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Long Blades Tier 2",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "RoundLog:5, Vineberry:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shields Tier 6",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Softtissue:9, CharredBone:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 6",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "MushroomSmokePuff:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Tower Shields Tier 4",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "Tin:2, TinOre:5, BonemawSerpentTooth:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Trinkets Tier 6",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Useful",
+      "cost": "TurnipSeeds:6, BlackMarble:7, AsksvinCarrionNeck:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Ashwood Beams",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Filler",
+      "cost": "FineWood:4, AskBladder:7",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Ashwood Decorations",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Filler",
+      "cost": "FineWood:2, SilverNecklace:1, MoltenCore:8",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Ashwood Doors",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Filler",
+      "cost": "Wood:2, Pot_Shard_Green:6",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Ashwood Floors",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Filler",
+      "cost": "Copper:6, SulfurStone:5",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Ashwood Stairs",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Filler",
+      "cost": "RoundLog:1, CharcoalResin:10",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Ashwood Walls",
+      "oldTier": 11,
+      "tier": 11,
+      "role": "Filler",
+      "cost": "Barley:7, Softtissue:1, MorgenHeart:10",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Snow Shovel",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Door",
+      "cost": "FlametalNew:4, FaderEmber:2",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Black Forge Upgrade 4",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "SoftProg",
+      "cost": "Honey:8, RoundLog:1, AsksvinCarrionNeck:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Battleaxes Tier 6",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "AskHide:7",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 8",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "Copper:18, MushroomSmokePuff:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blood Magic Tier 2",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "Obsidian:10, AsksvinCarrionSkull:5, CharredBone:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 7",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "Crystal:3, BonemawSerpentTooth:6, MushroomSmokePuff:7",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 7",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "Bloodbag:8, FlametalNew:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Crossbows Tier 3",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "CopperOre:2, AsksvinCarrionRibcage:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Elemental Magic Tier 3",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "Pot_Shard_Green:7",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Long Blades Tier 3",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "TrollHide:10, ProustitePowder:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 7",
+      "oldTier": 11,
+      "tier": 12,
+      "role": "Useful",
+      "cost": "Tin:2, Softtissue:2, Vineberry:9",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Ember Charge",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Door",
+      "cost": "SealHide:2, FaderEmber:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Frigid Kiln",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Door",
+      "cost": "Ice:10, Stone:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Frost Foundry",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Door",
+      "cost": "Iron:15, Stone:20, FrostCore:10",
+      "oldCat": "Progression"
+    },
+    {
+      "name": "Cape Tier 9",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Useful",
+      "cost": "MooseHide:6, MooseSinew:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cauldron Upgrade 6",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Useful",
+      "cost": "Iron:5, Ice:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Deep North Cooking",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Useful",
+      "cost": "Kale:4, Oat:4, Lingonberry:4, MooseMeat:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Deep North Crops",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Useful",
+      "cost": "KaleSeeds:3, OatSeeds:3, PoteitrSeeds:3",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Fishing Hat",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Useful",
+      "cost": "Fish1:1, Fish2:1, Fish3:1, Fish4_cave:1, Fish5:1, Fish6:1, Fish7:1, Fish8:1, Fish9:1, Fish10:1, Fish11:1, Fish12:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Deep North Furniture",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Filler",
+      "cost": "MooseHide:4, SealHide:4, Gold:2",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Scalewood Walls",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Filler",
+      "cost": "ScaleHide:10, Frostwood:10",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Snowball",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Filler",
+      "cost": "Ice:5",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Timber Beams",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Filler",
+      "cost": "Frostwood:20",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Timber Decor",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Filler",
+      "cost": "Frostwood:10",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Timber Walls",
+      "oldTier": 12,
+      "tier": 13,
+      "role": "Filler",
+      "cost": "Frostwood:20",
+      "oldCat": "Filler"
+    },
+    {
+      "name": "Intricate Key",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Door",
+      "cost": "Gold:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Black Forge Upgrade 5",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "SoftProg",
+      "cost": "Gold:5, Leatherstraps:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Galdr Table Upgrade 4",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "SoftProg",
+      "cost": "NornThread:5, Gold:4",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Arrows Tier 12",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:1, Frostwood:8, Feathers:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Axes Tier 6",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Battleaxes Tier 7",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 9",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bloodgold Ammunition",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:2, Frostwood:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bolts Tier 5",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:1, Frostwood:8, Feathers:2",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 8",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bucklers Tier 4",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:10, Frostwood:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 8",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Crossbows Tier 4",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Crown of Valheim",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:5, CrownJewel:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Knuckles Tier 4",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, MoleClaws:2  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Long Blades Tier 4",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, BarkaBranch:2  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Moose Saddle",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:4, SealHide:5, Frostwood:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Northern Feast",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "CookedMooseMeat:3, Poteitr:5, SpiceDeepNorth:1",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Polearms Tier 5",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Shields Tier 7",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:15, Frostwood:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 7",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Sledgehammers Tier 4",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 8",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:10  [SPLIT: keep Uncooked+base only]",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Storage Tier 5",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:5, Frostwood:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Tower Shields Tier 5",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:20, Frostwood:20",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Trinkets Tier 7",
+      "oldTier": 12,
+      "tier": 14,
+      "role": "Useful",
+      "cost": "Gold:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Axes Tier 6 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Battleaxes Tier 7 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blades Tier 9 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Blood Magic Tier 3",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "BarkaBranch:8, NornThread:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Bows Tier 8 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Caller Armor",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "Gold:6, MooseHide:6, NornThread:5",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Cape Tier 10",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "SealHide:6, NornThread:2, Eitr:15",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Clubs Tier 8 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Crossbows Tier 4 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Elemental Magic Tier 4",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "Ice:10, NornThread:5, Gold:10",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Knuckles Tier 4 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Long Blades Tier 4 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Polearms Tier 5 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Protector Armor",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "Gold:20, MooseHide:8",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Short Blades Tier 7 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Sledgehammers Tier 4 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Spears Tier 8 Enchanted",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "NEW research \u2014 Frostfire + Thunderblood variants (needs Memorial Coal path)",
+      "oldCat": "Useful"
+    },
+    {
+      "name": "Vanguard Armor",
+      "oldTier": 12,
+      "tier": 15,
+      "role": "Useful",
+      "cost": "Gold:12, ElakingHairBundle:8",
+      "oldCat": "Useful"
+    }
+  ]
+}

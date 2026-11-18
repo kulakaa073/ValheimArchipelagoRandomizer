@@ -100,7 +100,7 @@ def excluded(prefab: str, row: dict, have: set) -> bool:
     if prefab in {
         "Voidplasm", "LastBossGate_RuneTile", "MoldSmallParts", "Pot_Shard_Red", "VegvisirShard_Bonemass",
         "StoneRock", "FlametalOre", "Flametal", "BonemawSerpentScale",
-        "HardAntler", "QueenDrop", "FaderDrop", "FrozenKingDrop", "MushroomBlue",
+        "HardAntler", "QueenDrop", "FaderDrop", "FrozenKingDrop", "CrownJewel", "MushroomBlue",
     }:
         return True
     return False

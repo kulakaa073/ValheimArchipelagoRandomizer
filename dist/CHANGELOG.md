@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0
+* Research overhaul (v5.1): tiers, costs, and prereqs retuned across Meadows through Deep North; SoftProg station/upgrade lines; WrithanRoots swamp and JuteRed mountains placement
+* Trophy and gather checks retiered to the T0–T15 map; Regions doors through Tier15
+* Items, Locations, and Parents regenerated from research/trophies tables
+* Deep North gold weapons split: base research keeps Uncooked + finished (T14); Enchanted researches (T15) gate Frostfire + Thunderblood behind the base line + Intricate Key
+* Boss overhaul: Kall's Archipelago item is Crown Jewel; Sacrificial Blood always drops from the corpse for the ending and is not an AP item
+* Boss progression rewards spawn on the boss corpse at vanilla amounts (no world resource-rate multiply). Swamp Key and Wishbone still scale with player count
+* New goal `valhalla` — Journey to Valhalla: place Sacrificial Blood on the Meadows chiselled platform, talk to the Valkyrie, and clear the end credits
+* Boss kill regions aligned to the T0–T15 map (Eikthyr T2 … Kall T15)
+* Archipelago WebHost docs (`WebWorld`, game info, setup guide) and `archipelago.json` manifest for 0.6.8+ / 0.7.0 compatibility
+
 ## 0.2.35
 * Trophy drops can stay as they are, double with pity capped at 10, or guarantee the first trophy from each creature
 * Research costs can be halved. Half a cost rounds up, and a cost of 1 stays 1

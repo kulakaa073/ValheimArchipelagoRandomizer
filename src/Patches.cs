@@ -791,4 +791,24 @@ public static class Patches
             }
         }
     }
+
+    // Remember where a boss died so AP rewards can spawn on the corpse.
+    [HarmonyPatch(typeof(Character), nameof(Character.OnDeath))]
+    static class Character_OnDeath_BossPos_Patch
+    {
+        static void Prefix(Character __instance)
+        {
+            ValheimRandomizer.RememberBossDeath(__instance);
+        }
+    }
+
+    // Journey to Valhalla: chiselled platform + Valkyrie starts end credits.
+    [HarmonyPatch(typeof(EndCredits), nameof(EndCredits.StartEndCredits))]
+    static class EndCredits_Start_Patch
+    {
+        static void Postfix()
+        {
+            ArchipelagoConnection.NotifyValhallaEnding();
+        }
+    }
 }

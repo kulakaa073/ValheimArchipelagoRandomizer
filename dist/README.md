@@ -1,8 +1,10 @@
 # Valheim Archipelago Randomizer
 
-Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a boss kill chosen for the seed. The default is Defeat Kall.
+Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a chosen boss kill or Journey to Valhalla. The default is Defeat Kall.
 
 Gale installs this package. BepInEx and Jotunn are dependencies.
+
+The community's officially maintained Valheim Archipelago Randomizer is [xyzzy44/ValheimArchipelagoRandomizer](https://github.com/xyzzy44/ValheimArchipelagoRandomizer). This Thunderstore package is a separate fork.
 
 The Archipelago world is separate. Install `valheimapworld.apworld` from the [repository](https://github.com/kulakaa073/ValheimArchipelagoRandomizer). The [tracker](https://valheim-tracker.vercel.app) shows the room.
 
@@ -12,9 +14,9 @@ The connect window has two local options. Trophy drops: Default, x2, or Easy. x2
 
 ## World options
 
-`boss_checks` is on by default. Each boss kill is a check in that boss's tier. The unique drop is removed from the corpse and can be placed on any check from tier 0 through that boss's tier. The granted amount follows the world resource rate. The swamp key and the wishbone also follow how many players are in the world. Off, the corpse still drops the item, and only the goal kill is a location.
+`boss_checks` is on by default. Each boss kill is a check in that boss's tier. The unique progression drop is removed from the corpse and can be placed on any check from tier 0 through that boss's tier. Receiving it spawns the item on that corpse at the vanilla amount. The swamp key and the wishbone also follow how many players are in the world. Sacrificial Blood is never randomized; Kall always drops it for the ending. Off, the corpse still drops the item, and only the goal is a location.
 
-`goal` chooses which boss kill finishes the seed. The game sets a world key when that boss dies, and the client sends that check when the key is present.
+`goal` chooses what finishes the seed. Boss goals use the defeat world key. `valhalla` completes when you finish Journey to Valhalla (Sacrificial Blood on the Meadows chiselled platform, then the Valkyrie end credits).
 
 * `eikthyr`
 * `elder`
@@ -24,6 +26,7 @@ The connect window has two local options. Trophy drops: Default, x2, or Easy. x2
 * `queen`
 * `fader`
 * `kall` — Kall's last phase. This is the default.
+* `valhalla` — Journey to Valhalla end credits
 
 `research_access` chooses when a research recipe shows on the bench. The received item still grants that research's gear.
 

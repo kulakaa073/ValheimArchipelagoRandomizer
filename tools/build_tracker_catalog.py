@@ -222,7 +222,7 @@ def main() -> None:
         "YagluthDrop": 7105,
         "QueenDrop": 7106,
         "FaderDrop": 7107,
-        "FrozenKingDrop": 7108,
+        "CrownJewel": 7108,
     }
     gather_index = 0
     for line in (ROOT / "mod" / "drops.tsv").read_text(encoding="utf-8").splitlines():

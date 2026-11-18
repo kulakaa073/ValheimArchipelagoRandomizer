@@ -1,0 +1,929 @@
+Total researches: 285
+Priority (AP classification / category): Progression > Useful > Filler
+Counts: {'Progression': 32, 'Useful': 230, 'Filler': 23}
+
+==========================================================================================
+TIER 0 — Start / Meadows bootstrap — 3 researches (P=1 U=1 F=1)
+NEXT-DOOR ITEMS (should live here; open Tier 1): Crafting
+------------------------------------------------------------------------------------------
+[Progression] Crafting                            << DOOR TO NEXT TIER
+             cost: Dandelion:5
+[Useful     ] Clubs Tier 1                      
+             cost: BoneFragments:5
+[Filler     ] Lighting Tier 1                   
+             cost: Resin:5
+
+==========================================================================================
+TIER 1 — Meadows (post-Crafting) — 34 researches (P=5 U=28 F=1)
+DOOR INTO THIS TIER (must receive to access): Crafting
+NEXT-DOOR ITEMS (should live here; open Tier 2): Axes Tier 1, Troll Armor, Cooking Station, Bed Tier 1, Warmth Tier 1
+------------------------------------------------------------------------------------------
+[Progression] Axes Tier 1                         << DOOR TO NEXT TIER
+             cost: Flint:10, GreydwarfEye:2
+[Progression] Bed Tier 1                          << DOOR TO NEXT TIER
+             cost: AmberPearl:10
+             parents: researchWorkbench
+[Progression] Cooking Station                     << DOOR TO NEXT TIER
+             cost: BoneFragments:5, Thistle:5
+             parents: researchWarmthTier1, researchWorkbench
+[Progression] Troll Armor                         << DOOR TO NEXT TIER
+             cost: TrollHide:10, Thistle:10
+             parents: researchWorkbenchUpgrade1
+[Progression] Warmth Tier 1                       << DOOR TO NEXT TIER
+             cost: SurtlingCore:2, Coins:25
+[Useful     ] Arrows Tier 1                     
+             cost: Raspberry:10, Flint:5
+             parents: researchBowsTier1, researchWorkbenchUpgrade1
+[Useful     ] Arrows Tier 2                     
+             cost: Ectoplasm:1
+             parents: researchArrowsTier1
+[Useful     ] Bear Armor                        
+             cost: BjornPaw:3, Honey:5
+             parents: researchWorkbenchUpgrade1
+[Useful     ] Beekeping                         
+             cost: Honey:3
+             parents: researchWorkbench
+[Useful     ] Blades Tier 1                     
+             cost: Wood:5
+             parents: researchWorkbench
+[Useful     ] Bows Tier 1                       
+             cost: AncientSeed:2
+             parents: researchWorkbench
+[Useful     ] Cape Tier 1                       
+             cost: DeerHide:10
+             parents: researchWorkbenchUpgrade1
+[Useful     ] Cape Tier 2                       
+             cost: TrollHide:5, Stone:10, Wood:5
+             parents: researchCapeTier1, researchWorkbenchUpgrade1
+[Useful     ] Charcoal Kiln                     
+             cost: Ectoplasm:1, Thistle:10
+             parents: researchWorkbench
+[Useful     ] Hoe                               
+             cost: Thistle:10
+             parents: researchWorkbench
+[Useful     ] Knuckles Tier 1                   
+             cost: BjornHide:3, Wood:10
+             parents: researchWorkbenchUpgrade1
+[Useful     ] Leather Armor                     
+             cost: Blueberries:15, DeerHide:5
+             parents: researchRagArmor, researchWorkbenchUpgrade1
+[Useful     ] Pulled Bear                       
+             cost: CookedBjornMeat:1, Carrot:2
+             parents: researchCookingStation
+[Useful     ] Rag Armor                         
+             cost: LeatherScraps:10
+             parents: researchWorkbench
+[Useful     ] Shields Tier 1                    
+             cost: Wood:15, Stone:10, Thistle:2
+             parents: researchWorkbench
+[Useful     ] Short Blades Tier 1               
+             cost: Flint:5, Dandelion:5
+             parents: researchWorkbench
+[Useful     ] Spears Tier 1                     
+             cost: Flint:5, Wood:5
+             parents: researchWorkbench
+[Useful     ] Storage Tier 1                    
+             cost: Feathers:5, Ruby:2
+             parents: researchWorkbench
+[Useful     ] Storage Tier 2                    
+             cost: Amber:2, Ruby:2
+             parents: researchStorageTier1
+[Useful     ] Tower Shields Tier 1              
+             cost: BoneFragments:10
+             parents: researchWorkbench
+[Useful     ] Wooden Beams                      
+             cost: Wood:25, Honey:3, Mushroom:3
+             parents: researchWorkbench
+[Useful     ] Wooden Doors                      
+             cost: Wood:25, Honey:3, Mushroom:3
+             parents: researchWorkbench
+[Useful     ] Wooden Floors                     
+             cost: Wood:25, Honey:3, Mushroom:3
+             parents: researchWorkbench
+[Useful     ] Wooden Roofs                      
+             cost: Wood:25, Honey:3, Mushroom:3
+             parents: researchWorkbench
+[Useful     ] Wooden Stairs                     
+             cost: Wood:25, Honey:3, Mushroom:3
+             parents: researchWorkbench
+[Useful     ] Wooden Walls                      
+             cost: Wood:25, Honey:3, Mushroom:3
+             parents: researchWorkbench
+[Useful     ] Workbench Upgrade 1               
+             cost: Wood:20, GreydwarfEye:5
+             parents: researchWorkbench
+[Useful     ] Workbench Upgrade 2               
+             cost: Stone:20, MushroomYellow:10
+             parents: researchWorkbenchUpgrade1
+[Filler     ] Roundpole Fence                   
+             cost: Wood:20, RoundLog:5
+             parents: researchWorkbench
+
+==========================================================================================
+TIER 2 — Eikthyr / Black Forest prep — 6 researches (P=4 U=1 F=1)
+DOOR INTO THIS TIER (must receive to access): Axes Tier 1, Troll Armor, Cooking Station, Bed Tier 1, Warmth Tier 1
+NEXT-DOOR ITEMS (should live here; open Tier 3): Pickaxes Tier 1, Boat Tier 1, Smelter, Forge
+------------------------------------------------------------------------------------------
+[Progression] Boat Tier 1                         << DOOR TO NEXT TIER
+             cost: AncientSeed:2, RoundLog:5
+             parents: researchWorkbench
+[Progression] Forge                               << DOOR TO NEXT TIER
+             cost: RoundLog:5, MushroomYellow:2
+             parents: researchPickaxeTier1, researchSmelter
+[Progression] Pickaxes Tier 1                     << DOOR TO NEXT TIER
+             cost: RoundLog:10
+             parents: researchWorkbench
+[Progression] Smelter                             << DOOR TO NEXT TIER
+             cost: RoundLog:10, Raspberry:10
+             parents: researchWorkbench
+[Useful     ] Sledgehammers Tier 1              
+             cost: RoundLog:20
+             parents: researchWorkbenchUpgrade1, researchAxeTier1
+[Filler     ] Corewood Beams                    
+             cost: RoundLog:3, BjornPaw:1
+             parents: researchAxeTier1
+
+==========================================================================================
+TIER 3 — Black Forest smelting — 10 researches (P=1 U=6 F=3)
+DOOR INTO THIS TIER (must receive to access): Pickaxes Tier 1, Boat Tier 1, Smelter, Forge
+NEXT-DOOR ITEMS (should live here; open Tier 4): Bronze
+------------------------------------------------------------------------------------------
+[Progression] Bronze                              << DOOR TO NEXT TIER
+             cost: Tin:10, Copper:5
+             parents: researchForge, researchBoatTier1
+[Useful     ] Cauldron                          
+             cost: Chitin:10
+             parents: researchForge, researchWarmthTier1
+[Useful     ] Cauldron Upgrade 1                
+             cost: Tin:6
+             parents: researchCauldron
+[Useful     ] Harpoon                           
+             cost: Tin:5
+             parents: researchAxeTier2, researchBoatTier1
+[Useful     ] Knife Butcher                     
+             cost: CopperOre:6
+             parents: researchForge
+[Useful     ] Mead ketill                       
+             cost: RoundLog:13, Copper:8
+             parents: researchForge
+[Useful     ] Short Blades Tier 2               
+             cost: Copper:10, Stone:10
+             parents: researchShortBladesTier1, researchForge
+[Filler     ] Darkwood Beams                    
+             cost: Wood:10, Chitin:2
+             parents: researchBoatTier1
+[Filler     ] Darkwood Decorations              
+             cost: Wood:10, Chitin:2
+             parents: researchBoatTier1
+[Filler     ] Darkwood Roofs                    
+             cost: Wood:10, Chitin:2
+             parents: researchBoatTier1
+
+==========================================================================================
+TIER 4 — Bronze Age — 17 researches (P=1 U=16 F=0)
+DOOR INTO THIS TIER (must receive to access): Bronze
+NEXT-DOOR ITEMS (should live here; open Tier 5): Axes Tier 2
+------------------------------------------------------------------------------------------
+[Progression] Axes Tier 2                         << DOOR TO NEXT TIER
+             cost: Chitin:3, Copper:3, Guck:1
+             parents: researchBronze
+[Useful     ] Arrows Tier 3                     
+             cost: MushroomYellow:1, RoundLog:5, Guck:5
+             parents: researchArrowsTier2, researchForge, researchBronze
+[Useful     ] Blades Tier 2                     
+             cost: RoundLog:7, Chain:2
+             parents: researchBladesTier1, researchBronze
+[Useful     ] Boat Tier 2                       
+             cost: Flint:5, Entrails:3
+             parents: researchBoatTier1, researchNailsTier1
+[Useful     ] Bronze Armor                      
+             cost: Flint:4, SurtlingCore:5, Guck:1
+             parents: researchBronze
+[Useful     ] Bucklers Tier 1                   
+             cost: Bloodbag:9, Ooze:2
+             parents: researchBronze
+[Useful     ] Celebratory Cap                   
+             cost: DeerHide:2, Bronze:1, BjornHide:1, AmberPearl:1
+             parents: researchBronze
+[Useful     ] Clubs Tier 2                      
+             cost: Tin:6, Ooze:5
+             parents: researchClubTier1, researchBronze
+[Useful     ] Cultivator                        
+             cost: RoundLog:1, CopperOre:4, Guck:3
+             parents: researchForge, researchBronze
+[Useful     ] Nails Tier 1                      
+             cost: CarrotSeeds:5, Tin:2, Ooze:1
+             parents: researchBronze
+[Useful     ] Pointy Hat                        
+             cost: DeerHide:3, Coal:5, Bronze:1
+             parents: researchBronze
+[Useful     ] Polearms Tier 1                   
+             cost: Feathers:2, Bloodbag:8
+             parents: researchBronze
+[Useful     ] Spears Tier 2                     
+             cost: Root:5
+             parents: researchSpearTier1, researchBronze
+[Useful     ] Transportation Tier 1             
+             cost: Ooze:2
+             parents: researchNailsTier1
+[Useful     ] Transportation Tier 2             
+             cost: Ectoplasm:2, Guck:5
+             parents: researchTransportationTier1
+[Useful     ] Trinkets Tier 1                   
+             cost: Bloodbag:1, Root:2
+             parents: researchBronze
+[Useful     ] Workbench Upgrade 3               
+             cost: Root:1
+             parents: researchWorkbenchUpgrade2, researchBronze
+
+==========================================================================================
+TIER 5 — Finewood / late Bronze — 7 researches (P=1 U=6 F=0)
+DOOR INTO THIS TIER (must receive to access): Axes Tier 2
+NEXT-DOOR ITEMS (should live here; open Tier 6): Pickaxes Tier 2
+------------------------------------------------------------------------------------------
+[Progression] Pickaxes Tier 2                     << DOOR TO NEXT TIER
+             cost: Chitin:2, ElderBark:9
+             parents: researchAxeTier2
+[Useful     ] Bonfire                           
+             cost: FineWood:6
+             parents: researchWarmthTier1, researchAxeTier2, researchBoatTier1
+[Useful     ] Bows Tier 2                       
+             cost: Raspberry:7, ElderBark:9
+             parents: researchBowsTier1, researchAxeTier2
+[Useful     ] Fermenter                         
+             cost: FineWood:1
+             parents: researchForge, researchAxeTier2
+[Useful     ] Root Armor                        
+             cost: Blueberries:4, Ectoplasm:7, ElderBark:1
+             parents: researchAxeTier2
+[Useful     ] Shields Tier 2                    
+             cost: RoundLog:6, FineWood:19
+             parents: researchShieldTier1, researchAxeTier2, researchWorkbenchUpgrade1
+[Useful     ] Short Blades Tier 3               
+             cost: RoundLog:8, FineWood:10
+             parents: researchShortBladesTier2, researchAxeTier2, researchBoatTier1
+
+==========================================================================================
+TIER 6 — Swamp / Iron — 32 researches (P=3 U=27 F=2)
+DOOR INTO THIS TIER (must receive to access): Pickaxes Tier 2
+NEXT-DOOR ITEMS (should live here; open Tier 7): Pickaxes Tier 3, Forge Upgrade 1, Nails Tier 2
+------------------------------------------------------------------------------------------
+[Progression] Forge Upgrade 1                     << DOOR TO NEXT TIER
+             cost: SilverNecklace:1, WitheredBone:9
+             parents: researchForge
+[Progression] Nails Tier 2                        << DOOR TO NEXT TIER
+             cost: WitheredBone:2
+             parents: researchPickaxeTier2
+[Progression] Pickaxes Tier 3                     << DOOR TO NEXT TIER
+             cost: RoundLog:7, FineWood:7, WitheredBone:1
+             parents: researchPickaxeTier2, researchForgeUpgrade1
+[Useful     ] Arrows Tier 4                     
+             cost: Entrails:2, FineWood:5, SilverNecklace:1
+             parents: researchArrowsTier3, researchForgeUpgrade1, researchPickaxeTier2
+[Useful     ] Axes Tier 3                       
+             cost: WitheredBone:2
+             parents: researchForgeUpgrade1, researchBoatTier1
+[Useful     ] Battleaxes Tier 1                 
+             cost: WitheredBone:8
+             parents: researchForgeUpgrade1
+[Useful     ] Bed Tier 2                        
+             cost: BjornPaw:5, Ectoplasm:3, Coins:200
+             parents: researchBedTier1, researchWarmthTier1, researchNailsTier2
+[Useful     ] Blades Tier 3                     
+             cost: BjornPaw:9, WitheredBone:4
+             parents: researchBladesTier2, researchPickaxeTier2, researchForgeUpgrade1
+[Useful     ] Boat Tier 3                       
+             cost: RoundLog:6, SilverNecklace:1
+             parents: researchBoatTier2, researchNailsTier2
+[Useful     ] Bows Tier 3                       
+             cost: Wood:1, SilverNecklace:1
+             parents: researchBowsTier2, researchPickaxeTier2
+[Useful     ] Bucklers Tier 2                   
+             cost: Entrails:2, FineWood:6, Coins:225
+             parents: researchBucklerTier1, researchPickaxeTier2
+[Useful     ] Clubs Tier 3                      
+             cost: WitheredBone:8
+             parents: researchClubTier2, researchPickaxeTier2, researchForgeUpgrade1
+[Useful     ] Darkwood Doors                    
+             cost: CarrotSeeds:7, Coins:125, Iron:10
+             parents: researchPickaxeTier2, researchBoatTier1
+[Useful     ] Drawbridge                        
+             cost: Iron:8, Wood:20
+             parents: researchForgeUpgrade1
+[Useful     ] Food Preparation Table            
+             cost: AncientSeed:2, WitheredBone:6
+             parents: researchPickaxeTier2, researchBoatTier1
+[Useful     ] Forge Upgrade 4                   
+             cost: Coins:150, SilverNecklace:1
+             parents: researchForgeUpgrade3, researchPickaxeTier2
+[Useful     ] Forge Upgrade 5                   
+             cost: WitheredBone:1
+             parents: researchForgeUpgrade4
+[Useful     ] Forge Upgrade 6                   
+             cost: BjornPaw:10, Entrails:10, WitheredBone:6
+             parents: researchForgeUpgrade5, researchStonecutter
+[Useful     ] Hearth                            
+             cost: RoundLog:12, Coins:25
+             parents: researchStonecutter, researchWarmthTier2
+[Useful     ] Iron Armor                        
+             cost: Coins:225
+             parents: researchPickaxeTier2
+[Useful     ] Iron Cooking Station              
+             cost: TrollHide:2, RoundLog:7, Coins:250
+             parents: researchPickaxeTier2, researchBoatTier1, researchWarmthTier3
+[Useful     ] Iron Shield                       
+             cost: FineWood:10, Iron:6
+             parents: researchShieldTier1, researchPickaxeTier2
+[Useful     ] Polearms Tier 2                   
+             cost: Iron:2
+             parents: researchPolearmsTier1, researchPickaxeTier2, researchForgeUpgrade1
+[Useful     ] Sledgehammers Tier 2              
+             cost: Iron:8
+             parents: researchSledgehammerTier1, researchPickaxeTier2, researchForgeUpgrade1
+[Useful     ] Spears Tier 3                     
+             cost: Iron:3, SilverNecklace:1
+             parents: researchSpearTier2, researchPickaxeTier2, researchForgeUpgrade2
+[Useful     ] Stonecutter                       
+             cost: AncientSeed:7, WitheredBone:3
+             parents: researchPickaxeTier2
+[Useful     ] Storage Tier 3                    
+             cost: SilverNecklace:1
+             parents: researchStorageTier2, researchPickaxeTier2, researchBoatTier1
+[Useful     ] Tower Shields Tier 2              
+             cost: SilverNecklace:1
+             parents: researchTowerShieldTier1, researchForgeUpgrade1, researchPickaxeTier2
+[Useful     ] Trinkets Tier 2                   
+             cost: RoundLog:10, Guck:7, Coins:100
+             parents: researchTrinketTier1, researchPickaxeTier2
+[Useful     ] Windmill                          
+             cost: ElderBark:2, Coins:25
+             parents: researchPickaxeTier2, researchBoatTier1, researchCultivator
+[Filler     ] Ironwood Beam 67                  
+             cost: Iron:5
+             parents: researchPickaxeTier3
+[Filler     ] Stone Fence                       
+             cost: Stone:20
+             parents: researchStonecutter
+
+==========================================================================================
+TIER 7 — Mountains / Silver — 21 researches (P=2 U=19 F=0)
+DOOR INTO THIS TIER (must receive to access): Pickaxes Tier 3, Forge Upgrade 1, Nails Tier 2
+NEXT-DOOR ITEMS (should live here; open Tier 8): Artisan Table, Blast Furnace
+------------------------------------------------------------------------------------------
+[Progression] Artisan Table                       << DOOR TO NEXT TIER
+             cost: FineWood:3, FreezeGland:8, WolfClaw:6
+             parents: researchPickaxeTier3, researchWarmthTier1
+[Progression] Blast Furnace                       << DOOR TO NEXT TIER
+             cost: Copper:2, WitheredBone:9, Crystal:10
+             parents: researchArtisanTable
+[Useful     ] Arrows Tier 5                     
+             cost: RoundLog:5, Tin:2, Obsidian:3
+             parents: researchArrowsTier4, researchWorkbenchUpgrade2, researchPickaxeTier3, researchWarmthTier1
+[Useful     ] Arrows Tier 6                     
+             cost: Guck:4, ElderBark:9, SilverOre:9
+             parents: researchArrowsTier5
+[Useful     ] Arrows Tier 7                     
+             cost: Coins:100, WolfHairBundle:13
+             parents: researchArrowsTier6
+[Useful     ] Arrows Tier 8                     
+             cost: Ectoplasm:2, WolfHairBundle:9
+             parents: researchArrowsTier7, researchWorkbenchUpgrade3
+[Useful     ] Arrows Tier 9                     
+             cost: RoundLog:9, SilverNecklace:1, WolfHairBundle:1
+             parents: researchArrowsTier8
+[Useful     ] Battleaxes Tier 2                 
+             cost: FreezeGland:7
+             parents: researchBattleaxeTier1, researchForgeUpgrade2, researchPickaxeTier3, researchWarmthTier1
+[Useful     ] Blades Tier 4                     
+             cost: CopperOre:9, FineWood:4, WolfClaw:4
+             parents: researchBladesTier3, researchForgeUpgrade2, researchWarmthTier1, researchPickaxeTier3
+[Useful     ] Bows Tier 4                       
+             cost: Tin:9, JuteRed:3, WolfClaw:6
+             parents: researchBowsTier3, researchSpinningWheel, researchBlastFurnace, researchForgeUpgrade1
+[Useful     ] Cauldron Upgrade 2                
+             cost: Obsidian:7
+             parents: researchCauldronUpgrade1, researchPickaxeTier3
+[Useful     ] Clubs Tier 4                      
+             cost: AncientSeed:3, SilverOre:5
+             parents: researchClubTier3, researchForgeUpgrade2, researchWarmthTier1, researchPickaxeTier3
+[Useful     ] Fenris Armor                      
+             cost: Copper:5, WolfPelt:2
+             parents: researchWarmthTier1, researchWorkbenchUpgrade1
+[Useful     ] Knuckles Tier 2                   
+             cost: Coins:100, FreezeGland:3
+             parents: researchKnucklesTier1, researchForgeUpgrade2, researchWarmthTier1, researchPickaxeTier3
+[Useful     ] Meat In Bread                     
+             cost: BreadDough:2
+             parents: researchCauldronUpgrade2
+[Useful     ] Shields Tier 3                    
+             cost: TrollHide:5, SilverOre:4, WolfPelt:9
+             parents: researchShieldTier2, researchPickaxeTier3, researchWarmthTier1
+[Useful     ] Short Blades Tier 4               
+             cost: GreydwarfEye:10, FineWood:4, WolfHairBundle:9
+             parents: researchShortBladesTier3, researchForgeUpgrade2, researchWarmthTier1, researchPickaxeTier3
+[Useful     ] Spears Tier 4                     
+             cost: BjornPaw:7, Crystal:8, Obsidian:2
+             parents: researchSpearTier3, researchForgeUpgrade2, researchWarmthTier1, researchPickaxeTier3
+[Useful     ] Trinkets Tier 3                   
+             cost: Ooze:1, SilverOre:10, WolfHairBundle:1
+             parents: researchTrinketTier2, researchWarmthTier1, researchPickaxeTier3
+[Useful     ] Wolf Armor                        
+             cost: WolfFang:5
+             parents: researchPickaxeTier3, researchWarmthTier1
+[Useful     ] Workbench Upgrade 4               
+             cost: Copper:2, Obsidian:2
+             parents: researchWorkbenchUpgrade3, researchPickaxeTier3, researchWarmthTier1
+
+==========================================================================================
+TIER 8 — Plains — 27 researches (P=6 U=21 F=0)
+DOOR INTO THIS TIER (must receive to access): Artisan Table, Blast Furnace
+NEXT-DOOR ITEMS (should live here; open Tier 9): Axes Tier 4, Wisp Fountain, Wisplight, Forge Upgrade 2, Forge Upgrade 3, Spinning Wheel
+------------------------------------------------------------------------------------------
+[Progression] Axes Tier 4                         << DOOR TO NEXT TIER
+             cost: Barley:9, BlackMetalScrap:1
+             parents: researchSpinningWheel, researchBlastFurnace, researchForgeUpgrade3
+[Progression] Forge Upgrade 2                     << DOOR TO NEXT TIER
+             cost: LoxPelt:1
+             parents: researchForgeUpgrade1, researchBoatTier1
+[Progression] Forge Upgrade 3                     << DOOR TO NEXT TIER
+             cost: Cloudberry:5
+             parents: researchForgeUpgrade2, researchBronze
+[Progression] Spinning Wheel                      << DOOR TO NEXT TIER
+             cost: Cloudberry:9
+             parents: researchArtisanTable, researchNailsTier2
+[Progression] Wisp Fountain                       << DOOR TO NEXT TIER
+             cost: CopperOre:1, Flax:10
+             parents: researchStonecutter
+[Progression] Wisplight                           << DOOR TO NEXT TIER
+             cost: BjornPaw:1, Barley:3
+             parents: researchWispFountain
+[Useful     ] Battleaxes Tier 3                 
+             cost: FineWood:2, Coins:100, Cloudberry:9
+             parents: researchBattleaxeTier2, researchSpinningWheel, researchBlastFurnace, researchForgeUpgrade3
+[Useful     ] Blades Tier 5                     
+             cost: Ectoplasm:7, JuteRed:1, Needle:1
+             parents: researchBladesTier4, researchSpinningWheel, researchBlastFurnace, researchForgeUpgrade3
+[Useful     ] Cape Tier 3                       
+             cost: UndeadBjornRibcage:9
+             parents: researchCapeTier2, researchPickaxeTier3, researchWarmthTier1
+[Useful     ] Cape Tier 4                       
+             cost: Barley:9
+             parents: researchCapeTier3
+[Useful     ] Cape Tier 5                       
+             cost: Barley:8
+             parents: researchCapeTier4
+[Useful     ] Cauldron Upgrade 3                
+             cost: Ectoplasm:1, Iron:10, LoxPelt:6
+             parents: researchCauldronUpgrade2, researchWindmill, researchBlastFurnace
+[Useful     ] Cauldron Upgrade 4                
+             cost: RoundLog:3, Cloudberry:2
+             parents: researchCauldronUpgrade3, researchPickaxeTier4
+[Useful     ] Clubs Tier 5                      
+             cost: Blueberries:2, Needle:4
+             parents: researchClubTier4, researchSpinningWheel, researchForgeUpgrade3
+[Useful     ] Knuckles Tier 3                   
+             cost: Dandelion:8, Barley:5
+             parents: researchKnucklesTier2, researchSpinningWheel, researchBlastFurnace, researchForgeUpgrade3
+[Useful     ] Lox Saddle                        
+             cost: LeatherScraps:10, LinenThread:20, BlackMetal:15
+             parents: researchSpinningWheel
+[Useful     ] Padded Armor                      
+             cost: BjornHide:5, Crystal:1, BlackMetalScrap:4
+             parents: researchSpinningWheel
+[Useful     ] Polearms Tier 3                   
+             cost: Ooze:4, UndeadBjornRibcage:3
+             parents: researchPolearmsTier2, researchSpinningWheel, researchBlastFurnace, researchForgeUpgrade3
+[Useful     ] Scythe                            
+             cost: Chain:9, Ooze:10, Barley:7
+             parents: researchCultivator, researchPickaxeTier4
+[Useful     ] Shields Tier 4                    
+             cost: Thistle:6, TinOre:5, Barley:6
+             parents: researchShieldTier3, researchBlastFurnace
+[Useful     ] Short Blades Tier 5               
+             cost: LoxPelt:10
+             parents: researchShortBladesTier4, researchSpinningWheel, researchBlastFurnace, researchForgeUpgrade3
+[Useful     ] Short Blades Tier 6               
+             cost: SurtlingCore:4, Iron:3, Flax:2
+             parents: researchShortBladesTier5, researchBlackForge
+[Useful     ] Stone Oven                        
+             cost: RoundLog:6, Tin:5, Flax:6
+             parents: researchArtisanTable
+[Useful     ] Storage Tier 4                    
+             cost: GreydwarfEye:10, Cloudberry:9
+             parents: researchStorageTier3, researchBlastFurnace
+[Useful     ] Tower Shields Tier 3              
+             cost: Ectoplasm:7, Chitin:7, Needle:5
+             parents: researchTowerShieldTier2, researchForgeUpgrade2, researchBlastFurnace
+[Useful     ] Trinkets Tier 4                   
+             cost: Feathers:9, BlackMetalScrap:6
+             parents: researchTrinketTier3, researchBlastFurnace
+[Useful     ] Vilebone Armor                    
+             cost: BlackMetalScrap:10
+             parents: researchSpinningWheel, researchForgeUpgrade1
+
+==========================================================================================
+TIER 9 — Mistlands entry — 18 researches (P=1 U=14 F=3)
+DOOR INTO THIS TIER (must receive to access): Axes Tier 4, Wisp Fountain, Wisplight, Forge Upgrade 2, Forge Upgrade 3, Spinning Wheel
+NEXT-DOOR ITEMS (should live here; open Tier 10): Pickaxes Tier 4
+------------------------------------------------------------------------------------------
+[Progression] Pickaxes Tier 4                     << DOOR TO NEXT TIER
+             cost: DvergrNeedle:8
+             parents: researchAxeTier4, researchWisplight
+[Useful     ] Arrows Tier 10                    
+             cost: FineWood:7, ScaleHide:9
+             parents: researchArrowsTier9, researchBlackForge
+[Useful     ] Black Forge                       
+             cost: MushroomMagecap:8
+             parents: researchPickaxeTier4
+[Useful     ] Black Forge Upgrade 1             
+             cost: YggdrasilWood:3
+             parents: researchBlackForge
+[Useful     ] Black Forge Upgrade 2             
+             cost: BlackCore:10, JuteBlue:5
+             parents: researchBlackForgeUpgrade1
+[Useful     ] Bolts Tier 1                      
+             cost: SilverNecklace:1, YggdrasilWood:9
+             parents: researchCrossbowsTier1, researchBlackForge
+[Useful     ] Bolts Tier 2                      
+             cost: Stone:9, Tin:5, Mandible:2
+             parents: researchBoltsTier1
+[Useful     ] Bolts Tier 3                      
+             cost: RoundLog:4, WolfFang:7, DvergrNeedle:5
+             parents: researchBoltsTier2
+[Useful     ] Carapace Armor                    
+             cost: Thistle:2, GiantBloodSack:9
+             parents: researchBlackForge
+[Useful     ] Crossbows Tier 1                  
+             cost: Copper:6, SilverNecklace:1, GiantBloodSack:6
+             parents: researchBlackForge
+[Useful     ] Eitr Refinery                     
+             cost: ElderBark:2, MushroomJotunPuffs:2, YggdrasilWood:8
+             parents: researchPickaxeTier4
+[Useful     ] Lantern                           
+             cost: Bronze:2, SurtlingCore:1, Crystal:1
+             parents: researchBlackForge
+[Useful     ] Long Blades Tier 1                
+             cost: Mandible:5
+             parents: researchBlackForge
+[Useful     ] Sap Extractor                     
+             cost: BjornHide:5, Ectoplasm:9, RoyalJelly:6
+             parents: researchPickaxeTier4
+[Useful     ] Spears Tier 5                     
+             cost: Bilebag:9, BlackCore:10
+             parents: researchSpearTier4, researchBlackForge
+[Filler     ] Dvergr Doors                      
+             cost: BlackCore:7
+             parents: researchAxeTier4
+[Filler     ] Dvergr Fences                     
+             cost: CarrotSeeds:9, YggdrasilWood:9
+             parents: researchAxeTier4
+[Filler     ] Dvergr Stairs                     
+             cost: Blueberries:2, Ooze:1, Bilebag:9
+             parents: researchAxeTier4
+
+==========================================================================================
+TIER 10 — Mistlands mining / gear — 19 researches (P=3 U=16 F=0)
+DOOR INTO THIS TIER (must receive to access): Pickaxes Tier 4
+NEXT-DOOR ITEMS (should live here; open Tier 11): Ceramic Plates, Boat Tier 4, Artisan Press
+------------------------------------------------------------------------------------------
+[Progression] Artisan Press                       << DOOR TO NEXT TIER
+             cost: Bloodbag:3, LoxPelt:6, Sap:5
+             parents: researchPickaxeTier4
+[Progression] Boat Tier 4                         << DOOR TO NEXT TIER
+             cost: Sap:7
+             parents: researchCeramicPlate
+[Progression] Ceramic Plates                      << DOOR TO NEXT TIER
+             cost: RoundLog:9, WitheredBone:1, Softtissue:1
+             parents: researchArtisanUpgrade1
+[Useful     ] Axes Tier 5                       
+             cost: BlackMarble:5
+             parents: researchBlackForge, researchEitrRefinery
+[Useful     ] Battleaxes Tier 4                 
+             cost: Resin:9, BlackMarble:2, Eitr:10
+             parents: researchBattleaxeTier3, researchEitrRefinery
+[Useful     ] Blades Tier 6                     
+             cost: FreezeGland:2, Softtissue:5
+             parents: researchBladesTier5, researchEitrRefinery, researchBlackForge
+[Useful     ] Blood Magic Tier 1                
+             cost: LoxPelt:2, BlackMarble:9
+             parents: researchGaldrTable
+[Useful     ] Bows Tier 5                       
+             cost: BjornPaw:6, Flax:8, Eitr:5
+             parents: researchBowsTier4, researchBlackForge, researchEitrRefinery
+[Useful     ] Bucklers Tier 3                   
+             cost: Sap:3
+             parents: researchBucklerTier2, researchBlackForge, researchEitrRefinery
+[Useful     ] Cape Tier 6                       
+             cost: Raspberry:5, Softtissue:9
+             parents: researchCapeTier5, researchGaldrTable
+[Useful     ] Eitr Armor                        
+             cost: RoundLog:2, Mandible:4, BlackMarble:8
+             parents: researchGaldrTable
+[Useful     ] Elemental Magic Tier 1            
+             cost: TinOre:9, Eitr:8
+             parents: researchGaldrTable
+[Useful     ] Galdr Table                       
+             cost: RoundLog:10, Softtissue:8
+             parents: researchEitrRefinery
+[Useful     ] Galdr Table Upgrade 1             
+             cost: Wisp:5
+             parents: researchGaldrTable
+[Useful     ] Galdr Table Upgrade 2             
+             cost: FineWood:1, BlackMarble:3
+             parents: researchGaldrTableUpgrade1
+[Useful     ] Polearms Tier 4                   
+             cost: Wood:9, TrollHide:7, Eitr:3
+             parents: researchPolearmsTier3, researchBlackForge, researchEitrRefinery
+[Useful     ] Shields Tier 5                    
+             cost: BjornHide:1, RoundLog:8, Softtissue:10
+             parents: researchShieldTier4, researchBlackForge, researchEitrRefinery
+[Useful     ] Sledgehammers Tier 3              
+             cost: Ectoplasm:8, Root:8, BlackMarble:8
+             parents: researchSledgehammerTier2, researchBlackForge, researchEitrRefinery
+[Useful     ] Trinkets Tier 5                   
+             cost: Wisp:4
+             parents: researchTrinketTier4, researchBlackForge, researchEitrRefinery
+
+==========================================================================================
+TIER 11 — Ashlands — 42 researches (P=2 U=34 F=6)
+DOOR INTO THIS TIER (must receive to access): Ceramic Plates, Boat Tier 4, Artisan Press
+NEXT-DOOR ITEMS (should live here; open Tier 12): Siege, Snow Shovel
+------------------------------------------------------------------------------------------
+[Progression] Siege                               << DOOR TO NEXT TIER
+             cost: MushroomSmokePuff:8
+             parents: researchBoatTier4
+[Progression] Snow Shovel                         << DOOR TO NEXT TIER
+             cost: FlametalNew:4, FaderEmber:2
+             parents: researchBoatTier4
+[Useful     ] Arrows Tier 11                    
+             cost: Entrails:9, Crystal:4, ProustitePowder:4
+             parents: researchArrowsTier10, researchBoatTier4
+[Useful     ] Ask Armor                         
+             cost: Fiddleheadfern:5
+             parents: researchBoatTier4
+[Useful     ] Asksvin Saddle                    
+             cost: FlametalNew:6, LinenThread:20, MorgenSinew:4
+             parents: researchBoatTier4
+[Useful     ] Battleaxes Tier 5                 
+             cost: AsksvinCarrionRibcage:2
+             parents: researchBattleaxeTier4, researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Battleaxes Tier 6                 
+             cost: AskHide:7
+             parents: researchBattleaxeTier5, researchSiege, researchBlackForgeUpgrade3
+[Useful     ] Bed Tier 3                        
+             cost: LoxPelt:8, Needle:10, MushroomSmokePuff:10
+             parents: researchBedTier2, researchBoatTier4
+[Useful     ] Black Forge Upgrade 3             
+             cost: FineWood:4, Sap:5, AsksvinCarrionPelvic:8
+             parents: researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Black Forge Upgrade 4             
+             cost: Honey:8, RoundLog:1, AsksvinCarrionNeck:9
+             parents: researchBlackForgeUpgrade3
+[Useful     ] Blades Tier 7                     
+             cost: BjornPaw:10, CopperOre:9, AsksvinCarrionSkull:1
+             parents: researchBladesTier6, researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Blades Tier 8                     
+             cost: Copper:18, MushroomSmokePuff:3
+             parents: researchBladesTier7, researchSiege, researchBlackForgeUpgrade3
+[Useful     ] Blood Magic Tier 2                
+             cost: Obsidian:10, AsksvinCarrionSkull:5, CharredBone:4
+             parents: reserachBloodMagicTier1, researchSiege
+[Useful     ] Bolts Tier 4                      
+             cost: Iron:10, Softtissue:9, AskHide:4
+             parents: researchBoltsTier3, researchBoatTier4
+[Useful     ] Bows Tier 6                       
+             cost: Dandelion:2, AskBladder:4
+             parents: researchBowsTier5, researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Bows Tier 7                       
+             cost: Crystal:3, BonemawSerpentTooth:6, MushroomSmokePuff:7
+             parents: researchBowsTier6, researchSiege, researchBlackForgeUpgrade3
+[Useful     ] Cape Tier 7                       
+             cost: RoundLog:5, AskHide:10
+             parents: researchCapeTier6, researchBoatTier4, researchGaldrTableUpgrade1
+[Useful     ] Cape Tier 8                       
+             cost: Fiddleheadfern:6
+             parents: researchCapeTier7, researchBlackForgeUpgrade2
+[Useful     ] Cauldron Upgrade 5                
+             cost: Guck:1, GiantBloodSack:3, FlametalNew:1
+             parents: researchCauldronUpgrade4, researchBoatTier4
+[Useful     ] Clubs Tier 6                      
+             cost: Guck:2, MorgenHeart:6
+             parents: researchClubTier5, researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Clubs Tier 7                      
+             cost: Bloodbag:8, FlametalNew:3
+             parents: researchClubTier6, researchSiege, researchBlackForgeUpgrade3
+[Useful     ] Crossbows Tier 2                  
+             cost: BonemawSerpentTooth:9
+             parents: researchCrossbowsTier1, researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Crossbows Tier 3                  
+             cost: CopperOre:2, AsksvinCarrionRibcage:1
+             parents: researchCrossbowsTier2, researchSiege, researchBlackForgeUpgrade3
+[Useful     ] Elemental Magic Tier 2            
+             cost: ElderBark:5, LoxPelt:1, Vineberry:7
+             parents: researchElementalMagicTier1, researchBoatTier4, researchGaldrTableUpgrade1
+[Useful     ] Elemental Magic Tier 3            
+             cost: Pot_Shard_Green:7
+             parents: researchElementalMagicTier2, researchSiege
+[Useful     ] Embla Armor                       
+             cost: MorgenHeart:8
+             parents: researchBoatTier4, researchGaldrTableUpgrade1
+[Useful     ] Flametal Armor                    
+             cost: RoundLog:5, JuteRed:8, MorgenHeart:2
+             parents: researchBoatTier4, researchBlackForgeUpgrade2
+[Useful     ] Galdr Table Upgrade 3             
+             cost: LeatherScraps:10, RoundLog:8, CharredBone:3
+             parents: researchGaldrTableUpgrade2, researchBoatTier4
+[Useful     ] Long Blades Tier 2                
+             cost: RoundLog:5, Vineberry:9
+             parents: researchLongBladesTier1, researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Long Blades Tier 3                
+             cost: TrollHide:10, ProustitePowder:8
+             parents: researchLongBladesTier2, researchSiege, researchBlackForgeUpgrade3
+[Useful     ] Shields Tier 6                    
+             cost: Softtissue:9, CharredBone:5
+             parents: researchShieldTier5, researchBoatTier4
+[Useful     ] Spears Tier 6                     
+             cost: MushroomSmokePuff:2
+             parents: researchSpearTier5, researchBlackForgeUpgrade2, researchBoatTier4
+[Useful     ] Spears Tier 7                     
+             cost: Tin:2, Softtissue:2, Vineberry:9
+             parents: researchSpearTier6, researchSiege, researchBlackForgeUpgrade3
+[Useful     ] Tower Shields Tier 4              
+             cost: Tin:2, TinOre:5, BonemawSerpentTooth:4
+             parents: researchTowerShieldTier3, researchBoatTier4
+[Useful     ] Transportation Tier 3             
+             cost: Crystal:4, AsksvinCarrionPelvic:9
+             parents: researchTransportationTier2, researchBoatTier4
+[Useful     ] Trinkets Tier 6                   
+             cost: TurnipSeeds:6, BlackMarble:7, AsksvinCarrionNeck:4
+             parents: researchTrinketTier5, researchBoatTier4
+[Filler     ] Ashwood Beams                     
+             cost: FineWood:4, AskBladder:7
+             parents: researchBoatTier4
+[Filler     ] Ashwood Decorations               
+             cost: FineWood:2, SilverNecklace:1, MoltenCore:8
+             parents: researchBoatTier4
+[Filler     ] Ashwood Doors                     
+             cost: Wood:2, Pot_Shard_Green:6
+             parents: researchBoatTier4
+[Filler     ] Ashwood Floors                    
+             cost: Copper:6, SulfurStone:5
+             parents: researchBoatTier4
+[Filler     ] Ashwood Stairs                    
+             cost: RoundLog:1, CharcoalResin:10
+             parents: researchBoatTier4
+[Filler     ] Ashwood Walls                     
+             cost: Barley:7, Softtissue:1, MorgenHeart:10
+             parents: researchBoatTier4
+
+==========================================================================================
+TIER 12 — Deep North — 49 researches (P=2 U=41 F=6)
+DOOR INTO THIS TIER (must receive to access): Siege, Snow Shovel
+------------------------------------------------------------------------------------------
+[Progression] Frigid Kiln                       
+             cost: Ice:10, Stone:10
+             parents: researchSnowShovel, researchSiege
+[Progression] Frost Foundry                     
+             cost: Iron:15, Stone:20, FrostCore:10
+             parents: researchFrostKiln
+[Useful     ] Arrows Tier 12                    
+             cost: Gold:1, Frostwood:8, Feathers:2
+             parents: researchBowsTier8
+[Useful     ] Axes Tier 6                       
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Battleaxes Tier 7                 
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Black Forge Upgrade 5             
+             cost: Gold:5, Leatherstraps:4
+             parents: researchBlackForgeUpgrade4, researchFrostFoundry
+[Useful     ] Blades Tier 9                     
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Blood Magic Tier 3                
+             cost: BarkaBranch:8, NornThread:5
+             parents: researchGaldrTableUpgrade4
+[Useful     ] Bloodgold Ammunition              
+             cost: Gold:2, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Bolts Tier 5                      
+             cost: Gold:1, Frostwood:8, Feathers:2
+             parents: researchCrossbowsTier4
+[Useful     ] Bows Tier 8                       
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Bucklers Tier 4                   
+             cost: Gold:10, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Caller Armor                      
+             cost: Gold:6, MooseHide:6, NornThread:5
+             parents: researchGaldrTableUpgrade4
+[Useful     ] Cape Tier 10                      
+             cost: SealHide:6, NornThread:2, Eitr:15
+             parents: researchCapeTier9, researchGaldrTableUpgrade4
+[Useful     ] Cape Tier 9                       
+             cost: MooseHide:6, MooseSinew:2
+             parents: researchCapeTier8, researchFrostFoundry
+[Useful     ] Cauldron Upgrade 6                
+             cost: Iron:5, Ice:4
+             parents: researchCauldronUpgrade5, researchFrostKiln
+[Useful     ] Clubs Tier 8                      
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Crossbows Tier 4                  
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Crown of Valheim                  
+             cost: Gold:5, CrownJewel:1
+             parents: researchFrostFoundry
+[Useful     ] Deep North Cooking                
+             cost: Kale:4, Oat:4, Lingonberry:4, MooseMeat:2
+             parents: researchCauldronUpgrade6
+[Useful     ] Deep North Crops                  
+             cost: KaleSeeds:3, OatSeeds:3, PoteitrSeeds:3
+             parents: researchCultivator, researchFrostKiln
+[Useful     ] Elemental Magic Tier 4            
+             cost: Ice:10, NornThread:5, Gold:10
+             parents: researchGaldrTableUpgrade4
+[Useful     ] Ember Charge                      
+             cost: SealHide:2, FaderEmber:1
+             parents: researchFrostKiln
+[Useful     ] Fishing Hat                       
+             cost: Fish1:1, Fish2:1, Fish3:1, Fish4_cave:1, Fish5:1, Fish6:1, Fish7:1, Fish8:1, Fish9:1, Fish10:1, Fish11:1, Fish12:1
+             parents: researchFrostKiln
+[Useful     ] Galdr Table Upgrade 4             
+             cost: NornThread:5, Gold:4
+             parents: researchGaldrTableUpgrade3, researchFrostFoundry
+[Useful     ] Grappling Hook                    
+             cost: YggdrasilWood:10, Eitr:10, Hook:1
+             parents: researchFrostFoundry
+[Useful     ] Intricate Key                     
+             cost: Gold:5
+             parents: researchFrostFoundry
+[Useful     ] Knuckles Tier 4                   
+             cost: Gold:20, MoleClaws:2
+             parents: researchFrostFoundry
+[Useful     ] Long Blades Tier 4                
+             cost: Gold:20, BarkaBranch:2
+             parents: researchFrostFoundry
+[Useful     ] Lox Fur Armor                     
+             cost: LoxPelt:5, WrithanRoots:2
+             parents: researchFrostKiln
+[Useful     ] Moose Saddle                      
+             cost: Gold:4, SealHide:5, Frostwood:5
+             parents: researchFrostFoundry
+[Useful     ] Northern Feast                    
+             cost: CookedMooseMeat:3, Poteitr:5, SpiceDeepNorth:1
+             parents: researchDeepNorthCooking
+[Useful     ] Polearms Tier 5                   
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Protector Armor                   
+             cost: Gold:20, MooseHide:8
+             parents: researchFrostFoundry
+[Useful     ] Shield of Roots                   
+             cost: FineWood:10, WrithanRoots:1
+             parents: researchFrostKiln
+[Useful     ] Shields Tier 7                    
+             cost: Gold:15, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Short Blades Tier 7               
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Sledgehammers Tier 4              
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Spears Tier 8                     
+             cost: Gold:20, Frostwood:10
+             parents: researchFrostFoundry
+[Useful     ] Storage Tier 5                    
+             cost: Gold:5, Frostwood:10
+             parents: researchStorageTier4, researchFrostFoundry
+[Useful     ] Tower Shields Tier 5              
+             cost: Gold:20, Frostwood:20
+             parents: researchFrostFoundry
+[Useful     ] Trinkets Tier 7                   
+             cost: Gold:5
+             parents: researchFrostFoundry
+[Useful     ] Vanguard Armor                    
+             cost: Gold:12, ElakingHairBundle:8
+             parents: researchFrostFoundry
+[Filler     ] Deep North Furniture              
+             cost: MooseHide:4, SealHide:4, Gold:2
+             parents: researchFrostKiln
+[Filler     ] Scalewood Walls                   
+             cost: ScaleHide:10, Frostwood:10
+             parents: researchFrostKiln
+[Filler     ] Snowball                          
+             cost: Ice:5
+             parents: researchFrostKiln
+[Filler     ] Timber Beams                      
+             cost: Frostwood:20
+             parents: researchFrostKiln
+[Filler     ] Timber Decor                      
+             cost: Frostwood:10
+             parents: researchTimberBeams
+[Filler     ] Timber Walls                      
+             cost: Frostwood:20
+             parents: researchFrostKiln

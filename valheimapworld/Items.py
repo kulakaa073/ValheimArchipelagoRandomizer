@@ -30,7 +30,7 @@ Cape Tier 1,item:researchCapeTier1,1,Item,Useful
 Cape Tier 2,item:researchCapeTier2,1,Item,Useful
 Rag Armor,item:researchRagArmor,1,Item,Useful
 Leather Armor,item:researchLeatherArmor,1,Item,Useful
-Troll Armor,item:researchTrollArmor,1,Item,Progression
+Troll Armor,item:researchTrollArmor,1,Item,Useful
 Bear Armor,item:researchBearArmor,1,Item,Useful
 Blades Tier 1,item:researchBladesTier1,1,Item,Useful
 Spears Tier 1,item:researchSpearTier1,1,Item,Useful
@@ -53,7 +53,7 @@ Storage Tier 2,item:researchStorageTier2,1,Item,Useful
 Bed Tier 1,item:researchBedTier1,1,Item,Progression
 Shields Tier 1,item:researchShieldTier1,1,Item,Useful
 Tower Shields Tier 1,item:researchTowerShieldTier1,1,Item,Useful
-Charcoal Kiln,item:researchCharcoalKiln,1,Item,Useful
+Charcoal Kiln,item:researchCharcoalKiln,1,Item,Progression
 Pickaxes Tier 1,item:researchPickaxeTier1,1,Item,Progression
 Boat Tier 1,item:researchBoatTier1,1,Item,Progression
 Smelter,item:researchSmelter,1,Item,Progression
@@ -66,11 +66,11 @@ Harpoon,item:researchHarpoon,1,Item,Useful
 Darkwood Roofs,item:researchRoofsDarkwood,1,Item,Filler
 Darkwood Beams,item:researchBeamsDarkwood,1,Item,Filler
 Darkwood Decorations,item:researchDecorationsDarkwod,1,Item,Filler
-Cauldron,item:researchCauldron,1,Item,Useful
+Cauldron,item:researchCauldron,1,Item,Progression
 Cauldron Upgrade 1,item:researchCauldronUpgrade1,1,Item,Useful
 Mead ketill,item:researchMeadketill,1,Item,Useful
 Knife Butcher,item:researchKnifeButcher,1,Item,Useful
-Nails Tier 1,item:researchNailsTier1,1,Item,Useful
+Nails Tier 1,item:researchNailsTier1,1,Item,Progression
 Axes Tier 2,item:researchAxeTier2,1,Item,Progression
 Workbench Upgrade 3,item:researchWorkbenchUpgrade3,1,Item,Useful
 Bronze Armor,item:researchBronzeArmor,1,Item,Useful
@@ -80,9 +80,9 @@ Spears Tier 2,item:researchSpearTier2,1,Item,Useful
 Polearms Tier 1,item:researchPolearmsTier1,1,Item,Useful
 Arrows Tier 3,item:researchArrowsTier3,1,Item,Useful
 Trinkets Tier 1,item:researchTrinketTier1,1,Item,Useful
-Transportation Tier 1,item:researchTransportationTier1,1,Item,Useful
-Transportation Tier 2,item:researchTransportationTier2,1,Item,Useful
-Boat Tier 2,item:researchBoatTier2,1,Item,Useful
+Transportation Tier 1,item:researchTransportationTier1,1,Item,Progression
+Transportation Tier 2,item:researchTransportationTier2,1,Item,Progression
+Boat Tier 2,item:researchBoatTier2,1,Item,Progression
 Cultivator,item:researchCultivator,1,Item,Useful
 Bucklers Tier 1,item:researchBucklerTier1,1,Item,Useful
 Pickaxes Tier 2,item:researchPickaxeTier2,1,Item,Progression
@@ -115,7 +115,7 @@ Windmill,item:researchWindmill,1,Item,Useful
 Iron Cooking Station,item:researchIronCookingStation,1,Item,Useful
 Food Preparation Table,item:researchPreparationTable,1,Item,Useful
 Storage Tier 3,item:researchStorageTier3,1,Item,Useful
-Boat Tier 3,item:researchBoatTier3,1,Item,Useful
+Boat Tier 3,item:researchBoatTier3,1,Item,Progression
 Bed Tier 2,item:researchBedTier2,1,Item,Useful
 Hearth,item:researchWarmthTier3,1,Item,Useful
 Tower Shields Tier 2,item:researchTowerShieldTier2,1,Item,Useful
@@ -144,8 +144,8 @@ Nails Tier 2,item:researchNailsTier2,1,Item,Progression
 Axes Tier 4,item:researchAxeTier4,1,Item,Progression
 Wisp Fountain,item:researchWispFountain,1,Item,Progression
 Wisplight,item:researchWisplight,1,Item,Progression
-Forge Upgrade 2,item:researchForgeUpgrade2,1,Item,Progression
-Forge Upgrade 3,item:researchForgeUpgrade3,1,Item,Progression
+Forge Upgrade 2,item:researchForgeUpgrade2,1,Item,Useful
+Forge Upgrade 3,item:researchForgeUpgrade3,1,Item,Useful
 Spinning Wheel,item:researchSpinningWheel,1,Item,Progression
 Cape Tier 3,item:researchCapeTier3,1,Item,Useful
 Cape Tier 4,item:researchCapeTier4,1,Item,Useful
@@ -168,11 +168,11 @@ Scythe,item:researchScythe,1,Item,Useful
 Shields Tier 4,item:researchShieldTier4,1,Item,Useful
 Tower Shields Tier 3,item:researchTowerShieldTier3,1,Item,Useful
 Pickaxes Tier 4,item:researchPickaxeTier4,1,Item,Progression
-Sap Extractor,item:researchSapExtractor,1,Item,Useful
-Eitr Refinery,item:researchEitrRefinery,1,Item,Useful
-Black Forge,item:researchBlackForge,1,Item,Useful
-Black Forge Upgrade 1,item:researchBlackForgeUpgrade1,1,Item,Useful
-Black Forge Upgrade 2,item:researchBlackForgeUpgrade2,1,Item,Useful
+Sap Extractor,item:researchSapExtractor,1,Item,Progression
+Eitr Refinery,item:researchEitrRefinery,1,Item,Progression
+Black Forge,item:researchBlackForge,1,Item,Progression
+Black Forge Upgrade 1,item:researchBlackForgeUpgrade1,1,Item,Progression
+Black Forge Upgrade 2,item:researchBlackForgeUpgrade2,1,Item,Progression
 Carapace Armor,item:researchCarapaceArmor,1,Item,Useful
 Long Blades Tier 1,item:researchLongBladesTier1,1,Item,Useful
 Spears Tier 5,item:researchSpearTier5,1,Item,Useful
@@ -187,9 +187,9 @@ Dvergr Stairs,item:researchDvergrStairs,1,Item,Filler
 Ceramic Plates,item:researchCeramicPlate,1,Item,Progression
 Boat Tier 4,item:researchBoatTier4,1,Item,Progression
 Artisan Press,item:researchArtisanUpgrade1,1,Item,Progression
-Galdr Table,item:researchGaldrTable,1,Item,Useful
-Galdr Table Upgrade 1,item:researchGaldrTableUpgrade1,1,Item,Useful
-Galdr Table Upgrade 2,item:researchGaldrTableUpgrade2,1,Item,Useful
+Galdr Table,item:researchGaldrTable,1,Item,Progression
+Galdr Table Upgrade 1,item:researchGaldrTableUpgrade1,1,Item,Progression
+Galdr Table Upgrade 2,item:researchGaldrTableUpgrade2,1,Item,Progression
 Cape Tier 6,item:researchCapeTier6,1,Item,Useful
 Eitr Armor,item:researchEitrArmor,1,Item,Useful
 Axes Tier 5,item:researchAxeTier5,1,Item,Useful
@@ -203,9 +203,9 @@ Blood Magic Tier 1,item:reserachBloodMagicTier1,1,Item,Useful
 Trinkets Tier 5,item:researchTrinketTier5,1,Item,Useful
 Shields Tier 5,item:researchShieldTier5,1,Item,Useful
 Bucklers Tier 3,item:researchBucklerTier3,1,Item,Useful
-Black Forge Upgrade 3,item:researchBlackForgeUpgrade3,1,Item,Useful
-Black Forge Upgrade 4,item:researchBlackForgeUpgrade4,1,Item,Useful
-Galdr Table Upgrade 3,item:researchGaldrTableUpgrade3,1,Item,Useful
+Black Forge Upgrade 3,item:researchBlackForgeUpgrade3,1,Item,Progression
+Black Forge Upgrade 4,item:researchBlackForgeUpgrade4,1,Item,Progression
+Galdr Table Upgrade 3,item:researchGaldrTableUpgrade3,1,Item,Progression
 Cape Tier 7,item:researchCapeTier7,1,Item,Useful
 Cape Tier 8,item:researchCapeTier8,1,Item,Useful
 Ask Armor,item:researchAskArmor,1,Item,Useful
@@ -238,7 +238,7 @@ Ashwood Decorations,item:researchAshwoodDecoration,1,Item,Filler
 Ashwood Beams,item:researchAshwoodBeams,1,Item,Filler
 Ashwood Stairs,item:researchAshwoodStairs,1,Item,Filler
 Ashwood Doors,item:researchAshwoodDoors,1,Item,Filler
-Transportation Tier 3,item:researchTransportationTier3,1,Item,Useful
+Transportation Tier 3,item:researchTransportationTier3,1,Item,Progression
 Cauldron Upgrade 5,item:researchCauldronUpgrade5,1,Item,Useful
 Bed Tier 3,item:researchBedTier3,1,Item,Useful
 Shields Tier 6,item:researchShieldTier6,1,Item,Useful
@@ -250,9 +250,9 @@ Roundpole Fence,item:researchRoundpole,1,Item,Filler
 Drawbridge,item:researchDrawbridge,1,Item,Useful
 Frigid Kiln,item:researchFrostKiln,1,Item,Progression
 Frost Foundry,item:researchFrostFoundry,1,Item,Progression
-Black Forge Upgrade 5,item:researchBlackForgeUpgrade5,1,Item,Useful
+Black Forge Upgrade 5,item:researchBlackForgeUpgrade5,1,Item,Progression
 Cauldron Upgrade 6,item:researchCauldronUpgrade6,1,Item,Useful
-Galdr Table Upgrade 4,item:researchGaldrTableUpgrade4,1,Item,Useful
+Galdr Table Upgrade 4,item:researchGaldrTableUpgrade4,1,Item,Progression
 Protector Armor,item:researchProtectorArmor,1,Item,Useful
 Vanguard Armor,item:researchVanguardArmor,1,Item,Useful
 Caller Armor,item:researchCallerArmor,1,Item,Useful
@@ -261,17 +261,29 @@ Crown of Valheim,item:researchCrownOfValheim,1,Item,Useful
 Cape Tier 9,item:researchCapeTier9,1,Item,Useful
 Cape Tier 10,item:researchCapeTier10,1,Item,Useful
 Blades Tier 9,item:researchBladesTier9,1,Item,Useful
+Blades Tier 9 Enchanted,item:researchBladesTier9Enchanted,1,Item,Useful
 Long Blades Tier 4,item:researchLongBladesTier4,1,Item,Useful
+Long Blades Tier 4 Enchanted,item:researchLongBladesTier4Enchanted,1,Item,Useful
 Polearms Tier 5,item:researchPolearmsTier5,1,Item,Useful
+Polearms Tier 5 Enchanted,item:researchPolearmsTier5Enchanted,1,Item,Useful
 Clubs Tier 8,item:researchClubTier8,1,Item,Useful
+Clubs Tier 8 Enchanted,item:researchClubTier8Enchanted,1,Item,Useful
 Sledgehammers Tier 4,item:researchSledgehammerTier4,1,Item,Useful
+Sledgehammers Tier 4 Enchanted,item:researchSledgehammerTier4Enchanted,1,Item,Useful
 Axes Tier 6,item:researchAxeTier6,1,Item,Useful
+Axes Tier 6 Enchanted,item:researchAxeTier6Enchanted,1,Item,Useful
 Battleaxes Tier 7,item:researchBattleaxeTier7,1,Item,Useful
+Battleaxes Tier 7 Enchanted,item:researchBattleaxeTier7Enchanted,1,Item,Useful
 Spears Tier 8,item:researchSpearTier8,1,Item,Useful
+Spears Tier 8 Enchanted,item:researchSpearTier8Enchanted,1,Item,Useful
 Short Blades Tier 7,item:researchShortBladesTier7,1,Item,Useful
+Short Blades Tier 7 Enchanted,item:researchShortBladesTier7Enchanted,1,Item,Useful
 Knuckles Tier 4,item:researchKnucklesTier4,1,Item,Useful
+Knuckles Tier 4 Enchanted,item:researchKnucklesTier4Enchanted,1,Item,Useful
 Bows Tier 8,item:researchBowsTier8,1,Item,Useful
+Bows Tier 8 Enchanted,item:researchBowsTier8Enchanted,1,Item,Useful
 Crossbows Tier 4,item:researchCrossbowsTier4,1,Item,Useful
+Crossbows Tier 4 Enchanted,item:researchCrossbowsTier4Enchanted,1,Item,Useful
 Shields Tier 7,item:researchShieldTier7,1,Item,Useful
 Bucklers Tier 4,item:researchBucklerTier4,1,Item,Useful
 Tower Shields Tier 5,item:researchTowerShieldTier5,1,Item,Useful
@@ -282,11 +294,11 @@ Bloodgold Ammunition,item:researchBloodgoldAmmo,1,Item,Useful
 Elemental Magic Tier 4,item:researchElementalMagicTier4,1,Item,Useful
 Blood Magic Tier 3,item:researchBloodMagicTier3,1,Item,Useful
 Trinkets Tier 7,item:researchTrinketTier7,1,Item,Useful
-Grappling Hook,item:researchGrapplingHook,1,Item,Useful
+Grappling Hook,item:researchGrapplingHook,1,Item,Progression
 Moose Saddle,item:researchSaddleMoose,1,Item,Useful
-Intricate Key,item:researchIntricateKey,1,Item,Useful
+Intricate Key,item:researchIntricateKey,1,Item,Progression
 Snowball,item:researchSnowball,1,Item,Filler
-Ember Charge,item:researchEmberCharge,1,Item,Useful
+Ember Charge,item:researchEmberCharge,1,Item,Progression
 Timber Walls,item:researchTimberWalls,1,Item,Filler
 Timber Beams,item:researchTimberBeams,1,Item,Filler
 Timber Decor,item:researchTimberDecor,1,Item,Filler
@@ -298,6 +310,13 @@ Deep North Cooking,item:researchDeepNorthCooking,1,Item,Useful
 Northern Feast,item:researchNorthernFeast,1,Item,Useful
 Pulled Bear,item:researchPulledBear,1,Item,Useful
 Meat In Bread,item:researchMeatInBread,1,Item,Useful
+Celebratory Cap,item:researchCelebratoryCap,1,Item,Useful
+Pointy Hat,item:researchPointyHat,1,Item,Useful
+Iron Shield,item:researchIronShield,1,Item,Useful
+Lox Saddle,item:researchSaddleLox,1,Item,Useful
+Lantern,item:researchLantern,1,Item,Useful
+Asksvin Saddle,item:researchSaddleAsksvin,1,Item,Useful
+Fishing Hat,item:researchFishingHat,1,Item,Useful
 Trophy: TrophyNeck,item:researchTrophyNeck,1,Item,Useful
 Trophy: TrophyBoar,item:researchTrophyBoar,1,Item,Useful
 Trophy: TrophyDeer,item:researchTrophyDeer,1,Item,Useful
@@ -367,13 +386,6 @@ Trophy: TrophySeal,item:researchTrophySeal,1,Item,Useful
 Trophy: TrophyJotunWarrior,item:researchTrophyKrigen,1,Item,Useful
 Trophy: TrophyJotunWitch,item:researchTrophyHexen,1,Item,Useful
 Trophy: TrophyElaking,item:researchTrophyElaking,1,Item,Useful
-Celebratory Cap,item:researchCelebratoryCap,1,Item,Useful
-Pointy Hat,item:researchPointyHat,1,Item,Useful
-Iron Shield,item:researchIronShield,1,Item,Useful
-Lox Saddle,item:researchSaddleLox,1,Item,Useful
-Lantern,item:researchLantern,1,Item,Useful
-Asksvin Saddle,item:researchSaddleAsksvin,1,Item,Useful
-Fishing Hat,item:researchFishingHat,1,Item,Useful
 '''
 
 # Map string classifications to `ItemClassification`

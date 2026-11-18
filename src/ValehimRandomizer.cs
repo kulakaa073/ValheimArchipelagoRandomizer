@@ -19,7 +19,7 @@ public class ValheimRandomizer : BaseUnityPlugin
 {
     public const string ModGuid = "com.samupo.randomizer";
     public const string ModName = "Randomizer";
-    public const string ModVersion = "0.2.35";
+    public const string ModVersion = "0.3.0";
 
     internal static BepInEx.Configuration.ConfigEntry<bool> randomized;
     internal static BepInEx.Configuration.ConfigEntry<string> archipelagoHostname;
@@ -173,6 +173,8 @@ public class ValheimRandomizer : BaseUnityPlugin
     public static Dictionary<string, BossDrop> bossByDefeatKey = new Dictionary<string, BossDrop>(StringComparer.Ordinal);
     public static readonly List<BossDrop> BossDrops = new List<BossDrop>();
     static readonly HashSet<string> bossPrefabs = new HashSet<string>(StringComparer.Ordinal);
+    static readonly Dictionary<string, Vector3> bossDeathPositions =
+        new Dictionary<string, Vector3>(StringComparer.Ordinal);
     public static bool SuppressDropChecks;
     static Dictionary<string, int> dropSeen = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
     static readonly Dictionary<string, int> dropCounts = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
@@ -674,8 +676,8 @@ public class ValheimRandomizer : BaseUnityPlugin
         return !string.IsNullOrEmpty(prefabName) && bossPrefabs.Contains(prefabName);
     }
 
-    // Vanilla marks these drops dontScale. The check still follows the world resource rate,
-    // and a one-per-player drop (swamp key, wishbone) is multiplied by the player count.
+    // Vanilla boss uniques dontScale. Grant the table amount (no world resource rate).
+    // One-per-player drops (swamp key, wishbone) still multiply by the player count.
     public static int BossGrantAmount(BossDrop boss)
     {
         int min = boss.amount;
@@ -697,9 +699,8 @@ public class ValheimRandomizer : BaseUnityPlugin
             }
         }
         if (max < min) max = min;
-        int rolled = min == max ? min : UnityEngine.Random.Range(min, max + 1);
-        float rate = Game.m_resourceRate > 0f ? Game.m_resourceRate : 1f;
-        int amount = Mathf.Max(1, Mathf.RoundToInt(rolled * rate));
+        int amount = min == max ? min : UnityEngine.Random.Range(min, max + 1);
+        amount = Mathf.Max(1, amount);
         if (onePerPlayer)
         {
             int players = 1;
@@ -707,8 +708,76 @@ public class ValheimRandomizer : BaseUnityPlugin
                 players = Mathf.Max(1, ZNet.instance.GetNrOfPlayers());
             amount *= players;
         }
-        if (amount > 100) amount = 100;
         return amount;
+    }
+
+    public static void RememberBossDeath(Character character)
+    {
+        if (character == null || character.gameObject == null) return;
+        string name = character.gameObject.name;
+        for (int i = 0; i < BossDrops.Count; i++)
+        {
+            var boss = BossDrops[i];
+            if (string.IsNullOrEmpty(boss.creature)) continue;
+            if (name.StartsWith(boss.creature, StringComparison.Ordinal))
+                bossDeathPositions[boss.creature] = character.transform.position;
+        }
+    }
+
+    static Vector3 ResolveBossDropPosition(string creature)
+    {
+        if (!string.IsNullOrEmpty(creature) && bossDeathPositions.TryGetValue(creature, out var pos))
+            return pos;
+        if (Player.m_localPlayer != null)
+            return Player.m_localPlayer.transform.position;
+        return Vector3.zero;
+    }
+
+    // Spawn the progression reward on the boss corpse (fallback: local player).
+    public static bool GrantBossRewardOnGround(BossDrop boss, int amount)
+    {
+        var prefab = ObjectDB.instance != null ? ObjectDB.instance.GetItemPrefab(boss.itemID) : null;
+        if (prefab == null)
+        {
+            Log?.LogWarning($"Could not spawn boss reward '{boss.itemID}' yet.");
+            return false;
+        }
+
+        Vector3 origin = ResolveBossDropPosition(boss.creature);
+        if (origin == Vector3.zero)
+        {
+            Log?.LogWarning($"No position to spawn boss reward '{boss.itemID}'.");
+            return false;
+        }
+
+        int stacks = boss.onePerPlayer ? amount : 1;
+        int perStack = boss.onePerPlayer ? 1 : amount;
+        SuppressDropChecks = true;
+        try
+        {
+            for (int i = 0; i < stacks; i++)
+            {
+                Vector3 offset = UnityEngine.Random.insideUnitSphere * 0.45f;
+                offset.y = Mathf.Abs(offset.y) * 0.2f;
+                var go = UnityEngine.Object.Instantiate(
+                    prefab, origin + offset + Vector3.up * 0.35f, Quaternion.identity);
+                var itemDrop = go != null ? go.GetComponent<ItemDrop>() : null;
+                if (itemDrop == null)
+                {
+                    Log?.LogWarning($"Spawned '{boss.itemID}' without ItemDrop.");
+                    if (go != null) UnityEngine.Object.Destroy(go);
+                    return false;
+                }
+                itemDrop.SetStack(perStack);
+            }
+            Log?.LogInfo($"Spawned boss reward {amount}x {boss.itemID} on corpse.");
+            return true;
+        }
+        finally
+        {
+            SuppressDropChecks = false;
+            SnapshotDropCounts();
+        }
     }
 
     public static bool GrantDropBundle(string itemID, int amount)

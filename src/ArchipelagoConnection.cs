@@ -582,7 +582,7 @@ internal static class ArchipelagoConnection
                 return;
             }
             int amount = ValheimRandomizer.BossGrantAmount(bossDrop);
-            if (ValheimRandomizer.GrantDropBundle(bossDrop.itemID, amount))
+            if (ValheimRandomizer.GrantBossRewardOnGround(bossDrop, amount))
             {
                 gottenItems.Add(name);
                 SetGlobal(grantedKey);
@@ -839,6 +839,15 @@ internal static class ArchipelagoConnection
         if (!HasGlobal(goalDefeatKey)) return;
 
         SetGlobal("ap_goal_pending");
+    }
+
+    // Sacrificial Blood → Meadows platform → Valkyrie → end credits.
+    public static void NotifyValhallaEnding()
+    {
+        if (!ValheimRandomizer.randomized.Value) return;
+        SetGlobal("ap_ending_valhalla");
+        QueueGoalIfBossDown();
+        TryFlushPendingLocations();
     }
 
     public static void CompleteGame()

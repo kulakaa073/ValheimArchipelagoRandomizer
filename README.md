@@ -1,8 +1,10 @@
 # Valheim Archipelago Randomizer
 
-Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a boss kill chosen for the seed. The default is Defeat Kall.
+Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a chosen boss kill or Journey to Valhalla. The default is Defeat Kall.
 
-This fork continues [Samupo's Valheim Archipelago Randomizer](https://github.com/Samupo/ValheimArchipelagoRandomizer). Gale installs the mod from [Thunderstore](https://thunderstore.io/c/valheim/p/ShadeNoob/ValheimArchipelagoRandomizer/). The [tracker](https://valheim-tracker.vercel.app) shows a room.
+This fork continues [Samupo's Valheim Archipelago Randomizer](https://github.com/Samupo/ValheimArchipelagoRandomizer). The community's officially maintained Valheim Archipelago Randomizer is [xyzzy44/ValheimArchipelagoRandomizer](https://github.com/xyzzy44/ValheimArchipelagoRandomizer) — use that build unless you specifically want this fork.
+
+Gale installs this package from [Thunderstore](https://thunderstore.io/c/valheim/p/ShadeNoob/ValheimArchipelagoRandomizer/). The [tracker](https://valheim-tracker.vercel.app) shows a room.
 
 Code added after the original mod was written with AI assistance in Cursor, using Grok (xAI).
 
@@ -18,9 +20,9 @@ The mod and the Archipelago world are separate.
 
 ## World options
 
-`boss_checks` is on by default. Each boss kill is a check in that boss's tier. The unique drop is removed from the corpse and can be placed on any check from tier 0 through that boss's tier. The granted amount follows the world resource rate. The swamp key and the wishbone also follow how many players are in the world. Off, the corpse still drops the item, and only the goal kill is a location.
+`boss_checks` is on by default. Each boss kill is a check in that boss's tier. The unique progression drop is removed from the corpse and can be placed on any check from tier 0 through that boss's tier. Receiving it spawns the item on that corpse at the vanilla amount. The swamp key and the wishbone also follow how many players are in the world. Sacrificial Blood is never randomized; Kall always drops it for the ending. Off, the corpse still drops the item, and only the goal is a location.
 
-`goal` chooses which boss kill finishes the seed. The game sets a world key when that boss dies, and the client sends that check when the key is present.
+`goal` chooses what finishes the seed. Boss goals use the defeat world key. `valhalla` completes when you finish Journey to Valhalla (Sacrificial Blood on the Meadows chiselled platform, then the Valkyrie end credits).
 
 * `eikthyr`
 * `elder`
@@ -30,6 +32,7 @@ The mod and the Archipelago world are separate.
 * `queen`
 * `fader`
 * `kall` — Kall's last phase. This is the default.
+* `valhalla` — Journey to Valhalla end credits
 
 `research_access` chooses when a research recipe shows on the bench. The received item still grants that research's gear.
 

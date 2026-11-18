@@ -27,19 +27,19 @@ Research,Axes Tier 1,loc:researchAxeTier1,Not Missable,Tier1
 Research,Workbench Upgrade 1,loc:researchWorkbenchUpgrade1,Not Missable,Tier1
 Research,Workbench Upgrade 2,loc:researchWorkbenchUpgrade2,Not Missable,Tier1
 Research,Cape Tier 1,loc:researchCapeTier1,Not Missable,Tier1
-Research,Cape Tier 2,loc:researchCapeTier2,Not Missable,Tier1
+Research,Cape Tier 2,loc:researchCapeTier2,Not Missable,Tier3
 Research,Rag Armor,loc:researchRagArmor,Not Missable,Tier1
 Research,Leather Armor,loc:researchLeatherArmor,Not Missable,Tier1
-Research,Troll Armor,loc:researchTrollArmor,Not Missable,Tier1
-Research,Bear Armor,loc:researchBearArmor,Not Missable,Tier1
+Research,Troll Armor,loc:researchTrollArmor,Not Missable,Tier3
+Research,Bear Armor,loc:researchBearArmor,Not Missable,Tier3
 Research,Blades Tier 1,loc:researchBladesTier1,Not Missable,Tier1
 Research,Spears Tier 1,loc:researchSpearTier1,Not Missable,Tier1
 Research,Short Blades Tier 1,loc:researchShortBladesTier1,Not Missable,Tier1
-Research,Knuckles Tier 1,loc:researchKnucklesTier1,Not Missable,Tier1
+Research,Knuckles Tier 1,loc:researchKnucklesTier1,Not Missable,Tier3
 Research,Bows Tier 1,loc:researchBowsTier1,Not Missable,Tier1
 Research,Arrows Tier 1,loc:researchArrowsTier1,Not Missable,Tier1
-Research,Arrows Tier 2,loc:researchArrowsTier2,Not Missable,Tier1
-Research,Hoe,loc:researchHoe,Not Missable,Tier1
+Research,Arrows Tier 2,loc:researchArrowsTier2,Not Missable,Tier3
+Research,Hoe,loc:researchHoe,Not Missable,Tier3
 Research,Beekeping,loc:researchBeekeping,Not Missable,Tier1
 Research,Wooden Floors,loc:researchFloorWood,Not Missable,Tier1
 Research,Wooden Stairs,loc:researchStairsWood,Not Missable,Tier1
@@ -53,40 +53,40 @@ Research,Storage Tier 2,loc:researchStorageTier2,Not Missable,Tier1
 Research,Bed Tier 1,loc:researchBedTier1,Not Missable,Tier1
 Research,Shields Tier 1,loc:researchShieldTier1,Not Missable,Tier1
 Research,Tower Shields Tier 1,loc:researchTowerShieldTier1,Not Missable,Tier1
-Research,Charcoal Kiln,loc:researchCharcoalKiln,Not Missable,Tier1
+Research,Charcoal Kiln,loc:researchCharcoalKiln,Not Missable,Tier2
 Research,Pickaxes Tier 1,loc:researchPickaxeTier1,Not Missable,Tier2
-Research,Boat Tier 1,loc:researchBoatTier1,Not Missable,Tier2
+Research,Boat Tier 1,loc:researchBoatTier1,Not Missable,Tier1
 Research,Smelter,loc:researchSmelter,Not Missable,Tier2
 Research,Forge,loc:researchForge,Not Missable,Tier2
 Research,Sledgehammers Tier 1,loc:researchSledgehammerTier1,Not Missable,Tier2
 Research,Corewood Beams,loc:researchBeamsCorewood,Not Missable,Tier2
 Research,Bronze,loc:researchBronze,Not Missable,Tier3
-Research,Short Blades Tier 2,loc:researchShortBladesTier2,Not Missable,Tier3
-Research,Harpoon,loc:researchHarpoon,Not Missable,Tier3
+Research,Short Blades Tier 2,loc:researchShortBladesTier2,Not Missable,Tier4
+Research,Harpoon,loc:researchHarpoon,Not Missable,Tier4
 Research,Darkwood Roofs,loc:researchRoofsDarkwood,Not Missable,Tier3
 Research,Darkwood Beams,loc:researchBeamsDarkwood,Not Missable,Tier3
 Research,Darkwood Decorations,loc:researchDecorationsDarkwod,Not Missable,Tier3
 Research,Cauldron,loc:researchCauldron,Not Missable,Tier3
-Research,Cauldron Upgrade 1,loc:researchCauldronUpgrade1,Not Missable,Tier3
-Research,Mead ketill,loc:researchMeadketill,Not Missable,Tier3
-Research,Knife Butcher,loc:researchKnifeButcher,Not Missable,Tier3
-Research,Nails Tier 1,loc:researchNailsTier1,Not Missable,Tier4
+Research,Cauldron Upgrade 1,loc:researchCauldronUpgrade1,Not Missable,Tier6
+Research,Mead ketill,loc:researchMeadketill,Not Missable,Tier4
+Research,Knife Butcher,loc:researchKnifeButcher,Not Missable,Tier4
+Research,Nails Tier 1,loc:researchNailsTier1,Not Missable,Tier3
 Research,Axes Tier 2,loc:researchAxeTier2,Not Missable,Tier4
-Research,Workbench Upgrade 3,loc:researchWorkbenchUpgrade3,Not Missable,Tier4
-Research,Bronze Armor,loc:researchBronzeArmor,Not Missable,Tier4
+Research,Workbench Upgrade 3,loc:researchWorkbenchUpgrade3,Not Missable,Tier5
+Research,Bronze Armor,loc:researchBronzeArmor,Not Missable,Tier3
 Research,Clubs Tier 2,loc:researchClubTier2,Not Missable,Tier4
 Research,Blades Tier 2,loc:researchBladesTier2,Not Missable,Tier4
 Research,Spears Tier 2,loc:researchSpearTier2,Not Missable,Tier4
 Research,Polearms Tier 1,loc:researchPolearmsTier1,Not Missable,Tier4
 Research,Arrows Tier 3,loc:researchArrowsTier3,Not Missable,Tier4
 Research,Trinkets Tier 1,loc:researchTrinketTier1,Not Missable,Tier4
-Research,Transportation Tier 1,loc:researchTransportationTier1,Not Missable,Tier4
-Research,Transportation Tier 2,loc:researchTransportationTier2,Not Missable,Tier4
-Research,Boat Tier 2,loc:researchBoatTier2,Not Missable,Tier4
-Research,Cultivator,loc:researchCultivator,Not Missable,Tier4
+Research,Transportation Tier 1,loc:researchTransportationTier1,Not Missable,Tier3
+Research,Transportation Tier 2,loc:researchTransportationTier2,Not Missable,Tier5
+Research,Boat Tier 2,loc:researchBoatTier2,Not Missable,Tier5
+Research,Cultivator,loc:researchCultivator,Not Missable,Tier3
 Research,Bucklers Tier 1,loc:researchBucklerTier1,Not Missable,Tier4
 Research,Pickaxes Tier 2,loc:researchPickaxeTier2,Not Missable,Tier5
-Research,Root Armor,loc:researchRootArmor,Not Missable,Tier5
+Research,Root Armor,loc:researchRootArmor,Not Missable,Tier6
 Research,Short Blades Tier 3,loc:researchShortBladesTier3,Not Missable,Tier5
 Research,Bows Tier 2,loc:researchBowsTier2,Not Missable,Tier5
 Research,Fermenter,loc:researchFermenter,Not Missable,Tier5
@@ -94,7 +94,7 @@ Research,Bonfire,loc:researchWarmthTier2,Not Missable,Tier5
 Research,Shields Tier 2,loc:researchShieldTier2,Not Missable,Tier5
 Research,Pickaxes Tier 3,loc:researchPickaxeTier3,Not Missable,Tier6
 Research,Warmth Tier 1,loc:researchWarmthTier1,Not Missable,Tier1
-Research,Forge Upgrade 1,loc:researchForgeUpgrade1,Not Missable,Tier6
+Research,Forge Upgrade 1,loc:researchForgeUpgrade1,Not Missable,Tier5
 Research,Forge Upgrade 4,loc:researchForgeUpgrade4,Not Missable,Tier6
 Research,Forge Upgrade 5,loc:researchForgeUpgrade5,Not Missable,Tier6
 Research,Forge Upgrade 6,loc:researchForgeUpgrade6,Not Missable,Tier6
@@ -111,7 +111,7 @@ Research,Bows Tier 3,loc:researchBowsTier3,Not Missable,Tier6
 Research,Arrows Tier 4,loc:researchArrowsTier4,Not Missable,Tier6
 Research,Trinkets Tier 2,loc:researchTrinketTier2,Not Missable,Tier6
 Research,Darkwood Doors,loc:reserachDoorsDarkwood,Not Missable,Tier6
-Research,Windmill,loc:researchWindmill,Not Missable,Tier6
+Research,Windmill,loc:researchWindmill,Not Missable,Tier8
 Research,Iron Cooking Station,loc:researchIronCookingStation,Not Missable,Tier6
 Research,Food Preparation Table,loc:researchPreparationTable,Not Missable,Tier6
 Research,Storage Tier 3,loc:researchStorageTier3,Not Missable,Tier6
@@ -144,8 +144,8 @@ Research,Nails Tier 2,loc:researchNailsTier2,Not Missable,Tier6
 Research,Axes Tier 4,loc:researchAxeTier4,Not Missable,Tier8
 Research,Wisp Fountain,loc:researchWispFountain,Not Missable,Tier8
 Research,Wisplight,loc:researchWisplight,Not Missable,Tier8
-Research,Forge Upgrade 2,loc:researchForgeUpgrade2,Not Missable,Tier8
-Research,Forge Upgrade 3,loc:researchForgeUpgrade3,Not Missable,Tier8
+Research,Forge Upgrade 2,loc:researchForgeUpgrade2,Not Missable,Tier6
+Research,Forge Upgrade 3,loc:researchForgeUpgrade3,Not Missable,Tier4
 Research,Spinning Wheel,loc:researchSpinningWheel,Not Missable,Tier8
 Research,Cape Tier 3,loc:researchCapeTier3,Not Missable,Tier8
 Research,Cape Tier 4,loc:researchCapeTier4,Not Missable,Tier8
@@ -157,12 +157,12 @@ Research,Clubs Tier 5,loc:researchClubTier5,Not Missable,Tier8
 Research,Blades Tier 5,loc:researchBladesTier5,Not Missable,Tier8
 Research,Polearms Tier 3,loc:researchPolearmsTier3,Not Missable,Tier8
 Research,Short Blades Tier 5,loc:researchShortBladesTier5,Not Missable,Tier8
-Research,Short Blades Tier 6,loc:researchShortBladesTier6,Not Missable,Tier8
+Research,Short Blades Tier 6,loc:researchShortBladesTier6,Not Missable,Tier10
 Research,Knuckles Tier 3,loc:researchKnucklesTier3,Not Missable,Tier8
 Research,Trinkets Tier 4,loc:researchTrinketTier4,Not Missable,Tier8
 Research,Stone Oven,loc:researchStoneOven,Not Missable,Tier8
 Research,Cauldron Upgrade 3,loc:researchCauldronUpgrade3,Not Missable,Tier8
-Research,Cauldron Upgrade 4,loc:researchCauldronUpgrade4,Not Missable,Tier8
+Research,Cauldron Upgrade 4,loc:researchCauldronUpgrade4,Not Missable,Tier10
 Research,Storage Tier 4,loc:researchStorageTier4,Not Missable,Tier8
 Research,Scythe,loc:researchScythe,Not Missable,Tier8
 Research,Shields Tier 4,loc:researchShieldTier4,Not Missable,Tier8
@@ -170,24 +170,24 @@ Research,Tower Shields Tier 3,loc:researchTowerShieldTier3,Not Missable,Tier8
 Research,Pickaxes Tier 4,loc:researchPickaxeTier4,Not Missable,Tier9
 Research,Sap Extractor,loc:researchSapExtractor,Not Missable,Tier9
 Research,Eitr Refinery,loc:researchEitrRefinery,Not Missable,Tier9
-Research,Black Forge,loc:researchBlackForge,Not Missable,Tier9
-Research,Black Forge Upgrade 1,loc:researchBlackForgeUpgrade1,Not Missable,Tier9
-Research,Black Forge Upgrade 2,loc:researchBlackForgeUpgrade2,Not Missable,Tier9
-Research,Carapace Armor,loc:researchCarapaceArmor,Not Missable,Tier9
-Research,Long Blades Tier 1,loc:researchLongBladesTier1,Not Missable,Tier9
-Research,Spears Tier 5,loc:researchSpearTier5,Not Missable,Tier9
-Research,Arrows Tier 10,loc:researchArrowsTier10,Not Missable,Tier9
-Research,Crossbows Tier 1,loc:researchCrossbowsTier1,Not Missable,Tier9
-Research,Bolts Tier 1,loc:researchBoltsTier1,Not Missable,Tier9
-Research,Bolts Tier 2,loc:researchBoltsTier2,Not Missable,Tier9
-Research,Bolts Tier 3,loc:researchBoltsTier3,Not Missable,Tier9
+Research,Black Forge,loc:researchBlackForge,Not Missable,Tier10
+Research,Black Forge Upgrade 1,loc:researchBlackForgeUpgrade1,Not Missable,Tier10
+Research,Black Forge Upgrade 2,loc:researchBlackForgeUpgrade2,Not Missable,Tier10
+Research,Carapace Armor,loc:researchCarapaceArmor,Not Missable,Tier10
+Research,Long Blades Tier 1,loc:researchLongBladesTier1,Not Missable,Tier10
+Research,Spears Tier 5,loc:researchSpearTier5,Not Missable,Tier10
+Research,Arrows Tier 10,loc:researchArrowsTier10,Not Missable,Tier10
+Research,Crossbows Tier 1,loc:researchCrossbowsTier1,Not Missable,Tier10
+Research,Bolts Tier 1,loc:researchBoltsTier1,Not Missable,Tier10
+Research,Bolts Tier 2,loc:researchBoltsTier2,Not Missable,Tier10
+Research,Bolts Tier 3,loc:researchBoltsTier3,Not Missable,Tier10
 Research,Dvergr Doors,loc:researchDvergrDoors,Not Missable,Tier9
 Research,Dvergr Fences,loc:researchDvergrFences,Not Missable,Tier9
 Research,Dvergr Stairs,loc:researchDvergrStairs,Not Missable,Tier9
 Research,Ceramic Plates,loc:researchCeramicPlate,Not Missable,Tier10
 Research,Boat Tier 4,loc:researchBoatTier4,Not Missable,Tier10
 Research,Artisan Press,loc:researchArtisanUpgrade1,Not Missable,Tier10
-Research,Galdr Table,loc:researchGaldrTable,Not Missable,Tier10
+Research,Galdr Table,loc:researchGaldrTable,Not Missable,Tier9
 Research,Galdr Table Upgrade 1,loc:researchGaldrTableUpgrade1,Not Missable,Tier10
 Research,Galdr Table Upgrade 2,loc:researchGaldrTableUpgrade2,Not Missable,Tier10
 Research,Cape Tier 6,loc:researchCapeTier6,Not Missable,Tier10
@@ -204,7 +204,7 @@ Research,Trinkets Tier 5,loc:researchTrinketTier5,Not Missable,Tier10
 Research,Shields Tier 5,loc:researchShieldTier5,Not Missable,Tier10
 Research,Bucklers Tier 3,loc:researchBucklerTier3,Not Missable,Tier10
 Research,Black Forge Upgrade 3,loc:researchBlackForgeUpgrade3,Not Missable,Tier11
-Research,Black Forge Upgrade 4,loc:researchBlackForgeUpgrade4,Not Missable,Tier11
+Research,Black Forge Upgrade 4,loc:researchBlackForgeUpgrade4,Not Missable,Tier12
 Research,Galdr Table Upgrade 3,loc:researchGaldrTableUpgrade3,Not Missable,Tier11
 Research,Cape Tier 7,loc:researchCapeTier7,Not Missable,Tier11
 Research,Cape Tier 8,loc:researchCapeTier8,Not Missable,Tier11
@@ -212,24 +212,24 @@ Research,Ask Armor,loc:researchAskArmor,Not Missable,Tier11
 Research,Embla Armor,loc:researchEmblaArmor,Not Missable,Tier11
 Research,Flametal Armor,loc:researchFlametalArmor,Not Missable,Tier11
 Research,Battleaxes Tier 5,loc:researchBattleaxeTier5,Not Missable,Tier11
-Research,Battleaxes Tier 6,loc:researchBattleaxeTier6,Not Missable,Tier11
+Research,Battleaxes Tier 6,loc:researchBattleaxeTier6,Not Missable,Tier12
 Research,Clubs Tier 6,loc:researchClubTier6,Not Missable,Tier11
-Research,Clubs Tier 7,loc:researchClubTier7,Not Missable,Tier11
+Research,Clubs Tier 7,loc:researchClubTier7,Not Missable,Tier12
 Research,Blades Tier 7,loc:researchBladesTier7,Not Missable,Tier11
-Research,Blades Tier 8,loc:researchBladesTier8,Not Missable,Tier11
+Research,Blades Tier 8,loc:researchBladesTier8,Not Missable,Tier12
 Research,Long Blades Tier 2,loc:researchLongBladesTier2,Not Missable,Tier11
-Research,Long Blades Tier 3,loc:researchLongBladesTier3,Not Missable,Tier11
+Research,Long Blades Tier 3,loc:researchLongBladesTier3,Not Missable,Tier12
 Research,Spears Tier 6,loc:researchSpearTier6,Not Missable,Tier11
-Research,Spears Tier 7,loc:researchSpearTier7,Not Missable,Tier11
+Research,Spears Tier 7,loc:researchSpearTier7,Not Missable,Tier12
 Research,Bows Tier 6,loc:researchBowsTier6,Not Missable,Tier11
-Research,Bows Tier 7,loc:researchBowsTier7,Not Missable,Tier11
+Research,Bows Tier 7,loc:researchBowsTier7,Not Missable,Tier12
 Research,Arrows Tier 11,loc:researchArrowsTier11,Not Missable,Tier11
 Research,Crossbows Tier 2,loc:researchCrossbowsTier2,Not Missable,Tier11
-Research,Crossbows Tier 3,loc:researchCrossbowsTier3,Not Missable,Tier11
+Research,Crossbows Tier 3,loc:researchCrossbowsTier3,Not Missable,Tier12
 Research,Bolts Tier 4,loc:researchBoltsTier4,Not Missable,Tier11
 Research,Elemental Magic Tier 2,loc:researchElementalMagicTier2,Not Missable,Tier11
-Research,Elemental Magic Tier 3,loc:researchElementalMagicTier3,Not Missable,Tier11
-Research,Blood Magic Tier 2,loc:researchBloodMagicTier2,Not Missable,Tier11
+Research,Elemental Magic Tier 3,loc:researchElementalMagicTier3,Not Missable,Tier12
+Research,Blood Magic Tier 2,loc:researchBloodMagicTier2,Not Missable,Tier12
 Research,Siege,loc:researchSiege,Not Missable,Tier11
 Research,Trinkets Tier 6,loc:researchTrinketTier6,Not Missable,Tier11
 Research,Ashwood Floors,loc:researchAshwoodFloor,Not Missable,Tier11
@@ -243,84 +243,103 @@ Research,Cauldron Upgrade 5,loc:researchCauldronUpgrade5,Not Missable,Tier11
 Research,Bed Tier 3,loc:researchBedTier3,Not Missable,Tier11
 Research,Shields Tier 6,loc:researchShieldTier6,Not Missable,Tier11
 Research,Tower Shields Tier 4,loc:researchTowerShieldTier4,Not Missable,Tier11
-Research,Snow Shovel,loc:researchSnowShovel,Not Missable,Tier11
+Research,Snow Shovel,loc:researchSnowShovel,Not Missable,Tier12
 Research,Ironwood Beam 67,loc:researchIronwoodBeam67,Not Missable,Tier6
 Research,Stone Fence,loc:researchStoneFence,Not Missable,Tier6
 Research,Roundpole Fence,loc:researchRoundpole,Not Missable,Tier1
 Research,Drawbridge,loc:researchDrawbridge,Not Missable,Tier6
-Research,Frigid Kiln,loc:researchFrostKiln,Not Missable,Tier12
-Research,Frost Foundry,loc:researchFrostFoundry,Not Missable,Tier12
-Research,Black Forge Upgrade 5,loc:researchBlackForgeUpgrade5,Not Missable,Tier12
-Research,Cauldron Upgrade 6,loc:researchCauldronUpgrade6,Not Missable,Tier12
-Research,Galdr Table Upgrade 4,loc:researchGaldrTableUpgrade4,Not Missable,Tier12
-Research,Protector Armor,loc:researchProtectorArmor,Not Missable,Tier12
-Research,Vanguard Armor,loc:researchVanguardArmor,Not Missable,Tier12
-Research,Caller Armor,loc:researchCallerArmor,Not Missable,Tier12
-Research,Lox Fur Armor,loc:researchLoxFurArmor,Not Missable,Tier12
-Research,Crown of Valheim,loc:researchCrownOfValheim,Not Missable,Tier12
-Research,Cape Tier 9,loc:researchCapeTier9,Not Missable,Tier12
-Research,Cape Tier 10,loc:researchCapeTier10,Not Missable,Tier12
-Research,Blades Tier 9,loc:researchBladesTier9,Not Missable,Tier12
-Research,Long Blades Tier 4,loc:researchLongBladesTier4,Not Missable,Tier12
-Research,Polearms Tier 5,loc:researchPolearmsTier5,Not Missable,Tier12
-Research,Clubs Tier 8,loc:researchClubTier8,Not Missable,Tier12
-Research,Sledgehammers Tier 4,loc:researchSledgehammerTier4,Not Missable,Tier12
-Research,Axes Tier 6,loc:researchAxeTier6,Not Missable,Tier12
-Research,Battleaxes Tier 7,loc:researchBattleaxeTier7,Not Missable,Tier12
-Research,Spears Tier 8,loc:researchSpearTier8,Not Missable,Tier12
-Research,Short Blades Tier 7,loc:researchShortBladesTier7,Not Missable,Tier12
-Research,Knuckles Tier 4,loc:researchKnucklesTier4,Not Missable,Tier12
-Research,Bows Tier 8,loc:researchBowsTier8,Not Missable,Tier12
-Research,Crossbows Tier 4,loc:researchCrossbowsTier4,Not Missable,Tier12
-Research,Shields Tier 7,loc:researchShieldTier7,Not Missable,Tier12
-Research,Bucklers Tier 4,loc:researchBucklerTier4,Not Missable,Tier12
-Research,Tower Shields Tier 5,loc:researchTowerShieldTier5,Not Missable,Tier12
-Research,Shield of Roots,loc:researchShieldOfRoots,Not Missable,Tier12
-Research,Arrows Tier 12,loc:researchArrowsTier12,Not Missable,Tier12
-Research,Bolts Tier 5,loc:researchBoltsTier5,Not Missable,Tier12
-Research,Bloodgold Ammunition,loc:researchBloodgoldAmmo,Not Missable,Tier12
-Research,Elemental Magic Tier 4,loc:researchElementalMagicTier4,Not Missable,Tier12
-Research,Blood Magic Tier 3,loc:researchBloodMagicTier3,Not Missable,Tier12
-Research,Trinkets Tier 7,loc:researchTrinketTier7,Not Missable,Tier12
-Research,Grappling Hook,loc:researchGrapplingHook,Not Missable,Tier12
-Research,Moose Saddle,loc:researchSaddleMoose,Not Missable,Tier12
-Research,Intricate Key,loc:researchIntricateKey,Not Missable,Tier12
-Research,Snowball,loc:researchSnowball,Not Missable,Tier12
-Research,Ember Charge,loc:researchEmberCharge,Not Missable,Tier12
-Research,Timber Walls,loc:researchTimberWalls,Not Missable,Tier12
-Research,Timber Beams,loc:researchTimberBeams,Not Missable,Tier12
-Research,Timber Decor,loc:researchTimberDecor,Not Missable,Tier12
-Research,Scalewood Walls,loc:researchScalewoodWalls,Not Missable,Tier12
-Research,Deep North Furniture,loc:researchDeepNorthFurniture,Not Missable,Tier12
-Research,Storage Tier 5,loc:researchStorageTier5,Not Missable,Tier12
-Research,Deep North Crops,loc:researchDeepNorthCrops,Not Missable,Tier12
-Research,Deep North Cooking,loc:researchDeepNorthCooking,Not Missable,Tier12
-Research,Northern Feast,loc:researchNorthernFeast,Not Missable,Tier12
-Research,Pulled Bear,loc:researchPulledBear,Not Missable,Tier1
+Research,Frigid Kiln,loc:researchFrostKiln,Not Missable,Tier13
+Research,Frost Foundry,loc:researchFrostFoundry,Not Missable,Tier13
+Research,Black Forge Upgrade 5,loc:researchBlackForgeUpgrade5,Not Missable,Tier14
+Research,Cauldron Upgrade 6,loc:researchCauldronUpgrade6,Not Missable,Tier13
+Research,Galdr Table Upgrade 4,loc:researchGaldrTableUpgrade4,Not Missable,Tier14
+Research,Protector Armor,loc:researchProtectorArmor,Not Missable,Tier15
+Research,Vanguard Armor,loc:researchVanguardArmor,Not Missable,Tier15
+Research,Caller Armor,loc:researchCallerArmor,Not Missable,Tier15
+Research,Lox Fur Armor,loc:researchLoxFurArmor,Not Missable,Tier8
+Research,Crown of Valheim,loc:researchCrownOfValheim,Not Missable,Tier14
+Research,Cape Tier 9,loc:researchCapeTier9,Not Missable,Tier13
+Research,Cape Tier 10,loc:researchCapeTier10,Not Missable,Tier15
+Research,Blades Tier 9,loc:researchBladesTier9,Not Missable,Tier14
+Research,Blades Tier 9 Enchanted,loc:researchBladesTier9Enchanted,Not Missable,Tier15
+Research,Long Blades Tier 4,loc:researchLongBladesTier4,Not Missable,Tier14
+Research,Long Blades Tier 4 Enchanted,loc:researchLongBladesTier4Enchanted,Not Missable,Tier15
+Research,Polearms Tier 5,loc:researchPolearmsTier5,Not Missable,Tier14
+Research,Polearms Tier 5 Enchanted,loc:researchPolearmsTier5Enchanted,Not Missable,Tier15
+Research,Clubs Tier 8,loc:researchClubTier8,Not Missable,Tier14
+Research,Clubs Tier 8 Enchanted,loc:researchClubTier8Enchanted,Not Missable,Tier15
+Research,Sledgehammers Tier 4,loc:researchSledgehammerTier4,Not Missable,Tier14
+Research,Sledgehammers Tier 4 Enchanted,loc:researchSledgehammerTier4Enchanted,Not Missable,Tier15
+Research,Axes Tier 6,loc:researchAxeTier6,Not Missable,Tier14
+Research,Axes Tier 6 Enchanted,loc:researchAxeTier6Enchanted,Not Missable,Tier15
+Research,Battleaxes Tier 7,loc:researchBattleaxeTier7,Not Missable,Tier14
+Research,Battleaxes Tier 7 Enchanted,loc:researchBattleaxeTier7Enchanted,Not Missable,Tier15
+Research,Spears Tier 8,loc:researchSpearTier8,Not Missable,Tier14
+Research,Spears Tier 8 Enchanted,loc:researchSpearTier8Enchanted,Not Missable,Tier15
+Research,Short Blades Tier 7,loc:researchShortBladesTier7,Not Missable,Tier14
+Research,Short Blades Tier 7 Enchanted,loc:researchShortBladesTier7Enchanted,Not Missable,Tier15
+Research,Knuckles Tier 4,loc:researchKnucklesTier4,Not Missable,Tier14
+Research,Knuckles Tier 4 Enchanted,loc:researchKnucklesTier4Enchanted,Not Missable,Tier15
+Research,Bows Tier 8,loc:researchBowsTier8,Not Missable,Tier14
+Research,Bows Tier 8 Enchanted,loc:researchBowsTier8Enchanted,Not Missable,Tier15
+Research,Crossbows Tier 4,loc:researchCrossbowsTier4,Not Missable,Tier14
+Research,Crossbows Tier 4 Enchanted,loc:researchCrossbowsTier4Enchanted,Not Missable,Tier15
+Research,Shields Tier 7,loc:researchShieldTier7,Not Missable,Tier14
+Research,Bucklers Tier 4,loc:researchBucklerTier4,Not Missable,Tier14
+Research,Tower Shields Tier 5,loc:researchTowerShieldTier5,Not Missable,Tier14
+Research,Shield of Roots,loc:researchShieldOfRoots,Not Missable,Tier6
+Research,Arrows Tier 12,loc:researchArrowsTier12,Not Missable,Tier14
+Research,Bolts Tier 5,loc:researchBoltsTier5,Not Missable,Tier14
+Research,Bloodgold Ammunition,loc:researchBloodgoldAmmo,Not Missable,Tier14
+Research,Elemental Magic Tier 4,loc:researchElementalMagicTier4,Not Missable,Tier15
+Research,Blood Magic Tier 3,loc:researchBloodMagicTier3,Not Missable,Tier15
+Research,Trinkets Tier 7,loc:researchTrinketTier7,Not Missable,Tier14
+Research,Grappling Hook,loc:researchGrapplingHook,Not Missable,Tier9
+Research,Moose Saddle,loc:researchSaddleMoose,Not Missable,Tier14
+Research,Intricate Key,loc:researchIntricateKey,Not Missable,Tier14
+Research,Snowball,loc:researchSnowball,Not Missable,Tier13
+Research,Ember Charge,loc:researchEmberCharge,Not Missable,Tier13
+Research,Timber Walls,loc:researchTimberWalls,Not Missable,Tier13
+Research,Timber Beams,loc:researchTimberBeams,Not Missable,Tier13
+Research,Timber Decor,loc:researchTimberDecor,Not Missable,Tier13
+Research,Scalewood Walls,loc:researchScalewoodWalls,Not Missable,Tier13
+Research,Deep North Furniture,loc:researchDeepNorthFurniture,Not Missable,Tier13
+Research,Storage Tier 5,loc:researchStorageTier5,Not Missable,Tier14
+Research,Deep North Crops,loc:researchDeepNorthCrops,Not Missable,Tier13
+Research,Deep North Cooking,loc:researchDeepNorthCooking,Not Missable,Tier13
+Research,Northern Feast,loc:researchNorthernFeast,Not Missable,Tier14
+Research,Pulled Bear,loc:researchPulledBear,Not Missable,Tier3
 Research,Meat In Bread,loc:researchMeatInBread,Not Missable,Tier7
+Research,Celebratory Cap,loc:researchCelebratoryCap,Not Missable,Tier4
+Research,Pointy Hat,loc:researchPointyHat,Not Missable,Tier4
+Research,Iron Shield,loc:researchIronShield,Not Missable,Tier6
+Research,Lox Saddle,loc:researchSaddleLox,Not Missable,Tier8
+Research,Lantern,loc:researchLantern,Not Missable,Tier10
+Research,Asksvin Saddle,loc:researchSaddleAsksvin,Not Missable,Tier11
+Research,Fishing Hat,loc:researchFishingHat,Not Missable,Tier13
 Trophy,Trophy: TrophyNeck,loc:researchTrophyNeck,Not Missable,Tier0
 Trophy,Trophy: TrophyBoar,loc:researchTrophyBoar,Not Missable,Tier0
 Trophy,Trophy: TrophyDeer,loc:researchTrophyDeer,Not Missable,Tier0
-Trophy,Trophy: TrophyGreydwarfBrute,loc:researchTrophyGreydwarfBrute,Not Missable,Tier1
-Trophy,Trophy: TrophyBjorn,loc:researchTrophyBear,Not Missable,Tier1
-Trophy,Trophy: TrophySkeleton,loc:researchTrophySkeleton,Not Missable,Tier1
-Trophy,Trophy: TrophyGreydwarfShaman,loc:researchTrophyGreydwarfShaman,Not Missable,Tier1
-Trophy,Trophy: TrophySkeletonPoison,loc:researchTrophyRancidRemains,Not Missable,Tier1
-Trophy,Trophy: TrophyEikthyr,loc:researchTrophyEikthyr,Not Missable,Tier1
-Trophy,Trophy: TrophyGreydwarf,loc:researchTrophyGreydwarf,Not Missable,Tier1
-Trophy,Trophy: TrophyGhost,loc:researchTrophyGhost,Not Missable,Tier1
-Trophy,Trophy: TrophySkeletonHildir,loc:researchTrophyBrenna,Not Missable,Tier4
-Trophy,Trophy: TrophyDraugrElite,loc:researchTrophyDraugrElite,Not Missable,Tier4
-Trophy,Trophy: TrophyAbomination,loc:researchTrophyAbomination,Not Missable,Tier4
-Trophy,Trophy: TrophyBonemass,loc:researchTrophyBonemass,Not Missable,Tier4
-Trophy,Trophy: TrophyKvastur,loc:researchTrophyKvastur,Not Missable,Tier4
-Trophy,Trophy: TrophyBlob,loc:researchTrophyBlob,Not Missable,Tier4
-Trophy,Trophy: TrophyLeech,loc:researchTrophyLeech,Not Missable,Tier4
-Trophy,Trophy: TrophyWraith,loc:researchTrophyWraith,Not Missable,Tier4
-Trophy,Trophy: TrophyTheElder,loc:researchTrophyTheElder,Not Missable,Tier4
-Trophy,Trophy: TrophyDraugr,loc:researchTrophyDraugr,Not Missable,Tier4
-Trophy,Trophy: TrophySurtling,loc:researchTrophySurtling,Not Missable,Tier4
-Trophy,Trophy: TrophySerpent,loc:researchTrophySerpent,Not Missable,Tier4
+Trophy,Trophy: TrophyGreydwarfBrute,loc:researchTrophyGreydwarfBrute,Not Missable,Tier3
+Trophy,Trophy: TrophyBjorn,loc:researchTrophyBear,Not Missable,Tier3
+Trophy,Trophy: TrophySkeleton,loc:researchTrophySkeleton,Not Missable,Tier3
+Trophy,Trophy: TrophyGreydwarfShaman,loc:researchTrophyGreydwarfShaman,Not Missable,Tier3
+Trophy,Trophy: TrophySkeletonPoison,loc:researchTrophyRancidRemains,Not Missable,Tier3
+Trophy,Trophy: TrophyEikthyr,loc:researchTrophyEikthyr,Not Missable,Tier2
+Trophy,Trophy: TrophyGreydwarf,loc:researchTrophyGreydwarf,Not Missable,Tier3
+Trophy,Trophy: TrophyGhost,loc:researchTrophyGhost,Not Missable,Tier3
+Trophy,Trophy: TrophySkeletonHildir,loc:researchTrophyBrenna,Not Missable,Tier6
+Trophy,Trophy: TrophyDraugrElite,loc:researchTrophyDraugrElite,Not Missable,Tier6
+Trophy,Trophy: TrophyAbomination,loc:researchTrophyAbomination,Not Missable,Tier6
+Trophy,Trophy: TrophyBonemass,loc:researchTrophyBonemass,Not Missable,Tier6
+Trophy,Trophy: TrophyKvastur,loc:researchTrophyKvastur,Not Missable,Tier6
+Trophy,Trophy: TrophyBlob,loc:researchTrophyBlob,Not Missable,Tier6
+Trophy,Trophy: TrophyLeech,loc:researchTrophyLeech,Not Missable,Tier6
+Trophy,Trophy: TrophyWraith,loc:researchTrophyWraith,Not Missable,Tier6
+Trophy,Trophy: TrophyTheElder,loc:researchTrophyTheElder,Not Missable,Tier3
+Trophy,Trophy: TrophyDraugr,loc:researchTrophyDraugr,Not Missable,Tier6
+Trophy,Trophy: TrophySurtling,loc:researchTrophySurtling,Not Missable,Tier6
+Trophy,Trophy: TrophySerpent,loc:researchTrophySerpent,Not Missable,Tier6
 Trophy,Trophy: TrophyCultist_Hildir,loc:researchTrophyGeirrhafa,Not Missable,Tier7
 Trophy,Trophy: TrophyFenring,loc:researchTrophyFenring,Not Missable,Tier7
 Trophy,Trophy: TrophyWolf,loc:researchTrophyWolf,Not Missable,Tier7
@@ -352,28 +371,21 @@ Trophy,Trophy: TrophyMorgen,loc:researchTrophyMorgen,Not Missable,Tier11
 Trophy,Trophy: TrophyCharredMage,loc:researchTrophyCharredWarlock,Not Missable,Tier11
 Trophy,Trophy: TrophyFallenValkyrie,loc:researchTrophyFallenValkyrie,Not Missable,Tier11
 Trophy,Trophy: TrophyCharredMelee,loc:researchTrophyCharredWarrior,Not Missable,Tier11
-Trophy,Trophy: TrophyFader,loc:researchTrophyFader,Not Missable,Tier11
+Trophy,Trophy: TrophyFader,loc:researchTrophyFader,Not Missable,Tier12
 Trophy,Trophy: TrophyAsksvin,loc:researchTrophyAsksvin,Not Missable,Tier11
 Trophy,Trophy: TrophyVolture,loc:researchTrophyVolture,Not Missable,Tier11
-Trophy,Trophy: TrophyBarka,loc:researchTrophyBarka,Not Missable,Tier12
-Trophy,Trophy: TrophyMole,loc:researchTrophyMole,Not Missable,Tier12
-Trophy,Trophy: TrophyFrostTroll,loc:researchTrophyFrostTroll,Not Missable,Tier1
-Trophy,Trophy: TrophyWrithan,loc:researchTrophyWrithan,Not Missable,Tier12
+Trophy,Trophy: TrophyBarka,loc:researchTrophyBarka,Not Missable,Tier14
+Trophy,Trophy: TrophyMole,loc:researchTrophyMole,Not Missable,Tier14
+Trophy,Trophy: TrophyFrostTroll,loc:researchTrophyFrostTroll,Not Missable,Tier3
+Trophy,Trophy: TrophyWrithan,loc:researchTrophyWrithan,Not Missable,Tier14
 Trophy,Trophy: TrophyBlob_Frost,loc:researchTrophyFrostBlob,Not Missable,Tier7
-Trophy,Trophy: TrophyBlob_Lava,loc:researchTrophyLavaBlob,Not Missable,Tier12
-Trophy,Trophy: TrophyBlob_Morkhalla,loc:researchTrophyMorkhallaBlob,Not Missable,Tier12
-Trophy,Trophy: TrophyMoose,loc:researchTrophyMoose,Not Missable,Tier12
-Trophy,Trophy: TrophySeal,loc:researchTrophySeal,Not Missable,Tier12
-Trophy,Trophy: TrophyJotunWarrior,loc:researchTrophyKrigen,Not Missable,Tier12
-Trophy,Trophy: TrophyJotunWitch,loc:researchTrophyHexen,Not Missable,Tier12
-Trophy,Trophy: TrophyElaking,loc:researchTrophyElaking,Not Missable,Tier12
-Research,Celebratory Cap,loc:researchCelebratoryCap,Not Missable,Tier4
-Research,Pointy Hat,loc:researchPointyHat,Not Missable,Tier4
-Research,Iron Shield,loc:researchIronShield,Not Missable,Tier6
-Research,Lox Saddle,loc:researchSaddleLox,Not Missable,Tier8
-Research,Lantern,loc:researchLantern,Not Missable,Tier9
-Research,Asksvin Saddle,loc:researchSaddleAsksvin,Not Missable,Tier11
-Research,Fishing Hat,loc:researchFishingHat,Not Missable,Tier12
+Trophy,Trophy: TrophyBlob_Lava,loc:researchTrophyLavaBlob,Not Missable,Tier14
+Trophy,Trophy: TrophyBlob_Morkhalla,loc:researchTrophyMorkhallaBlob,Not Missable,Tier15
+Trophy,Trophy: TrophyMoose,loc:researchTrophyMoose,Not Missable,Tier13
+Trophy,Trophy: TrophySeal,loc:researchTrophySeal,Not Missable,Tier13
+Trophy,Trophy: TrophyJotunWarrior,loc:researchTrophyKrigen,Not Missable,Tier15
+Trophy,Trophy: TrophyJotunWitch,loc:researchTrophyHexen,Not Missable,Tier15
+Trophy,Trophy: TrophyElaking,loc:researchTrophyElaking,Not Missable,Tier14
 '''
 
 # Map string classifications to `LocationProgressType`

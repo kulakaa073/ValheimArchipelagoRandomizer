@@ -31,19 +31,22 @@ class SequentialTiers(Toggle):
 
 
 class BossChecks(Toggle):
-    """Each boss kill is a check. The unique drop is removed from the corpse.
+    """Each boss kill is a check. The unique progression drop is removed from the corpse
+    and spawned back on that corpse at the vanilla amount when received.
     That drop can be placed on any check from tier 0 through the boss's own tier.
-    The amount follows the world resource rate. The swamp key and the wishbone also follow the player count.
-    Off: the corpse still drops the item, and only the goal kill is a location."""
+    The swamp key and the wishbone still follow the player count.
+    Sacrificial Blood is never an Archipelago item; it always drops from Kall for the ending.
+    Off: the corpse still drops the item, and only the goal is a location."""
     display_name = "Boss Checks"
     default = 1
 
 
 class Goal(Choice):
-    """Which boss kill finishes the seed.
-    eikthyr, elder, bonemass, moder, yagluth, queen, fader, or kall.
-    Kall is his last phase only.
-    With Boss Checks on, every boss kill is a location and that drop is its reward."""
+    """What finishes the seed.
+    Boss kills: eikthyr, elder, bonemass, moder, yagluth, queen, fader, or kall (last phase).
+    valhalla: take Sacrificial Blood to the Meadows chiselled platform, talk to the Valkyrie,
+    and finish Journey to Valhalla (end credits).
+    With Boss Checks on, every boss kill is still a location; the chosen goal is what completes the seed."""
     display_name = "Goal"
     option_eikthyr = 0
     option_elder = 1
@@ -53,6 +56,7 @@ class Goal(Choice):
     option_queen = 5
     option_fader = 6
     option_kall = 7
+    option_valhalla = 8
     default = 7
 
 

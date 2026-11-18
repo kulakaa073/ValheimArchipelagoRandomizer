@@ -1,7 +1,7 @@
 {
   "name": "ValheimArchipelagoRandomizer",
-  "description": "Gates Valheim research and trophies through Archipelago. Optional gather checks. The goal is a chosen boss kill. Default is Defeat Kall.",
-  "version_number": "0.2.35",
+  "description": "Gates Valheim research and trophies through Archipelago. Optional gather checks. Goals include boss kills or Journey to Valhalla. Default is Defeat Kall.",
+  "version_number": "0.3.0",
   "website_url": "https://github.com/kulakaa073/ValheimArchipelagoRandomizer",
   "dependencies": [
     "denikson-BepInExPack_Valheim-5.4.2351",
