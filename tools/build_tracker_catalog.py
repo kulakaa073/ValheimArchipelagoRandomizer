@@ -9,17 +9,20 @@ from write_research_md import pretty  # noqa: E402
 
 TIER_DOORS = {
     1: ["Crafting"],
-    2: ["Axes Tier 1", "Troll Armor", "Cooking Station", "Bed Tier 1", "Warmth Tier 1"],
-    3: ["Pickaxes Tier 1", "Boat Tier 1", "Smelter", "Forge"],
+    2: ["Axes Tier 1", "Warmth Tier 1", "Bed Tier 1", "Cooking Station"],
+    3: ["Pickaxes Tier 1", "Smelter", "Charcoal Kiln", "Forge"],
     4: ["Bronze"],
     5: ["Axes Tier 2"],
-    6: ["Pickaxes Tier 2"],
-    7: ["Pickaxes Tier 3", "Forge Upgrade 1", "Nails Tier 2"],
+    6: ["Pickaxes Tier 2", "Boat Tier 2"],
+    7: ["Pickaxes Tier 3"],
     8: ["Artisan Table", "Blast Furnace"],
-    9: ["Axes Tier 4", "Wisp Fountain", "Wisplight", "Forge Upgrade 2", "Forge Upgrade 3", "Spinning Wheel"],
-    10: ["Pickaxes Tier 4"],
-    11: ["Ceramic Plates", "Boat Tier 4", "Artisan Press"],
-    12: ["Siege", "Snow Shovel"],
+    9: ["Axes Tier 4", "Wisp Fountain", "Wisplight"],
+    10: ["Pickaxes Tier 4", "Sap Extractor", "Eitr Refinery", "Galdr Table"],
+    11: ["Boat Tier 4", "Ceramic Plates", "Artisan Press", "Black Forge"],
+    12: ["Black Forge Upgrade 3", "Siege"],
+    13: ["Snow Shovel"],
+    14: ["Frigid Kiln", "Frost Foundry", "Ember Charge"],
+    15: ["Intricate Key"],
 }
 
 RESOURCES = {
@@ -302,6 +305,39 @@ def main() -> None:
             "iconPrefab": prefab,
         })
         gather_index += 1
+
+    checks.append({
+        "id": "ap_ending_valhalla",
+        "name": "Journey to Valhalla",
+        "kind": "boss",
+        "tier": 15,
+        "category": "Progression",
+        "locationId": 5008,
+        "itemId": 4500,
+        "iconPrefab": "FrozenKingDrop",
+        "requires": [],
+        "materials": [],
+        "rewardKind": "resource",
+        "bundle": 1,
+        "onePerPlayer": False,
+        "unlocks": [{
+            "prefab": "FrozenKingDrop",
+            "name": "Sacrificial Blood ending",
+            "rewardKind": "resource",
+            "amount": 1,
+        }],
+    })
+    unlocks.append({
+        "id": "ap_ending_valhalla",
+        "name": "Journey to Valhalla",
+        "rewardKind": "resource",
+        "amount": 1,
+        "checkId": "ap_ending_valhalla",
+        "checkName": "Journey to Valhalla",
+        "checkKind": "boss",
+        "tier": 15,
+        "iconPrefab": "FrozenKingDrop",
+    })
 
     missing_locations = [check["name"] for check in checks if check["kind"] != "gather" and check["kind"] != "goal" and check["locationId"] is None]
     if missing_locations:
