@@ -2,6 +2,7 @@
 from typing import Dict, List, NamedTuple, TYPE_CHECKING
 
 from BaseClasses import Item, ItemClassification, Location, LocationProgressType
+from .Ids import require_id, resolve_section
 
 if TYPE_CHECKING:
     from . import ValheimWorld
@@ -284,12 +285,14 @@ class ValheimDrop(NamedTuple):
 
 
 def _build() -> List[ValheimDrop]:
+    names = [f"Gather: {display_name}" for _, display_name, _, _ in DROP_ROWS]
+    location_ids = resolve_section("drop_locations", names)
+    item_ids = resolve_section("drop_items", names)
     drops = []
-    for index, (item_id, display_name, tier, amount) in enumerate(DROP_ROWS):
-        drops.append(ValheimDrop(item_id, display_name, tier, amount, 6001 + index, 8001 + index))
-    names = [d.check_name for d in drops]
-    if len(names) != len(set(names)):
-        raise RuntimeError("Duplicate gather check names")
+    for (item_id, display_name, tier, amount), location_id, ap_item_id in zip(
+        DROP_ROWS, location_ids, item_ids
+    ):
+        drops.append(ValheimDrop(item_id, display_name, tier, amount, location_id, ap_item_id))
     return drops
 
 
@@ -344,6 +347,10 @@ boss_item_table: Dict[str, int] = {boss.item_name: boss.ap_item_id for boss in B
 _boss_names = [boss.item_name for boss in BOSS_DROPS]
 if len(_boss_names) != len(set(_boss_names)):
     raise RuntimeError("Duplicate boss item names")
+
+for _boss in BOSS_DROPS:
+    require_id("boss_items", _boss.item_name, _boss.ap_item_id)
+    require_id("goal_locations", _boss.location, _boss.location_id)
 
 
 def create_boss_locations(world: "ValheimWorld") -> None:

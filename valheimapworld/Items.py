@@ -1,5 +1,6 @@
 from typing import Dict, NamedTuple, List, TYPE_CHECKING
 from BaseClasses import Item, ItemClassification
+from .Ids import resolve_section
 
 if TYPE_CHECKING:
     from . import ValheimWorld
@@ -396,8 +397,8 @@ classification_map = {
     "Trap": ItemClassification.trap,
 }
 
-# Parse the item data from the text
-current_id = 2000
+# Ids come from id_registry.json, not from this row's position.
+_parsed_items = []
 for line in items_txt.strip().splitlines():
     if line.startswith("//"):  # Skip comments
         continue
@@ -405,16 +406,18 @@ for line in items_txt.strip().splitlines():
     if len(parts) < 5:
         print(f"Malformed line: {line}")  # Debugging output
         continue
+    _parsed_items.append(parts)
 
+_item_ids = resolve_section("research_items", [parts[0].strip() for parts in _parsed_items])
+for parts, item_id in zip(_parsed_items, _item_ids):
     item_data_table.append(ValheimItem(
-        id=current_id,
+        id=item_id,
         item_name=parts[0].strip(),
         game_id=parts[1].strip(),
         count=int(parts[2].strip()),
         item_type=parts[3].strip(),
-            classification=classification_map[parts[4].strip()],
+        classification=classification_map[parts[4].strip()],
     ))
-    current_id += 1
 
 
 def create_items(world: "ValheimWorld"):

@@ -12,7 +12,7 @@ The community's officially maintained Valheim Archipelago Randomizer is [xyzzy44
 
 * **Research** — Crafting a research at the research bench is a location. The matching research item unlocks that line's gated recipes.
 * **Trophies** — Turning in a trophy is a location. Trophy rewards grant passive bonuses.
-* **Boss checks** (default on) — Each boss kill is a location in that boss's tier. The unique progression drop is removed from the corpse and can land on any check from tier 0 through that boss's tier. Receiving it spawns the item on that corpse. Sacrificial Blood is never randomized; Kall always drops it for the ending.
+* **Boss checks** (default on) — Each boss kill is a location in that boss's tier. The unique progression drop is removed from the corpse and can land on any check from tier 0 through that boss's tier. Receiving it grants one vanilla bundle to the player inventory. With boss checks off, the corpse still drops that item and it is not an Archipelago reward. Sacrificial Blood is never randomized; Kall always drops it for the ending.
 * **Gather / drop checks** (optional) — First pickup of listed materials can be a location.
 * **Deep North enchanted weapons** — Gold weapon bases unlock at Frost Foundry (T14). Frostfire and Thunderblood variants need a separate Enchanted research (T15), gated by the base line and the Intricate Key.
 
@@ -31,10 +31,10 @@ Default is Defeat Kall.
 
 * `default` — after every parent research is received
 * `tier` — after the items that open its tier are received
-* `materials` — once its materials have been found (tier doors removed)
-* `natural` — crafting opens the next recipes; receiving a parent leaves them closed (tier doors removed)
+* `materials` — once its materials have been found. The bench does not wait on tier door items. Region arrows stay.
+* `natural` — crafting opens the next recipes; receiving a parent leaves them closed. Region arrows stay.
 
-`sequential_tiers` can force door items into the previous tier in your own world. It has no effect for `materials` or `natural`.
+`sequential_tiers` places door items into the previous tier in your own world. It still does that for `materials` and `natural`. Those modes only change the research bench.
 
 ## Where is the options page?
 

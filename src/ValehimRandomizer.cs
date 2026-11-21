@@ -11,16 +11,17 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using Newtonsoft.Json.Linq;
+using ValheimApLogic;
 using static ValheimRandomizer;
-
+ 
 [BepInPlugin(ModGuid, ModName, ModVersion)]
 [BepInDependency(Jotunn.Main.ModGuid)]
 public class ValheimRandomizer : BaseUnityPlugin
 {
     public const string ModGuid = "com.samupo.randomizer";
     public const string ModName = "Randomizer";
-    public const string ModVersion = "0.3.1";
-
+    public const string ModVersion = "0.3.3";
+ 
     internal static BepInEx.Configuration.ConfigEntry<bool> randomized;
     internal static BepInEx.Configuration.ConfigEntry<string> archipelagoHostname;
     internal static BepInEx.Configuration.ConfigEntry<int> archipelagoPort;
@@ -31,7 +32,7 @@ public class ValheimRandomizer : BaseUnityPlugin
     internal static BepInEx.Configuration.ConfigEntry<string> researchAccess;
     internal static BepInEx.Configuration.ConfigEntry<string> trophyDrops;
     internal static BepInEx.Configuration.ConfigEntry<string> researchCosts;
-
+ 
     public enum ResearchAccessMode
     {
         Default = 0,
@@ -39,7 +40,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         Materials = 2,
         Natural = 3,
     }
-
+ 
     public static readonly string[] ResearchAccessLabels =
     {
         "Default: parent chain",
@@ -47,46 +48,56 @@ public class ValheimRandomizer : BaseUnityPlugin
         "Materials only",
         "Natural: craft opens the next",
     };
-
+ 
     public enum TrophyDropMode
     {
         Default = 0,
         Double = 1,
         Easy = 2,
     }
-
+ 
     public enum ResearchCostMode
     {
         Default = 0,
         Halved = 1,
     }
-
+ 
     public static readonly string[] TrophyDropLabels = { "Default", "x2", "Easy" };
     public static readonly string[] ResearchCostLabels = { "Default", "Halved" };
     public static TrophyDropMode ActiveTrophyDrops = TrophyDropMode.Default;
     public static ResearchCostMode ActiveResearchCosts = ResearchCostMode.Default;
-
-    // Items required to enter a tier. Keep this in sync with valheimapworld/Regions.py.
+ 
+    // Items required to enter a tier. This is the client copy of valheimapworld/Regions.py.
+    // tests/test_apworld.py fails if the two lists diverge. Region arrows stay in every research mode.
     static readonly Dictionary<int, string[]> TierDoorItems = new Dictionary<int, string[]>
     {
         { 1, new[] { "Crafting" } },
-        { 2, new[] { "Axes Tier 1", "Troll Armor", "Cooking Station", "Bed Tier 1", "Warmth Tier 1" } },
-        { 3, new[] { "Pickaxes Tier 1", "Boat Tier 1", "Smelter", "Forge" } },
+        { 2, new[] { "Axes Tier 1", "Warmth Tier 1", "Bed Tier 1", "Cooking Station" } },
+        { 3, new[] { "Pickaxes Tier 1", "Smelter", "Charcoal Kiln", "Forge" } },
         { 4, new[] { "Bronze" } },
         { 5, new[] { "Axes Tier 2" } },
-        { 6, new[] { "Pickaxes Tier 2" } },
-        { 7, new[] { "Pickaxes Tier 3", "Forge Upgrade 1", "Nails Tier 2" } },
+        { 6, new[] { "Pickaxes Tier 2", "Boat Tier 2" } },
+        { 7, new[] { "Pickaxes Tier 3" } },
         { 8, new[] { "Artisan Table", "Blast Furnace" } },
-        { 9, new[] { "Axes Tier 4", "Wisp Fountain", "Wisplight", "Forge Upgrade 2", "Forge Upgrade 3", "Spinning Wheel" } },
-        { 10, new[] { "Pickaxes Tier 4" } },
-        { 11, new[] { "Ceramic Plates", "Boat Tier 4", "Artisan Press" } },
-        { 12, new[] { "Siege", "Snow Shovel" } },
+        { 9, new[] { "Axes Tier 4", "Wisp Fountain", "Wisplight" } },
+        { 10, new[] { "Pickaxes Tier 4", "Sap Extractor", "Eitr Refinery", "Galdr Table" } },
+        { 11, new[] { "Boat Tier 4", "Ceramic Plates", "Artisan Press", "Black Forge" } },
+        { 12, new[] { "Black Forge Upgrade 3", "Siege" } },
+        { 13, new[] { "Snow Shovel" } },
+        { 14, new[] { "Frigid Kiln", "Frost Foundry", "Ember Charge" } },
+        { 15, new[] { "Intricate Key" } },
     };
-
+ 
+    public static bool ProgressionReady { get; private set; }
+    static bool researchLoaded;
+    static bool trophiesLoaded;
+    static bool dropsLoaded;
+    static int researchLoadAttempts;
+ 
     public class TrophyResearch
     {
         public enum TrophyBoost { Load, HP, Stamina, Eitr, HPRegen, StaminaRegen, Attack, Defense, Adrenaline, EitrRegen, Speed, SkillXp }
-
+ 
         public const int LoadPerTrophy = 10;
         public const int HpPerFood = 2;
         public const int StaminaPerFood = 2;
@@ -97,11 +108,11 @@ public class ValheimRandomizer : BaseUnityPlugin
         public const int DefensePercentPerTrophy = 5;
         public const int SpeedPercentPerTrophy = 5;
         public const int SkillXpPercentPerTrophy = 25;
-
+ 
         public string itemID;
         public string researchID;
         public TrophyBoost boost;
-
+ 
         public TrophyResearch(string itemID, string researchID, TrophyBoost boost)
         {
             this.itemID = itemID;
@@ -109,15 +120,15 @@ public class ValheimRandomizer : BaseUnityPlugin
             this.boost = boost;
         }
     }
-
-
+ 
+ 
     // Name for our custom piece/prefab that has a CraftingStation component
     public const string ResearchBenchPrefabName = "piece_randomizer_researchbench";
-
+ 
     public static CraftingStation ResearchBenchCraftingStation { get; set; }
-
+ 
     private Player currentPlayer = null;
-
+ 
     public static List<string> research = new List<string>();
     public static Dictionary<string, List<string>> recipeRequirements = new Dictionary<string, List<string>>();
     public static Dictionary<string, TrophyResearch> trophyByItemID = new Dictionary<string, TrophyResearch>();
@@ -130,13 +141,13 @@ public class ValheimRandomizer : BaseUnityPlugin
     public static ResearchAccessMode ActiveResearchAccess { get; private set; } = ResearchAccessMode.Default;
     public static bool SeedControlsAccess { get; private set; }
     public static bool SequentialTiers { get; private set; }
-
+ 
     public class DropCheck
     {
         public string itemID;
         public string locationName;
         public int amount;
-
+ 
         public DropCheck(string itemID, string locationName, int amount)
         {
             this.itemID = itemID;
@@ -144,7 +155,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             this.amount = amount;
         }
     }
-
+ 
     public class BossDrop
     {
         public string itemID;
@@ -154,7 +165,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         public string creature;
         public int amount;
         public bool onePerPlayer;
-
+ 
         public BossDrop(string itemID, string itemName, string locationName, string defeatKey, string creature, int amount, bool onePerPlayer)
         {
             this.itemID = itemID;
@@ -166,7 +177,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             this.onePerPlayer = onePerPlayer;
         }
     }
-
+ 
     public static Dictionary<string, DropCheck> dropByItemID = new Dictionary<string, DropCheck>(StringComparer.OrdinalIgnoreCase);
     public static Dictionary<string, DropCheck> dropByLocationName = new Dictionary<string, DropCheck>(StringComparer.OrdinalIgnoreCase);
     public static Dictionary<string, BossDrop> bossByItemName = new Dictionary<string, BossDrop>(StringComparer.Ordinal);
@@ -198,13 +209,13 @@ public class ValheimRandomizer : BaseUnityPlugin
     static float pityWait;
     static string pitySent;
     static Dictionary<string, TrophyPityInfo> pityChances;
-
+ 
     class TrophyPityInfo
     {
         public float baseChance;
         public readonly List<PityChance> chances = new List<PityChance>();
     }
-
+ 
     class PityChance
     {
         public float chance;
@@ -218,11 +229,11 @@ public class ValheimRandomizer : BaseUnityPlugin
     static readonly MethodInfo UpdatePiecesMethod = AccessTools.Method(typeof(Player), "UpdateAvailablePiecesList");
     static readonly AccessTools.FieldRef<Player, HashSet<string>> KnownMaterialsRef =
         AccessTools.FieldRefAccess<Player, HashSet<string>>("m_knownMaterial");
-
+ 
     public static BepInEx.Logging.ManualLogSource Log { get; private set; }
-
+ 
     float time = 0f;
-
+ 
     private void Awake()
     {
         randomized = Config.Bind("Archipelago", "Randomized", false, "Uses Archipelago?");
@@ -243,39 +254,40 @@ public class ValheimRandomizer : BaseUnityPlugin
         ActiveResearchAccess = ParseResearchAccess(researchAccess.Value);
         ActiveTrophyDrops = ParseTrophyDrops(trophyDrops.Value);
         ActiveResearchCosts = ParseResearchCosts(researchCosts.Value);
-
+ 
         ValheimRandomizer.Log = this.Logger;
         PrefabManager.OnVanillaPrefabsAvailable += DoOnPrefabsAvailable;
         new Harmony(ValheimRandomizer.ModGuid).PatchAll();
-
+ 
         var go = new GameObject("ValheimRandomizer.AP_UI");
         DontDestroyOnLoad(go);
         go.AddComponent<ArchipelagoUI>().Init();
     }
-
+ 
     static string DataFolder => Path.GetDirectoryName(typeof(ValheimRandomizer).Assembly.Location);
-
+ 
     void DoOnPrefabsAvailable()
     {
         PrefabManager.OnVanillaPrefabsAvailable -= DoOnPrefabsAvailable;
+        ResetProgressionLoad();
         RandomizerUtils.RegisterResearchBench();
         AddDropChecks();
         Invoke(nameof(AddResearchRecipes), 5.0f);
         Invoke(nameof(AddTrophyResearches), 5.5f);
         Invoke(nameof(CheckRecipesAndPiecesWithoutResearch), 10.0f);
     }
-
+ 
     private void Update()
     {
         ArchipelagoConnection.Pump();
-
+ 
         if (currentPlayer != Player.m_localPlayer)
         {
             if (currentPlayer != null && currentPlayer.GetInventory() != null)
             {
                 currentPlayer.GetInventory().m_onChanged -= OnInventoryChanged;
             }
-
+ 
             currentPlayer = Player.m_localPlayer;
             revealedForPlayer = false;
             dropCatchUpDone = false;
@@ -283,40 +295,43 @@ public class ValheimRandomizer : BaseUnityPlugin
             knownMaterialCount = MaterialCount(currentPlayer);
             sentDrops.Clear();
             craftedResearch.Clear();
-
+ 
             if (currentPlayer != null && currentPlayer.GetInventory() != null)
             {
                 currentPlayer.GetInventory().m_onChanged += OnInventoryChanged;
                 SnapshotDropCounts();
             }
+ 
+            // A new world has its own global keys. Re-read the Archipelago history against those keys.
+            ArchipelagoConnection.RequeueReceivedItems();
         }
-
+ 
         CatchUpHeldDrops();
-
+ 
         if (!revealedForPlayer && currentPlayer != null && research.Count > 0)
         {
             RevealEligibleRecipes();
             revealedForPlayer = true;
         }
-
+ 
         if (inventoryDirty)
             FlushInventoryChecks();
-
+ 
         time += Time.unscaledDeltaTime;
         if (time > 2.0f)
         {
             time = 0.0f;
             ArchipelagoConnection.TryFlushPendingLocations();
         }
-
+ 
         FlushTrophyPity();
     }
-
+ 
     public static void MarkTrophyPityDirty()
     {
         pityDirty = true;
     }
-
+ 
     // The countdown lives on this client. A stored 0 still drops on the next kill, so the published number is at least 1.
     void FlushTrophyPity()
     {
@@ -352,7 +367,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             Log?.LogWarning("Trophy pity publish failed: " + ex.Message);
         }
     }
-
+ 
     // The live counter is keyed by prefab hash plus the chance in thousandths, so each star level has its own count.
     static JObject SnapshotTrophyPity()
     {
@@ -409,7 +424,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return root;
     }
-
+ 
     static void EnsurePityChances()
     {
         if (pityChancesFrozen || trophyByItemID.Count == 0) return;
@@ -444,7 +459,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         pityChances = map;
         if (ZNetScene.instance != null) pityChancesFrozen = true;
     }
-
+ 
     static void AddPityChance(TrophyPityInfo info, string name, float chance, bool starred)
     {
         if (chance <= 0f || chance > 0.3f) return;
@@ -455,13 +470,31 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         info.chances.Add(new PityChance { chance = chance, key = key, starred = starred });
     }
-
+ 
     private void OnInventoryChanged()
     {
         if (scanningInventory) return;
+        NoteGatherIncreases();
         inventoryDirty = true;
     }
-
+ 
+    // Record a gather increase on the inventory callback. A later spend or slot move
+    // in the same frame cannot erase a count that already went up.
+    static void NoteGatherIncreases()
+    {
+        if (SuppressDropChecks) return;
+        if (!ArchipelagoConnection.DropChecksEnabled || dropByItemID.Count == 0) return;
+        var inventory = Player.m_localPlayer != null ? Player.m_localPlayer.GetInventory() : null;
+        if (inventory == null) return;
+        TallyUnsentDrops(inventory.GetAllItems());
+        foreach (var pair in dropCounts)
+        {
+            if (!GatherChecks.NoteIncrease(dropSeen, pair.Key, pair.Value, DropAlreadySent(pair.Key))) continue;
+            if (dropByItemID.TryGetValue(pair.Key, out var drop))
+                ArchipelagoConnection.SendDropLocation(drop.itemID, drop.locationName);
+        }
+    }
+ 
     void FlushInventoryChecks()
     {
         if (scanningInventory) return;
@@ -472,7 +505,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             inventoryDirty = false;
             return;
         }
-
+ 
         scanningInventory = true;
         inventoryDirty = false;
         revealSuppressed++;
@@ -485,7 +518,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             researchConsume.Clear();
             bool trackDrops = ArchipelagoConnection.DropChecksEnabled && !SuppressDropChecks && dropByItemID.Count > 0;
             if (trackDrops) dropCounts.Clear();
-
+ 
             if (items != null)
             {
                 for (int i = 0; i < items.Count; i++)
@@ -495,10 +528,10 @@ public class ValheimRandomizer : BaseUnityPlugin
                     if (prefab == null) continue;
                     string name = prefab.name;
                     if (string.IsNullOrEmpty(name)) continue;
-
+ 
                     if (ids.Contains(name))
                         researchConsume.Add(it);
-
+ 
                     if (trophyByItemID.TryGetValue(name, out var tr) && !AlreadyCrafted(tr.researchID))
                     {
                         craftedResearch.Add(tr.researchID);
@@ -506,7 +539,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                         reveal = true;
                         Log?.LogInfo($"Unlocked trophy research '{tr.researchID}' from '{name}'.");
                     }
-
+ 
                     if (trackDrops && dropByItemID.ContainsKey(name) && !DropAlreadySent(name))
                     {
                         dropCounts.TryGetValue(name, out int have);
@@ -514,7 +547,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                     }
                 }
             }
-
+ 
             for (int i = 0; i < researchConsume.Count; i++)
             {
                 var it = researchConsume[i];
@@ -531,10 +564,10 @@ public class ValheimRandomizer : BaseUnityPlugin
                 refreshBench = true;
             }
             researchConsume.Clear();
-
+ 
             if (trackDrops)
                 ApplyDropCounts();
-
+ 
             if (MaterialsGrew(player))
                 reveal = true;
         }
@@ -543,19 +576,19 @@ public class ValheimRandomizer : BaseUnityPlugin
             revealSuppressed--;
             scanningInventory = false;
         }
-
+ 
         if (reveal || revealQueued)
         {
             revealQueued = false;
             RevealEligibleRecipes();
         }
-
+ 
         // The craft list rebuilds inside the craft action, before this scan
         // records the research. Refresh once the local crafted set is updated.
         if (refreshBench)
             Patches.RefreshResearchBench();
     }
-
+ 
     static HashSet<string> ResearchIdSet()
     {
         if (researchIds == null || researchIdCount != research.Count)
@@ -565,7 +598,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return researchIds;
     }
-
+ 
     static bool AlreadyCrafted(string researchId)
     {
         if (string.IsNullOrEmpty(researchId)) return true;
@@ -574,7 +607,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         craftedResearch.Add(researchId);
         return true;
     }
-
+ 
     static bool DropAlreadySent(string itemID)
     {
         if (sentDrops.Contains(itemID)) return true;
@@ -585,13 +618,13 @@ public class ValheimRandomizer : BaseUnityPlugin
         sentDrops.Add(itemID);
         return true;
     }
-
+ 
     static int MaterialCount(Player player)
     {
         var materials = player != null ? KnownMaterialsRef(player) : null;
         return materials != null ? materials.Count : 0;
     }
-
+ 
     static bool MaterialsGrew(Player player)
     {
         int count = MaterialCount(player);
@@ -603,7 +636,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         knownMaterialCount = count;
         return true;
     }
-
+ 
     static void TallyUnsentDrops(List<ItemDrop.ItemData> items)
     {
         dropCounts.Clear();
@@ -619,28 +652,17 @@ public class ValheimRandomizer : BaseUnityPlugin
             dropCounts[name] = have + it.m_stack;
         }
     }
-
+ 
     static void ApplyDropCounts()
     {
         foreach (var pair in dropCounts)
         {
-            dropSeen.TryGetValue(pair.Key, out int seen);
-            if (pair.Value > seen && dropByItemID.TryGetValue(pair.Key, out var drop))
+            if (!GatherChecks.NoteIncrease(dropSeen, pair.Key, pair.Value, DropAlreadySent(pair.Key))) continue;
+            if (dropByItemID.TryGetValue(pair.Key, out var drop))
                 ArchipelagoConnection.SendDropLocation(drop.itemID, drop.locationName);
-            dropSeen[pair.Key] = pair.Value;
         }
-
-        dropMissing.Clear();
-        foreach (var pair in dropSeen)
-        {
-            if (dropCounts.ContainsKey(pair.Key) || DropAlreadySent(pair.Key)) continue;
-            dropMissing.Add(pair.Key);
-        }
-        for (int i = 0; i < dropMissing.Count; i++)
-            dropSeen[dropMissing[i]] = 0;
-        dropMissing.Clear();
     }
-
+ 
     public static void SnapshotDropCounts()
     {
         dropSeen.Clear();
@@ -650,13 +672,13 @@ public class ValheimRandomizer : BaseUnityPlugin
         foreach (var pair in dropCounts)
             dropSeen[pair.Key] = pair.Value;
     }
-
+ 
     void CatchUpHeldDrops()
     {
         if (dropCatchUpDone) return;
         if (currentPlayer == null || ZoneSystem.instance == null || dropByItemID.Count == 0) return;
         if (!ArchipelagoConnection.DropChecksEnabled || randomized == null || !randomized.Value) return;
-
+ 
         dropCatchUpDone = true;
         TallyUnsentDrops(currentPlayer.GetInventory().GetAllItems());
         int held = 0;
@@ -670,19 +692,22 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         Log?.LogInfo($"Drop catch-up: {held} listed stacks already held.");
     }
-
+ 
     public static bool IsBossDropPrefab(string prefabName)
     {
         return !string.IsNullOrEmpty(prefabName) && bossPrefabs.Contains(prefabName);
     }
-
-    // Vanilla boss uniques dontScale. Grant the table amount (no world resource rate).
-    // One-per-player drops (swamp key, wishbone) still multiply by the player count.
+ 
+    // One vanilla corpse bundle. onePerPlayer replaces the roll with the Valheim player
+    // count (CharacterDrop). It does not multiply the rolled amount, and Archipelago slot
+    // count is not an input. Returns a negative number when the live table is not ready.
     public static int BossGrantAmount(BossDrop boss)
     {
         int min = boss.amount;
         int max = boss.amount;
         bool onePerPlayer = boss.onePerPlayer;
+        bool dontScale = true;
+        GameObject prefab = null;
         var creature = ZNetScene.instance != null ? ZNetScene.instance.GetPrefab(boss.creature) : null;
         var table = creature != null ? creature.GetComponent<CharacterDrop>() : null;
         if (table != null && table.m_drops != null)
@@ -695,22 +720,29 @@ public class ValheimRandomizer : BaseUnityPlugin
                 min = drop.m_amountMin;
                 max = drop.m_amountMax;
                 onePerPlayer = drop.m_onePerPlayer;
+                dontScale = drop.m_dontScale;
+                prefab = drop.m_prefab;
                 break;
             }
         }
-        if (max < min) max = min;
-        int amount = min == max ? min : UnityEngine.Random.Range(min, max + 1);
-        amount = Mathf.Max(1, amount);
         if (onePerPlayer)
         {
-            int players = 1;
-            if (ZNet.instance != null)
-                players = Mathf.Max(1, ZNet.instance.GetNrOfPlayers());
-            amount *= players;
+            if (ZNet.instance == null) return -1;
+            return BossRewardMath.VanillaTotal(0, true, ZNet.instance.GetNrOfPlayers());
         }
-        return amount;
+        int roll;
+        if (!dontScale)
+        {
+            if (Game.instance == null || prefab == null) return -1;
+            roll = Game.instance.ScaleDrops(prefab, min, max);
+        }
+        else
+        {
+            roll = BossRewardMath.RollExclusive(min, max, (low, high) => UnityEngine.Random.Range(low, high));
+        }
+        return BossRewardMath.VanillaTotal(roll, false, 0);
     }
-
+ 
     public static void RememberBossDeath(Character character)
     {
         if (character == null || character.gameObject == null) return;
@@ -723,7 +755,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                 bossDeathPositions[boss.creature] = character.transform.position;
         }
     }
-
+ 
     static Vector3 ResolveBossDropPosition(string creature)
     {
         if (!string.IsNullOrEmpty(creature) && bossDeathPositions.TryGetValue(creature, out var pos))
@@ -732,8 +764,8 @@ public class ValheimRandomizer : BaseUnityPlugin
             return Player.m_localPlayer.transform.position;
         return Vector3.zero;
     }
-
-    // Spawn the progression reward on the boss corpse (fallback: local player).
+ 
+    // Ground spawn for a non-randomized caller. Randomized boss rewards do not use this path.
     public static bool GrantBossRewardOnGround(BossDrop boss, int amount)
     {
         var prefab = ObjectDB.instance != null ? ObjectDB.instance.GetItemPrefab(boss.itemID) : null;
@@ -742,14 +774,14 @@ public class ValheimRandomizer : BaseUnityPlugin
             Log?.LogWarning($"Could not spawn boss reward '{boss.itemID}' yet.");
             return false;
         }
-
+ 
         Vector3 origin = ResolveBossDropPosition(boss.creature);
         if (origin == Vector3.zero)
         {
             Log?.LogWarning($"No position to spawn boss reward '{boss.itemID}'.");
             return false;
         }
-
+ 
         int stacks = boss.onePerPlayer ? amount : 1;
         int perStack = boss.onePerPlayer ? 1 : amount;
         SuppressDropChecks = true;
@@ -779,7 +811,29 @@ public class ValheimRandomizer : BaseUnityPlugin
             SnapshotDropCounts();
         }
     }
-
+ 
+    static int FreeCapacity(Inventory inventory, ItemDrop.ItemData.SharedData shared, int maxStack)
+    {
+        int room = inventory.GetEmptySlots() * maxStack;
+        var items = inventory.GetAllItems();
+        for (int i = 0; i < items.Count; i++)
+        {
+            var it = items[i];
+            if (it?.m_shared == null || it.m_shared.m_name != shared.m_name) continue;
+            room += Math.Max(0, it.m_shared.m_maxStackSize - it.m_stack);
+        }
+        return room;
+    }
+    
+    static readonly Dictionary<string, float> refusalLogged = new Dictionary<string, float>();
+    static void LogRefusalOnce(string itemID, int amount)
+    {
+        float now = Time.unscaledTime;
+        if (refusalLogged.TryGetValue(itemID, out float last) && now - last < 30f) return;
+        refusalLogged[itemID] = now;
+        Log?.LogWarning($"Inventory full for {amount}x {itemID}. Keeping it queued.");
+    }
+ 
     public static bool GrantDropBundle(string itemID, int amount)
     {
         var player = Player.m_localPlayer;
@@ -789,15 +843,40 @@ public class ValheimRandomizer : BaseUnityPlugin
             Log?.LogWarning($"Could not grant drop bundle '{itemID}' yet.");
             return false;
         }
-
+ 
+        if (amount < 1) return false;
+        var shared = prefab.GetComponent<ItemDrop>()?.m_itemData?.m_shared;
+        if (shared == null)
+        {
+            Log?.LogWarning($"Could not grant drop bundle '{itemID}' yet.");
+            return false;
+        }
+ 
+        var inventory = player.GetInventory();
+        int maxStack = Math.Max(1, shared.m_maxStackSize);
+        if (FreeCapacity(inventory, shared, maxStack) < amount)
+        {
+            LogRefusalOnce(itemID, amount);
+            return false;
+        }
+ 
         SuppressDropChecks = true;
+        int stored = 0;
         try
         {
-            bool added = player.GetInventory().AddItem(prefab, amount);
-            if (!added)
+            int left = amount;
+            while (left > 0)
             {
-                Log?.LogWarning($"Inventory refused drop bundle {amount}x {itemID}.");
-                return false;
+                int chunk = Math.Min(left, maxStack);
+                if (!inventory.AddItem(prefab, chunk))
+                {
+                    LogRefusalOnce(itemID, amount);
+                    if (stored == 0) return false;
+                    Log?.LogError($"Drop bundle {itemID} stored {stored} of {amount}. Not granting the rest again.");
+                    return true;
+                }
+                stored += chunk;
+                left -= chunk;
             }
             Log?.LogInfo($"Granted drop bundle {amount}x {itemID}.");
             return true;
@@ -808,7 +887,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             SnapshotDropCounts();
         }
     }
-
+ 
     public static void DoUnlockResearch(string research)
     {
         bool first = ZoneSystem.instance != null && !ZoneSystem.instance.GetGlobalKey(research);
@@ -818,12 +897,12 @@ public class ValheimRandomizer : BaseUnityPlugin
         if (first)
             AnnounceTrophy(research);
     }
-
+ 
     static void AnnounceTrophy(string research)
     {
         if (string.IsNullOrEmpty(research) || !trophyByResearchID.TryGetValue(research, out var tr)) return;
         if (MessageHud.instance == null) return;
-
+ 
         string name = TrophyNameToken(tr.itemID);
         string bonus = TrophyBonusPhrase(tr.boost);
         MessageHud.instance.ShowMessage(
@@ -832,13 +911,13 @@ public class ValheimRandomizer : BaseUnityPlugin
             0,
             TrophyIcon(tr.itemID));
     }
-
+ 
     static string TrophyNameToken(string itemID)
     {
         string token = UnlockLabel(itemID);
         return string.IsNullOrEmpty(token) ? itemID : token;
     }
-
+ 
     static Sprite TrophyIcon(string itemID)
     {
         var go = PrefabManager.Instance != null ? PrefabManager.Instance.GetPrefab(itemID) : null;
@@ -849,7 +928,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         if (variant < 0 || variant >= shared.m_icons.Length) variant = 0;
         return shared.m_icons[variant];
     }
-
+ 
     public static string TrophyBonusPhrase(TrophyResearch.TrophyBoost boost)
     {
         switch (boost)
@@ -882,7 +961,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                 return "";
         }
     }
-
+ 
     public static string BuildTrophyStatusBlock()
     {
         int foods = ActiveFoodCount();
@@ -909,7 +988,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return builder.ToString();
     }
-
+ 
     static void AddTrophyStatusLine(List<string> lines, TrophyResearch.TrophyBoost boost, int foods)
     {
         int tiers = GetBoost(boost);
@@ -918,7 +997,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         if (string.IsNullOrEmpty(value)) return;
         lines.Add(TrophyStatusLabel(boost) + ": <color=orange>" + value + "</color>");
     }
-
+ 
     static string TrophyStatusLabel(TrophyResearch.TrophyBoost boost)
     {
         switch (boost)
@@ -938,7 +1017,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             default: return "";
         }
     }
-
+ 
     static string TrophyStatusValue(TrophyResearch.TrophyBoost boost, int tiers, int foods)
     {
         switch (boost)
@@ -969,7 +1048,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                 return "";
         }
     }
-
+ 
     static string PerFood(int perFood, int foods, bool percent)
     {
         string rate = "+" + perFood + (percent ? "% per food" : " per food");
@@ -977,7 +1056,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         int now = perFood * foods;
         return rate + " (+" + now + (percent ? "%)" : ")");
     }
-
+ 
     static int ActiveFoodCount()
     {
         var player = Player.m_localPlayer;
@@ -985,7 +1064,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         var foods = player.GetFoods();
         return foods != null ? foods.Count : 0;
     }
-
+ 
     public static bool ResearchRequirementsMet(string itemID)
     {
         foreach (string required in GetResearchRequired(itemID))
@@ -994,7 +1073,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return true;
     }
-
+ 
     public static void RevealEligibleRecipes()
     {
         if (revealSuppressed > 0)
@@ -1004,14 +1083,14 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         RevealEligibleRecipesNow();
     }
-
+ 
     static void RevealEligibleRecipesNow()
     {
         var player = Player.m_localPlayer;
         if (player == null || ObjectDB.instance == null) return;
         var known = KnownRecipesRef(player);
         if (known == null) return;
-
+ 
         bool anyMaterial = anyResearchMaterial != null && anyResearchMaterial.Value;
         if (ObjectDB.instance.m_recipes != null)
         {
@@ -1047,7 +1126,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                     known.Add(shown);
             }
         }
-
+ 
         bool pieceAdded = false;
         if (ZNetScene.instance != null)
         {
@@ -1064,11 +1143,11 @@ public class ValheimRandomizer : BaseUnityPlugin
                 pieceAdded = true;
             }
         }
-
+ 
         if (pieceAdded && UpdatePiecesMethod != null)
             UpdatePiecesMethod.Invoke(player, null);
     }
-
+ 
     static bool ResearchMaterialsMatch(Player player, Recipe recipe, bool anyMaterial)
     {
         var materials = KnownMaterialsRef(player);
@@ -1086,24 +1165,24 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return !sawCost || !anyMaterial;
     }
-
+ 
     public static void SetAnyResearchMaterial(bool any)
     {
         if (anyResearchMaterial != null && anyResearchMaterial.Value != any)
             anyResearchMaterial.Value = any;
         RevealEligibleRecipes();
     }
-
+ 
     public static bool ShowResearchUnlocks =>
         showResearchUnlocks != null && showResearchUnlocks.Value;
-
+ 
     public static void SetShowResearchUnlocks(bool show)
     {
         if (showResearchUnlocks != null && showResearchUnlocks.Value != show)
             showResearchUnlocks.Value = show;
         RefreshResearchDescriptions();
     }
-
+ 
     public static string BuildResearchDescription(string researchId)
     {
         researchBody.TryGetValue(researchId, out var body);
@@ -1118,7 +1197,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             labels[i] = UnlockLabel(ids[i]);
         return body + "\r\n\r\nUnlocks: " + string.Join(", ", labels);
     }
-
+ 
     static string UnlockLabel(string prefabId)
     {
         var go = PrefabManager.Instance != null ? PrefabManager.Instance.GetPrefab(prefabId) : null;
@@ -1137,7 +1216,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return prefabId;
     }
-
+ 
     public static void RefreshResearchDescriptions()
     {
         if (PrefabManager.Instance == null) return;
@@ -1149,7 +1228,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             drop.m_itemData.m_shared.m_description = BuildResearchDescription(id);
         }
     }
-
+ 
     public static void SetLocalResearchAccess(ResearchAccessMode mode)
     {
         if (researchAccess != null)
@@ -1158,7 +1237,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         ActiveResearchAccess = mode;
         RevealEligibleRecipes();
     }
-
+ 
     public static void ApplySeedRules(int? access, bool sequential)
     {
         SeedControlsAccess = access.HasValue;
@@ -1173,20 +1252,20 @@ public class ValheimRandomizer : BaseUnityPlugin
             + (SeedControlsAccess ? " from seed." : " from local config.")
             + " Sequential tiers " + (SequentialTiers ? "on." : "off."));
     }
-
+ 
     public static void ClearSeedRules()
     {
         SeedControlsAccess = false;
         SequentialTiers = false;
         ActiveResearchAccess = ParseResearchAccess(researchAccess?.Value);
     }
-
+ 
     public static int ScaleResearchCost(int amount)
     {
         if (amount <= 1 || ActiveResearchCosts != ResearchCostMode.Halved) return amount;
         return Math.Max(1, (amount + 1) / 2);
     }
-
+ 
     public static void ApplyResearchCostMode()
     {
         if (ObjectDB.instance == null || ObjectDB.instance.m_recipes == null) return;
@@ -1202,7 +1281,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             }
         }
     }
-
+ 
     public static void SetTrophyDrops(TrophyDropMode mode)
     {
         ActiveTrophyDrops = mode;
@@ -1212,7 +1291,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         pityChances = null;
         MarkTrophyPityDirty();
     }
-
+ 
     public static void SetResearchCosts(ResearchCostMode mode)
     {
         ActiveResearchCosts = mode;
@@ -1221,7 +1300,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         ApplyResearchCostMode();
         ArchipelagoConnection.PublishResearchCosts();
     }
-
+ 
     public static TrophyDropMode ParseTrophyDrops(string text)
     {
         if (string.IsNullOrWhiteSpace(text)) return TrophyDropMode.Default;
@@ -1238,7 +1317,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                 return TrophyDropMode.Default;
         }
     }
-
+ 
     public static ResearchCostMode ParseResearchCosts(string text)
     {
         if (string.IsNullOrWhiteSpace(text)) return ResearchCostMode.Default;
@@ -1252,7 +1331,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                 return ResearchCostMode.Default;
         }
     }
-
+ 
     static string TrophyDropName(TrophyDropMode mode)
     {
         switch (mode)
@@ -1262,7 +1341,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             default: return "default";
         }
     }
-
+ 
     public static ResearchAccessMode ParseResearchAccess(string text)
     {
         if (string.IsNullOrWhiteSpace(text)) return ResearchAccessMode.Default;
@@ -1282,7 +1361,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                 return ResearchAccessMode.Default;
         }
     }
-
+ 
     static string ResearchAccessName(ResearchAccessMode mode)
     {
         switch (mode)
@@ -1293,7 +1372,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             default: return "default";
         }
     }
-
+ 
     public static bool ResearchRecipeVisible(string researchId)
     {
         switch (ActiveResearchAccess)
@@ -1312,13 +1391,13 @@ public class ValheimRandomizer : BaseUnityPlugin
                 return ResearchRequirementsMet(researchId);
         }
     }
-
+ 
     static int TierOf(string researchId)
     {
         if (researchId != null && researchTier.TryGetValue(researchId, out int tier)) return tier;
         return 0;
     }
-
+ 
     static bool TierIsOpen(int tier)
     {
         if (tier <= 0) return true;
@@ -1330,7 +1409,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return true;
     }
-
+ 
     public static void UnlockResearch(string research)
     {
         ZoneSystem.instance.SetGlobalKey(research + "_crafted");
@@ -1343,12 +1422,12 @@ public class ValheimRandomizer : BaseUnityPlugin
             DoUnlockResearch(research);
         }
     }
-
+ 
     public static bool IsResearchUnlocked(string research)
     {
         return ZoneSystem.instance.GetGlobalKey(research);
     }
-
+ 
     public static bool IsResearchCrafted(string research)
     {
         // The crafted key is a routed RPC, so it is not visible in the same craft.
@@ -1356,7 +1435,7 @@ public class ValheimRandomizer : BaseUnityPlugin
         if (!string.IsNullOrEmpty(research) && craftedResearch.Contains(research)) return true;
         return ZoneSystem.instance.GetGlobalKey(research + "_crafted");
     }
-
+ 
     public static void AddResearchRequirement(string itemID, params string[] researches)
     {
         if (!recipeRequirements.ContainsKey(itemID))
@@ -1368,13 +1447,13 @@ public class ValheimRandomizer : BaseUnityPlugin
             recipeRequirements[itemID].Add(research);
         }
     }
-
+ 
     public static IEnumerable<string> GetResearchRequired(string itemID)
     {
         if (!recipeRequirements.ContainsKey(itemID)) yield break;
         foreach (string research in recipeRequirements[itemID]) yield return research;
     }
-
+ 
     public static int GetBoost(TrophyResearch.TrophyBoost boost)
     {
         int total = 0;
@@ -1386,48 +1465,101 @@ public class ValheimRandomizer : BaseUnityPlugin
         }
         return total;
     }
-
+ 
+    public static void ResetProgressionLoad()
+    {
+        ProgressionReady = false;
+        researchLoaded = false;
+        trophiesLoaded = false;
+        dropsLoaded = false;
+        researchLoadAttempts = 0;
+        research.Clear();
+        recipeRequirements.Clear();
+        trophyByItemID.Clear();
+        trophyByResearchID.Clear();
+        researchToArchipelago.Clear();
+        archipelagoToResearch.Clear();
+        researchTier.Clear();
+        researchBody.Clear();
+        researchUnlockPrefabs.Clear();
+        researchBaseCosts.Clear();
+        dropByItemID.Clear();
+        dropByLocationName.Clear();
+        bossByItemName.Clear();
+        bossByDefeatKey.Clear();
+        BossDrops.Clear();
+        bossPrefabs.Clear();
+        researchIds = null;
+        researchIdCount = -1;
+    }
+ 
+    static void PublishProgressionReady()
+    {
+        bool ready = researchLoaded && trophiesLoaded && dropsLoaded;
+        if (ready && !ProgressionReady)
+            Log?.LogInfo("Archipelago progression data is ready.");
+        ProgressionReady = ready;
+    }
+ 
     private void AddResearchRecipes()
     {
         Logger.LogInfo("Trying to add recipes");
+        researchLoaded = false;
         if (!ResearchBenchCraftingStation)
         {
-            Logger.LogWarning("AddResearchRecipes: Research bench prefab missing; skipping.");
+            researchLoadAttempts++;
+            PublishProgressionReady();
+            if (researchLoadAttempts < 8)
+            {
+                Logger.LogWarning("AddResearchRecipes: Research bench prefab missing; retrying.");
+                Invoke(nameof(AddResearchRecipes), 2f);
+            }
+            else
+            {
+                Logger.LogError("AddResearchRecipes: Research bench prefab missing. Progression data was not loaded.");
+            }
             return;
         }
-
+ 
         try
         {
             string file = Path.Combine(DataFolder, "research.tsv");
-
-            // Seed a tiny example if missing
             if (!File.Exists(file))
             {
-                var seed = string.Join("\n", new[]
-                {
-                "# iconFromItemPrefab\tresearchItemID\tdisplayName\tdescription\trequiredResearchIDs\tresearchRecipeRequirements\tgatedItemPrefabIDs",
-                "Hammer\tresearchWorkbench\tCrafting\tAllows basic crafting\t\tWood:5\tpiece_workbench",
-                "Bow\tresearchBowTier1\tBows Tier 1\tAllows to craft bows and arrows\tresearchWorkbench\tWood:5|LeatherScraps:2\tBow|ArrowWood"
-            });
-                File.WriteAllText(file, seed);
-                Logger.LogInfo($"Created starter research file at: {file}");
+                Logger.LogError("research.tsv is missing at " + file + ". Progression data was not loaded.");
+                return;
             }
             Logger.LogInfo("File found at " + file);
-
-            int added = 0;
+ 
+            var rows = new List<string[]>();
+            var seen = new HashSet<string>(StringComparer.Ordinal);
+            int lineNumber = 0;
+            int errors = 0;
             foreach (var raw in File.ReadAllLines(file))
             {
-                var line = raw.Trim();
-                if (line.Length == 0 || line.StartsWith("#")) continue;
-
-                // Split on TABs (no escaping needed if you avoid tabs in text)
-                var cols = line.Split('\t');
-                if (cols.Length < 7)
+                lineNumber++;
+                if (TsvValidation.IsCommentOrBlank(raw)) continue;
+                var cols = raw.Trim().Split('\t');
+                string problem = TsvValidation.ResearchError(cols);
+                if (problem == null && !seen.Add(cols[1]))
+                    problem = "duplicate research id '" + cols[1] + "'";
+                if (problem != null)
                 {
-                    Logger.LogWarning($"Skipping line (needs 7 columns): {line}");
+                    errors++;
+                    Logger.LogError($"research.tsv line {lineNumber}: {problem}");
                     continue;
                 }
-
+                rows.Add(cols);
+            }
+            if (errors > 0 || rows.Count == 0)
+            {
+                Logger.LogError($"research.tsv was not loaded ({errors} malformed row(s), {rows.Count} valid).");
+                return;
+            }
+ 
+            int added = 0;
+            foreach (var cols in rows)
+            {
                 string iconSrc = cols[0];
                 string rid = cols[1];
                 string name = cols[2];
@@ -1435,21 +1567,15 @@ public class ValheimRandomizer : BaseUnityPlugin
                 string prereqStr = cols[4];
                 string costsStr = cols[5];
                 string gatedStr = cols[6];
-
-                if (string.IsNullOrWhiteSpace(rid) || string.IsNullOrWhiteSpace(name))
-                {
-                    Logger.LogWarning($"Skipping line (missing id/name): {line}");
-                    continue;
-                }
-
+ 
                 int tier = 0;
                 if (cols.Length > 7)
                     int.TryParse(cols[7], out tier);
                 researchTier[rid] = tier;
-
+ 
                 string[] prereqs = SplitPipes(prereqStr);
                 string[] gated = SplitPipes(gatedStr);
-
+ 
                 var reqs = new List<RequirementConfig>();
                 var bases = new List<int>();
                 foreach (var tok in SplitPipes(costsStr))
@@ -1462,7 +1588,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                     }
                 }
                 researchBaseCosts[rid] = bases.ToArray();
-
+ 
                 RandomizerUtils.CreateResearch(
                     string.IsNullOrWhiteSpace(iconSrc) ? "Amber" : iconSrc,
                     rid,
@@ -1472,19 +1598,25 @@ public class ValheimRandomizer : BaseUnityPlugin
                     reqs.ToArray(),
                     gated
                 );
-
+ 
                 added++;
             }
-
+ 
             Logger.LogInfo($"Loaded and registered {added} research definition(s) from {file}.");
+            researchLoaded = true;
             ApplyResearchCostMode();
             RevealEligibleRecipes();
         }
         catch (Exception ex)
         {
+            researchLoaded = false;
             Logger.LogError($"AddResearchRecipes (from TSV) failed: {ex}");
         }
-
+        finally
+        {
+            PublishProgressionReady();
+        }
+ 
         // local helpers — tiny & clear
         string[] SplitPipes(string s)
         {
@@ -1497,7 +1629,7 @@ public class ValheimRandomizer : BaseUnityPlugin
             return kept.ToArray();
         }
     }
-
+ 
     private void CheckRecipesAndPiecesWithoutResearch()
     {
         try
@@ -1505,10 +1637,10 @@ public class ValheimRandomizer : BaseUnityPlugin
             string pluginFolder = DataFolder;
             string recipesFile = System.IO.Path.Combine(pluginFolder, "RecipesWithoutResearch.txt");
             string piecesFile = System.IO.Path.Combine(pluginFolder, "PiecesWithoutResearch.txt");
-
+ 
             var recipesWithoutResearch = new List<string>();
             var piecesWithoutResearch = new List<string>();
-
+ 
             // --- Recipes: scan ObjectDB recipes
             if (ObjectDB.instance != null && ObjectDB.instance.m_recipes != null)
             {
@@ -1517,7 +1649,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                     if (recipe == null || recipe.m_item == null || !recipe.m_enabled) continue;
                     string id = recipe.m_item.name;
                     if (string.IsNullOrEmpty(id)) continue;
-
+ 
                     if (!ValheimRandomizer.recipeRequirements.ContainsKey(id))
                     {
                         string toAdd = id;
@@ -1529,7 +1661,7 @@ public class ValheimRandomizer : BaseUnityPlugin
                     }
                 }
             }
-
+ 
             // --- Pieces: gather all buildable pieces from every PieceTable
             var buildablePieces = new HashSet<Piece>();
             var allTables = Resources.FindObjectsOfTypeAll<PieceTable>();
@@ -1541,21 +1673,21 @@ public class ValheimRandomizer : BaseUnityPlugin
                     if (p != null && p.GetComponent<Piece>() != null) buildablePieces.Add(p.GetComponent<Piece>());
                 }
             }
-
+ 
             foreach (var piece in buildablePieces)
             {
                 string id = piece?.name;
                 if (string.IsNullOrEmpty(id)) continue;
-
+ 
                 if (!ValheimRandomizer.recipeRequirements.ContainsKey(id))
                 {
                     piecesWithoutResearch.Add(id);
                 }
             }
-
+ 
             System.IO.File.WriteAllLines(recipesFile, recipesWithoutResearch);
             System.IO.File.WriteAllLines(piecesFile, piecesWithoutResearch);
-
+ 
             Logger.LogInfo($"Exported {recipesWithoutResearch.Count} recipes and {piecesWithoutResearch.Count} pieces without research.");
         }
         catch (Exception ex)
@@ -1563,71 +1695,104 @@ public class ValheimRandomizer : BaseUnityPlugin
             Logger.LogError($"Error while exporting ungated recipes/pieces: {ex}");
         }
     }
-
+ 
     private void AddTrophyResearches()
     {
+        trophiesLoaded = false;
         try
         {
             string file = Path.Combine(DataFolder, "trophies.tsv");
-            if (!System.IO.File.Exists(file))
+            if (!File.Exists(file))
             {
-                Logger.LogWarning($"Trophy research file not found at {file}. Skipping trophy researches.");
+                Logger.LogError($"trophies.tsv is missing at {file}. Progression data was not loaded.");
                 return;
             }
-
-            int added = 0;
-
-            foreach (var raw in System.IO.File.ReadAllLines(file))
+ 
+            var rows = new List<string[]>();
+            int lineNumber = 0;
+            int errors = 0;
+            foreach (var raw in File.ReadAllLines(file))
             {
-                var line = raw.Trim();
-                if (line.Length == 0 || line.StartsWith("#")) continue;
-
-                var cols = line.Split('\t');
-                if (cols.Length < 4)
+                lineNumber++;
+                if (TsvValidation.IsCommentOrBlank(raw)) continue;
+                var cols = raw.Trim().Split('\t');
+                if (TsvValidation.IsTrophyHeader(cols)) continue;
+                string problem = TsvValidation.TrophyError(cols);
+                if (problem != null)
                 {
-                    Logger.LogWarning($"Skipping trophy line (needs 4 columns): {line}");
+                    errors++;
+                    Logger.LogError($"trophies.tsv line {lineNumber}: {problem}");
                     continue;
                 }
-
-                string itemID = cols[0];
-                string researchID = cols[1];
-                string boostStr = cols[2];
-
-                if (string.IsNullOrWhiteSpace(itemID) || string.IsNullOrWhiteSpace(researchID))
+                rows.Add(cols);
+            }
+            if (errors > 0 || rows.Count == 0)
+            {
+                Logger.LogError($"trophies.tsv was not loaded ({errors} malformed row(s), {rows.Count} valid).");
+                return;
+            }
+ 
+            int added = 0;
+            foreach (var cols in rows)
+            {
+                if (!TryParseBoost(cols[2], out TrophyResearch.TrophyBoost boost))
                 {
-                    Logger.LogWarning($"Skipping trophy line (missing itemID/researchID): {line}");
-                    continue;
+                    Logger.LogError($"trophies.tsv boost '{cols[2]}' for '{cols[0]}' is not a known boost.");
+                    return;
                 }
-
-                if (!TryParseBoost(boostStr, out TrophyResearch.TrophyBoost boost))
-                {
-                    Logger.LogWarning($"Unknown boost type '{boostStr}' for '{itemID}'. Defaulting to Load.");
-                    boost = TrophyResearch.TrophyBoost.Load;
-                }
-
-                RandomizerUtils.CreateTrophyResearch(itemID, researchID, boost);
+                RandomizerUtils.CreateTrophyResearch(cols[0], cols[1], boost);
                 added++;
             }
-
+ 
+            trophiesLoaded = true;
             Logger.LogInfo($"Loaded and registered {added} trophy research definition(s) from {file}.");
         }
         catch (Exception ex)
         {
+            trophiesLoaded = false;
             Logger.LogError($"AddTrophyResearches (from TSV) failed: {ex}");
         }
+        finally
+        {
+            PublishProgressionReady();
+        }
     }
-
+ 
     private void AddDropChecks()
     {
+        dropsLoaded = false;
         try
         {
             string file = Path.Combine(DataFolder, "drops.tsv");
             if (!File.Exists(file))
             {
-                Logger.LogWarning($"Drop check file not found at {file}.");
+                Logger.LogError($"drops.tsv is missing at {file}. Progression data was not loaded.");
                 return;
             }
-
+ 
+            var rows = new List<string[]>();
+            int lineNumber = 0;
+            int errors = 0;
+            foreach (var raw in File.ReadAllLines(file))
+            {
+                lineNumber++;
+                if (TsvValidation.IsCommentOrBlank(raw)) continue;
+                var cols = raw.Trim().Split('\t');
+                string problem = TsvValidation.DropError(cols);
+                if (problem != null)
+                {
+                    errors++;
+                    Logger.LogError($"drops.tsv line {lineNumber}: {problem}");
+                    continue;
+                }
+                rows.Add(cols);
+            }
+            if (errors > 0 || rows.Count == 0)
+            {
+                Logger.LogError($"drops.tsv was not loaded ({errors} malformed row(s), {rows.Count} valid).");
+                return;
+            }
+ 
             dropByItemID.Clear();
             dropByLocationName.Clear();
             bossByItemName.Clear();
@@ -1636,22 +1801,12 @@ public class ValheimRandomizer : BaseUnityPlugin
             bossPrefabs.Clear();
             int added = 0;
             int bosses = 0;
-            foreach (var raw in File.ReadAllLines(file))
+            foreach (var cols in rows)
             {
-                var line = raw.Trim();
-                if (line.Length == 0 || line.StartsWith("#")) continue;
-                var cols = line.Split('\t');
-                if (cols.Length < 4)
-                {
-                    Logger.LogWarning($"Skipping drop line (needs 4 columns): {line}");
-                    continue;
-                }
-
                 string itemID = cols[0];
                 string display = cols[1];
-                if (!int.TryParse(cols[3], out int amount) || amount < 1) amount = 1;
-                if (string.IsNullOrWhiteSpace(itemID) || string.IsNullOrWhiteSpace(display)) continue;
-
+                int amount = int.Parse(cols[3], System.Globalization.CultureInfo.InvariantCulture);
+ 
                 if (cols.Length >= 9 && cols[4] == "boss")
                 {
                     bool onePerPlayer = cols[8] == "1";
@@ -1663,24 +1818,31 @@ public class ValheimRandomizer : BaseUnityPlugin
                     bosses++;
                     continue;
                 }
-
+ 
                 var drop = new DropCheck(itemID, "Gather: " + display, amount);
                 dropByItemID[itemID] = drop;
                 dropByLocationName[drop.locationName] = drop;
                 added++;
             }
-
+ 
+            dropsLoaded = true;
             SnapshotDropCounts();
             Logger.LogInfo($"Loaded {added} drop check(s) and {bosses} boss drop(s) from {file}.");
         }
         catch (Exception ex)
         {
+            dropsLoaded = false;
             Logger.LogError($"AddDropChecks failed: {ex}");
         }
+        finally
+        {
+            PublishProgressionReady();
+        }
     }
-
+ 
     static bool TryParseBoost(string s, out TrophyResearch.TrophyBoost boost)
     {
         return Enum.TryParse(s, out boost);
     }
 }
+ 

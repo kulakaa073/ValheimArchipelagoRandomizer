@@ -13,8 +13,8 @@ class ResearchAccess(Choice):
     """How a research recipe appears on the bench.
     default: the recipe appears after you receive every parent research.
     tier: the recipe appears after you receive the items that open its tier.
-    materials: the recipe appears once you have found its materials. Tier doors are removed.
-    natural: crafting a research opens the next recipes. Receiving a parent leaves those recipes closed. The received item grants the gear. Tier doors are removed."""
+    materials: the recipe appears once you have found its materials. The bench does not wait on tier door items. Region arrows stay.
+    natural: crafting a research opens the next recipes. Receiving a parent leaves those recipes closed. The received item grants the gear. Region arrows stay."""
     display_name = "Research Access"
     option_default = 0
     option_tier = 1
@@ -31,10 +31,11 @@ class SequentialTiers(Toggle):
 
 
 class BossChecks(Toggle):
-    """Each boss kill is a check. The unique progression drop is removed from the corpse
-    and spawned back on that corpse at the vanilla amount when received.
+    """Each boss kill is a check. The unique progression drop is removed from the corpse.
+    When that item is received it is granted to the player inventory as one vanilla bundle.
     That drop can be placed on any check from tier 0 through the boss's own tier.
-    The swamp key and the wishbone still follow the player count.
+    One-per-player rewards (swamp key, wishbone) use the vanilla player-count total once.
+    They are not multiplied again, and they are not granted once per Archipelago slot.
     Sacrificial Blood is never an Archipelago item; it always drops from Kall for the ending.
     Off: the corpse still drops the item, and only the goal is a location."""
     display_name = "Boss Checks"

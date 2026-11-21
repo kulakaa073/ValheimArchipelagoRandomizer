@@ -11,102 +11,120 @@
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
   </PropertyGroup>
+  <PropertyGroup>
+    <ValheimDir Condition="'$(ValheimDir)' == ''">d:\SteamLibrary\steamapps\common\Valheim</ValheimDir>
+    <ValheimManaged Condition="'$(ValheimManaged)' == ''">$(ValheimDir)\valheim_Data\Managed</ValheimManaged>
+    <BepInExCore Condition="'$(BepInExCore)' == ''">C:\Users\Shade\AppData\Roaming\com.kesomannen.gale\valheim\profiles\sushr\BepInEx\core</BepInExCore>
+    <JotunnDll Condition="'$(JotunnDll)' == ''">C:\Users\Shade\AppData\Roaming\com.kesomannen.gale\valheim\profiles\sushr\BepInEx\plugins\ValheimModding-Jotunn\Jotunn.dll</JotunnDll>
+    <NewtonsoftJsonDll Condition="'$(NewtonsoftJsonDll)' == ''">C:\Users\Shade\AppData\Roaming\com.kesomannen.gale\valheim\profiles\sushr\BepInEx\plugins\ValheimModding-JsonDotNET\Newtonsoft.Json.dll</NewtonsoftJsonDll>
+    <ArchipelagoDll Condition="'$(ArchipelagoDll)' == ''">$(MSBuildThisFileDirectory)lib\Archipelago.MultiClient.Net.dll</ArchipelagoDll>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Remove="tools/**" />
+    <Compile Remove="tests/**" />
   </ItemGroup>
   <ItemGroup>
     <AssemblyMetadata Include="AI_Assisted_Creation" Value="This assembly was partially created with the assistance of generative AI in Cursor." />
     <AssemblyMetadata Include="AI_Model_Vendor" Value="xAI" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="UnityEngine.AccessibilityModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.AIModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AIModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.AMDModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AMDModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.AndroidJNIModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.AnimationModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AnimationModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ARModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ARModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.AssetBundleModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.AudioModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ClothModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ClothModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ClusterInputModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ClusterRendererModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ContentLoadModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ContentLoadModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.CoreModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.CrashReportingModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.DirectorModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.DirectorModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.DSPGraphModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.GameCenterModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.GIModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.GIModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.GraphicsStateCollectionSerializerModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.GraphicsStateCollectionSerializerModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.GridModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.GridModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.HierarchyCoreModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.HierarchyCoreModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.HotReloadModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.IdentifiersModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.IdentifiersModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.IMGUIModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.InputForUIModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.InputForUIModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.InputModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.InputModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.InsightsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.InsightsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.JSONSerializeModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.LocalizationModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.MarshallingModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.MarshallingModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.MultiplayerModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.MultiplayerModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.NVIDIAModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ParticleSystemModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.PerformanceReportingModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.Physics2DModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.PhysicsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.PropertiesModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.PropertiesModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ScreenCaptureModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.ShaderVariantAnalyticsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.ShaderVariantAnalyticsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.SharedInternalsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.SpatialTracking"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.SpatialTracking.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.SpriteMaskModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.SpriteShapeModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.StreamingModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.StreamingModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.SubstanceModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.SubsystemsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.TerrainModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.TerrainModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.TerrainPhysicsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.TextCoreFontEngineModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.TextCoreTextEngineModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.TilemapModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.TilemapModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.TLSModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.TLSModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UI"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UIElementsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UIModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UmbraModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UmbraModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsCommonModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityAnalyticsModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityConnectModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityConsentModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityConsentModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityCurlModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityTestProtocolModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityWebRequestAudioModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityWebRequestModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityWebRequestTextureModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UnityWebRequestWWWModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.VehiclesModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.VFXModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.VFXModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.VideoModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.VideoModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.VirtualTexturingModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.VRModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.VRModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.WindModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.WindModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.XR.LegacyInputHelpers"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.XR.LegacyInputHelpers.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.XRModule"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.XRModule.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="assembly_valheim"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_valheim.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="assembly_utils"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\assembly_utils.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="Unity.TextMeshPro"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="UnityEngine.UI"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim_Data\Managed\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="BepInEx"><HintPath>C:\Users\Shade\AppData\Roaming\com.kesomannen.gale\valheim\profiles\sushr\BepInEx\core\BepInEx.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="0Harmony"><HintPath>C:\Users\Shade\AppData\Roaming\com.kesomannen.gale\valheim\profiles\sushr\BepInEx\core\0Harmony.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="Jotunn"><HintPath>C:\Users\Shade\AppData\Roaming\com.kesomannen.gale\valheim\profiles\sushr\BepInEx\plugins\ValheimModding-Jotunn\Jotunn.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="Newtonsoft.Json"><HintPath>C:\Users\Shade\AppData\Roaming\com.kesomannen.gale\valheim\profiles\sushr\BepInEx\plugins\ValheimModding-JsonDotNET\Newtonsoft.Json.dll</HintPath><Private>false</Private></Reference>
-    <Reference Include="Archipelago.MultiClient.Net"><HintPath>d:\SteamLibrary\steamapps\common\Valheim\valheim-ap-randomizer\lib\Archipelago.MultiClient.Net.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AccessibilityModule"><HintPath>$(ValheimManaged)\UnityEngine.AccessibilityModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AIModule"><HintPath>$(ValheimManaged)\UnityEngine.AIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AMDModule"><HintPath>$(ValheimManaged)\UnityEngine.AMDModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule"><HintPath>$(ValheimManaged)\UnityEngine.AndroidJNIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AnimationModule"><HintPath>$(ValheimManaged)\UnityEngine.AnimationModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ARModule"><HintPath>$(ValheimManaged)\UnityEngine.ARModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AssetBundleModule"><HintPath>$(ValheimManaged)\UnityEngine.AssetBundleModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.AudioModule"><HintPath>$(ValheimManaged)\UnityEngine.AudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ClothModule"><HintPath>$(ValheimManaged)\UnityEngine.ClothModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ClusterInputModule"><HintPath>$(ValheimManaged)\UnityEngine.ClusterInputModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule"><HintPath>$(ValheimManaged)\UnityEngine.ClusterRendererModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ContentLoadModule"><HintPath>$(ValheimManaged)\UnityEngine.ContentLoadModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ValheimManaged)\UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CrashReportingModule"><HintPath>$(ValheimManaged)\UnityEngine.CrashReportingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.DirectorModule"><HintPath>$(ValheimManaged)\UnityEngine.DirectorModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ValheimManaged)\UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.DSPGraphModule"><HintPath>$(ValheimManaged)\UnityEngine.DSPGraphModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.GameCenterModule"><HintPath>$(ValheimManaged)\UnityEngine.GameCenterModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.GIModule"><HintPath>$(ValheimManaged)\UnityEngine.GIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.GraphicsStateCollectionSerializerModule"><HintPath>$(ValheimManaged)\UnityEngine.GraphicsStateCollectionSerializerModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.GridModule"><HintPath>$(ValheimManaged)\UnityEngine.GridModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.HierarchyCoreModule"><HintPath>$(ValheimManaged)\UnityEngine.HierarchyCoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.HotReloadModule"><HintPath>$(ValheimManaged)\UnityEngine.HotReloadModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IdentifiersModule"><HintPath>$(ValheimManaged)\UnityEngine.IdentifiersModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ImageConversionModule"><HintPath>$(ValheimManaged)\UnityEngine.ImageConversionModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.IMGUIModule"><HintPath>$(ValheimManaged)\UnityEngine.IMGUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputForUIModule"><HintPath>$(ValheimManaged)\UnityEngine.InputForUIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputLegacyModule"><HintPath>$(ValheimManaged)\UnityEngine.InputLegacyModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InputModule"><HintPath>$(ValheimManaged)\UnityEngine.InputModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.InsightsModule"><HintPath>$(ValheimManaged)\UnityEngine.InsightsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule"><HintPath>$(ValheimManaged)\UnityEngine.JSONSerializeModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.LocalizationModule"><HintPath>$(ValheimManaged)\UnityEngine.LocalizationModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.MarshallingModule"><HintPath>$(ValheimManaged)\UnityEngine.MarshallingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.MultiplayerModule"><HintPath>$(ValheimManaged)\UnityEngine.MultiplayerModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.NVIDIAModule"><HintPath>$(ValheimManaged)\UnityEngine.NVIDIAModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule"><HintPath>$(ValheimManaged)\UnityEngine.ParticleSystemModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule"><HintPath>$(ValheimManaged)\UnityEngine.PerformanceReportingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.Physics2DModule"><HintPath>$(ValheimManaged)\UnityEngine.Physics2DModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PhysicsModule"><HintPath>$(ValheimManaged)\UnityEngine.PhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.PropertiesModule"><HintPath>$(ValheimManaged)\UnityEngine.PropertiesModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule"><HintPath>$(ValheimManaged)\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule"><HintPath>$(ValheimManaged)\UnityEngine.ScreenCaptureModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.ShaderVariantAnalyticsModule"><HintPath>$(ValheimManaged)\UnityEngine.ShaderVariantAnalyticsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule"><HintPath>$(ValheimManaged)\UnityEngine.SharedInternalsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.SpatialTracking"><HintPath>$(ValheimManaged)\UnityEngine.SpatialTracking.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule"><HintPath>$(ValheimManaged)\UnityEngine.SpriteMaskModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule"><HintPath>$(ValheimManaged)\UnityEngine.SpriteShapeModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.StreamingModule"><HintPath>$(ValheimManaged)\UnityEngine.StreamingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.SubstanceModule"><HintPath>$(ValheimManaged)\UnityEngine.SubstanceModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.SubsystemsModule"><HintPath>$(ValheimManaged)\UnityEngine.SubsystemsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TerrainModule"><HintPath>$(ValheimManaged)\UnityEngine.TerrainModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule"><HintPath>$(ValheimManaged)\UnityEngine.TerrainPhysicsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule"><HintPath>$(ValheimManaged)\UnityEngine.TextCoreFontEngineModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule"><HintPath>$(ValheimManaged)\UnityEngine.TextCoreTextEngineModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TextRenderingModule"><HintPath>$(ValheimManaged)\UnityEngine.TextRenderingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TilemapModule"><HintPath>$(ValheimManaged)\UnityEngine.TilemapModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.TLSModule"><HintPath>$(ValheimManaged)\UnityEngine.TLSModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(ValheimManaged)\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UIElementsModule"><HintPath>$(ValheimManaged)\UnityEngine.UIElementsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UIModule"><HintPath>$(ValheimManaged)\UnityEngine.UIModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UmbraModule"><HintPath>$(ValheimManaged)\UnityEngine.UmbraModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityAnalyticsModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityConnectModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityConnectModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityConsentModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityConsentModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityCurlModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityCurlModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityTestProtocolModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityWebRequestAudioModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityWebRequestModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityWebRequestTextureModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule"><HintPath>$(ValheimManaged)\UnityEngine.UnityWebRequestWWWModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.VehiclesModule"><HintPath>$(ValheimManaged)\UnityEngine.VehiclesModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.VFXModule"><HintPath>$(ValheimManaged)\UnityEngine.VFXModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.VideoModule"><HintPath>$(ValheimManaged)\UnityEngine.VideoModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule"><HintPath>$(ValheimManaged)\UnityEngine.VirtualTexturingModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.VRModule"><HintPath>$(ValheimManaged)\UnityEngine.VRModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.WindModule"><HintPath>$(ValheimManaged)\UnityEngine.WindModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers"><HintPath>$(ValheimManaged)\UnityEngine.XR.LegacyInputHelpers.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.XRModule"><HintPath>$(ValheimManaged)\UnityEngine.XRModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_valheim"><HintPath>$(ValheimManaged)\assembly_valheim.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_utils"><HintPath>$(ValheimManaged)\assembly_utils.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Unity.TextMeshPro"><HintPath>$(ValheimManaged)\Unity.TextMeshPro.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.UI"><HintPath>$(ValheimManaged)\UnityEngine.UI.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="BepInEx"><HintPath>$(BepInExCore)\BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExCore)\0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="Jotunn"><HintPath>$(JotunnDll)</HintPath><Private>false</Private></Reference>
+    <Reference Include="Newtonsoft.Json"><HintPath>$(NewtonsoftJsonDll)</HintPath><Private>false</Private></Reference>
+    <Reference Include="Archipelago.MultiClient.Net"><HintPath>$(ArchipelagoDll)</HintPath><Private>false</Private></Reference>
   </ItemGroup>
+
+  <Target Name="ValidateModReferences" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(ValheimManaged)\assembly_valheim.dll')" Text="Valheim assembly not found at '$(ValheimManaged)\assembly_valheim.dll'. Set ValheimDir to the game install, for example /p:ValheimDir=D:\SteamLibrary\steamapps\common\Valheim" />
+    <Error Condition="!Exists('$(BepInExCore)\BepInEx.dll')" Text="BepInEx.dll not found at '$(BepInExCore)\BepInEx.dll'. Set BepInExCore to the BepInEx core folder." />
+    <Error Condition="!Exists('$(BepInExCore)\0Harmony.dll')" Text="0Harmony.dll not found at '$(BepInExCore)\0Harmony.dll'. Set BepInExCore to the BepInEx core folder." />
+    <Error Condition="!Exists('$(JotunnDll)')" Text="Jotunn.dll not found at '$(JotunnDll)'. Set JotunnDll to the full path of Jotunn.dll." />
+    <Error Condition="!Exists('$(NewtonsoftJsonDll)')" Text="Newtonsoft.Json.dll not found at '$(NewtonsoftJsonDll)'. Set NewtonsoftJsonDll to the full path. Do not copy it into the mod package." />
+    <Error Condition="!Exists('$(ArchipelagoDll)')" Text="Archipelago.MultiClient.Net.dll not found at '$(ArchipelagoDll)'. Set ArchipelagoDll. The repository copy lives in lib\." />
+  </Target>
 </Project>

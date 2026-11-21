@@ -1,5 +1,6 @@
 from typing import Dict, NamedTuple, List, TYPE_CHECKING
 from BaseClasses import Location, LocationProgressType
+from .Ids import resolve_section
 
 if TYPE_CHECKING:
     from . import ValheimWorld
@@ -394,8 +395,8 @@ progress_type_map = {
     "Missable": LocationProgressType.EXCLUDED,
 }
 
-# Parse the location data from the text
-current_id = 1
+# Ids come from id_registry.json, not from this row's position.
+_parsed_locations = []
 for line in locations_txt.strip().splitlines():
     if line.startswith("//"):  # Skip comments
         continue
@@ -403,16 +404,20 @@ for line in locations_txt.strip().splitlines():
     if len(parts) < 5:
         print(f"Malformed line: {line}")  # Debugging output
         continue
+    _parsed_locations.append(parts)
 
+_location_ids = resolve_section(
+    "research_locations", [parts[1].strip() for parts in _parsed_locations]
+)
+for parts, location_id in zip(_parsed_locations, _location_ids):
     location_data_table.append(ValheimLocation(
-        id=current_id,
+        id=location_id,
         location_type=parts[0].strip(),
         user_friendly_name=parts[1].strip(),
         game_id=parts[2].strip(),  # Only for reference; not used in APWorld
         classification=parts[3].strip(),
         region=parts[4].strip(),
     ))
-    current_id += 1
 
 
 def create_locations(world: "ValheimWorld"):

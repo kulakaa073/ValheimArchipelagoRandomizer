@@ -6,6 +6,7 @@ from .Options import ValheimOptions
 from .Regions import create_regions, place_sequential_tier_items, apply_default_parent_rules, promote_parent_items
 from .Locations import create_locations, location_table
 from .Items import create_items, item_table
+from .Ids import assert_unique_spaces, require_id
 from .Drops import (
     BOSS_DROPS,
     create_drop_items,
@@ -165,4 +166,10 @@ def selected_goal(world: "ValheimWorld") -> BossGoal:
     if index < 0 or index >= len(GOALS):
         return GOALS[-1]
     return GOALS[index]
+
+
+for _goal in GOALS:
+    require_id("goal_locations", _goal.location, _goal.location_id)
+require_id("victory_item", GOAL_ITEM_NAME, GOAL_ITEM_ID)
+assert_unique_spaces()
 

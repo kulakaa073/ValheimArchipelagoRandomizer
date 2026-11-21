@@ -792,7 +792,7 @@ public static class Patches
         }
     }
 
-    // Remember where a boss died so AP rewards can spawn on the corpse.
+    // Optional ground helper only. Randomized boss rewards go to the inventory and do not read this.
     [HarmonyPatch(typeof(Character), nameof(Character.OnDeath))]
     static class Character_OnDeath_BossPos_Patch
     {

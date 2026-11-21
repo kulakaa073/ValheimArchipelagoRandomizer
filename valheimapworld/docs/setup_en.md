@@ -23,7 +23,7 @@ Generation with this custom world must be done locally. You can still upload the
 
 1. Install Gale (or another Thunderstore-compatible manager) for Valheim.
 2. Install **ValheimArchipelagoRandomizer** and its dependencies into your profile.
-3. Install the same profile on every player PC and on the dedicated server / host. The host must run the mod so randomized boss drops are removed from corpses when they roll.
+3. Install the same profile on every player PC and on the dedicated server / host. The host must run the mod so randomized boss drops are removed from corpses when they roll. Received boss rewards go to that player's inventory. One shared world is one Archipelago slot; research unlocks are not separated per slot.
 
 The mod zip on the GitHub release matches the Thunderstore package.
 
