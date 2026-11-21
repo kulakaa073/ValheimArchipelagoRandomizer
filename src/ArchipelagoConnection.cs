@@ -582,7 +582,12 @@ internal static class ArchipelagoConnection
                 return;
             }
             int amount = ValheimRandomizer.BossGrantAmount(bossDrop);
-            if (ValheimRandomizer.GrantBossRewardOnGround(bossDrop, amount))
+
+            bool granted = BossDropsEnabled
+                ? ValheimRandomizer.GrantDropBundle(bossDrop.itemID, amount)
+                : ValheimRandomizer.GrantBossRewardOnGround(bossDrop, amount);
+
+            if (granted)
             {
                 gottenItems.Add(name);
                 SetGlobal(grantedKey);

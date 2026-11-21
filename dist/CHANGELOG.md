@@ -3,6 +3,9 @@
 ## 0.3.1
 * Fixed malformed empty research prerequisite sets.
 * Regenerated the Archipelago world package.
+* Fix Journey to Valhalla location issue.
+* Fixed randomized boss rewards being spawned at boss corpses when Boss Checks are enabled.
+* Boss rewards are now granted directly to player inventory when Boss Checks are enabled.
 
 ## 0.3.0
 * Research overhaul (v5.1): tiers, costs, and prereqs retuned across Meadows through Deep North; SoftProg station/upgrade lines; WrithanRoots swamp and JuteRed mountains placement
