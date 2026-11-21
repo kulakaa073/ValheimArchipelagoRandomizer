@@ -89,7 +89,7 @@ class ValheimWorld(World):
             # Ending goal is not a boss kill location — add it when selected.
             goal = selected_goal(self)
             if goal.location not in {boss.location for boss in BOSS_DROPS}:
-                create_goal_location(self, goal, lock_victory=False)
+                create_goal_location(self, goal, lock_victory=True)
         else:
             create_goal(self)
         if self.options.drop_checks:

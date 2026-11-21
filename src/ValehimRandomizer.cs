@@ -19,7 +19,7 @@ public class ValheimRandomizer : BaseUnityPlugin
 {
     public const string ModGuid = "com.samupo.randomizer";
     public const string ModName = "Randomizer";
-    public const string ModVersion = "0.3.0";
+    public const string ModVersion = "0.3.1";
 
     internal static BepInEx.Configuration.ConfigEntry<bool> randomized;
     internal static BepInEx.Configuration.ConfigEntry<string> archipelagoHostname;
