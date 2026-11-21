@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+* Fixed malformed empty research prerequisite sets.
+* Regenerated the Archipelago world package.
+
 ## 0.3.0
 * Research overhaul (v5.1): tiers, costs, and prereqs retuned across Meadows through Deep North; SoftProg station/upgrade lines; WrithanRoots swamp and JuteRed mountains placement
 * Trophy and gather checks retiered to the T0–T15 map; Regions doors through Tier15
